@@ -7,7 +7,7 @@ services:
       volumes:
       - "./rasa/openHPI_en:/app"
       ports: 
-        - "54321:5005"
+        - "10000:5005"
     action_server:
       build: 
         context: ./rasa/openHPI_en/actions
@@ -15,4 +15,4 @@ services:
         - ./rasa/openHPI_en/actions:/app/actions
         - ./rasa/openHPI_en/data:/app/data
       ports:
-        - 5055:5055
+        - 10001:5055

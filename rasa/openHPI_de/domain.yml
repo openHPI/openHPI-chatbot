@@ -96,13 +96,13 @@ responses:
   utter_thankyou_feedback:
   - text: "Vielen Dank für dein Feedback!"
 
-  utter_faq/ask_about_moocs:
+  utter_faq/moocs:
   - text: Ein paar grundlegende Informationen zu Online-Kursen haben wir <a href="https://open.hpi.de/pages/mooc">hier</a> zusammengetragen.
 
-  utter_faq/ask_about_ki:
+  utter_faq/ki:
   - text: Künstliche Intelligenz (KI) ist ein Teilgebiet der Informatik, das sich mit Konzepten und Methoden beschäftigt, die Computer befähigen, ihre Umgebung wahrzunehmen, zu denken, zu handeln, zu kommunizieren und zu lernen. Die Konzepte und Methoden werden durch Algorithmen als KI-Systeme realisiert.
 
-  utter_faq/ask_about_openHPI:
+  utter_faq/openHPI:
   - text: "openHPI ist die Lernplattform des Potsdamer Hasso-Plattner-Instituts (HPI). Im September 2012 startete openHPI mit Prof. Dr. h.c. mult. Hasso Plattners Kurs 'In-Memory Data Management' als erste europäische MOOC-Plattform. Die englisch- und deutschsprachigen Kurse zu IT-Themen, Design Thinking und Digital Health werden von Professor:innen und wissenschaftlichen Mitarbeiter:innen des HPI erstellt. Außerdem wird openHPI für Blended Learning-Formate und zur Unterstützung von Präsenzveranstaltungen am Hasso-Plattner-Institut eingesetzt."
   
 

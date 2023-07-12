@@ -22,7 +22,6 @@ class ActionResponsesFiles(Enum):
 	<action>_responses.py is defined in action_responses/**
 	"""
 	actions = 'actions_responses.yml'
-	actions_recommender = 'actions_recommender_responses.yml'
 
 
 def load_response_texts(file_name: str) -> Dict[str, Dict[str, str]]:
