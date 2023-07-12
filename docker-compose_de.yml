@@ -1,0 +1,18 @@
+version: '3'
+services:
+    rasa:
+      user: root
+      build: 
+        context: ./rasa/openHPI_de
+      volumes:
+      - "./rasa/openHPI_de:/app"
+      ports: 
+        - "12345:5005"
+    action_server:
+      build: 
+        context: ./rasa/openHPI_de/actions
+      volumes:
+        - ./rasa/openHPI_de/actions:/app/actions
+        - ./rasa/openHPI_de/data:/app/data
+      ports:
+        - 5045:5055
