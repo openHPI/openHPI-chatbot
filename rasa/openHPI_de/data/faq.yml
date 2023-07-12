@@ -1,0 +1,41 @@
+version: '3.1'
+
+nlu:
+  - intent: faq/ask_about_moocs
+    examples: |
+      - Was sind Massive Open Online Courses?
+      - Sag mir was zu Massive Open Online Courses
+      - Was sind Moocs?
+      - Was ist ein Mooc?
+      - Was heißt Mooc?
+      - Wofür steht Mooc?
+      - Was bedeutet MOOC?
+      - Ich verstehe nicht was Mooc bedeutet
+      - Erklär mir Moocs
+      - Ich will wissen was Mooc bedeutet
+      - Ich will wissen was ein mooc ist
+      - Kannst du mir sagen was ein Mooc ist?
+      - MOOC
+
+  - intent: faq/ask_about_ki
+    examples: |
+      - Ich möchte wissen was KI ist
+      - ich möchte wissen was KI ist
+      - Was ist KI
+      - Kannst du mir sagen was KI ist?
+      - Was ist KI?
+      - Ich möchte mich über KI informieren
+      - Ich möchte mich über Ki informieren
+      - Was ist AI
+      - Was ist Artificial Intelligence
+      - Ich will mich über AI informieren
+      - KI
+
+  - intent: faq/ask_about_openHPI
+    examples: |
+      - Was ist openHPI?
+      - Was ist diese Seite?
+      - Was ist die Idee von openHPI?
+      - Warum gibt es openHPI?
+      - Wo kann ich mehr über openHPI erfahren?
+      - openHPI

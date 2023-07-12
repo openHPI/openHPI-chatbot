@@ -3,32 +3,182 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - affirm
+  - thank
   - deny
-  - mood_great
-  - mood_unhappy
+  - affirm
+  - faq
+  - get_course
+  - get_achievements
+  - get_courses
+  - help
+  - out_of_scope
   - bot_challenge
+  - human_handoff
+  - insults
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: Hey, wie kann ich dir helfen?
+  - text: Hey, was kann ich für dich tun?
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_tip_formulation:
+  - text: "💡 Übrigens: Ich verstehe dich am besten, wenn du deine Fragen kurz und präzise formulierst!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: Alles klar. Ich wünsche dir noch einen schönen Tag! Bis bald 👋
+  - text: Alles klar. Ich wünsche dir noch einen schönen Tag! Auf Wiedersehen 👋
+  
+  utter_have_a_nice_day:
+  - text: Hab einen schönen Tag und bis bald!
+
+  utter_you_are_welcome:
+  - text: Bitte sehr.
+  - text: Es ist immer schön, hilfreich zu sein.
+
+  utter_submit:
+  - text: Alles klar!
+  - text: In Ordnung!
+
+  utter_download_certificate:
+  - text: Möchtest du deinen Leistungsnachweis oder deine Teilnahmebestätigung herunterladen?
+
+  utter_ask_which_course:
+  - text: Bitte wähle einen Kurs aus, für den du deinen Fortschritt oder deine Bescheinigungen sehen möchtest.
+
+  utter_out_of_scope:
+  - text: 'Tut mir leid, das kann ich leider nicht beantworten. Benutze gerne unser Kontaktformular, um deine Frage zu stellen oder tippe "Hilfe". ' 
+
+  utter_use_contact_form:
+  - text: Du kannst auch das Kontaktformular nebenan verwenden, um Hilfe zu erhalten. Wir werden versuchen, dir so schnell wie möglich zu antworten.
+
+  utter_more_info:
+  - text: Okay. Wie kann ich dir weiterhelfen?
+
+  utter_anything_else:
+  - text: Kann ich dir noch bei etwas anderem helfen?
+    buttons:
+    - title: "Ja"
+      payload: "/affirm"
+    - title: "Nö, danke für deine Hilfe!"
+      payload: "/deny"
+
+  utter_help:
+  - text: Ich helfe dir gerne bei technischen Problemen und Fragen zu den Kursen. Ich erkläre dir zum Beispiel den Kursaufbau und beantworte Fragen zum Zertifikat, zum Zurücksetzen des Passworts oder zum Ändern deiner persönlichen Daten. 
+
+  utter_default:
+  - text: Das habe ich nicht ganz verstanden. Kannst du das umformulieren?
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: Ich bin dein virtueller Lern-Assistent. Gerne unterstütze ich dich auf deiner MOOC-Reise.
+
+  utter_ask_handoff:
+  - text: Willst du lieber mit unserem Helpdesk-Team sprechen?
+    buttons:
+    - title: "Ja, bitte"
+      payload: "/affirm"
+    - title: "Nö"
+      payload: "/deny"
+
+  utter_handoff:
+  - text: 'Um mit unserem Helpdesk-Team zu sprechen, klicke auf den Reiter "Kontaktformular" und beschreibe uns dein Anliegen dort kurz. Das Helpdesk-Team wird sich zeitnah bei dir melden.'
+  
+  utter_insults:
+  - text: "Na, na, na, du bist aber ein ganz Schlimmer :) Bitte achte etwas besser auf dein Wording! Ich bin zwar nur eine Maschine, aber ich habe auch Gefühle!!"
+
+  utter_feedback:
+  - text: "Hab ich dir bei deinem Anliegen helfen können?"
+    buttons:
+    - title: "Ja!"
+      payload: "/affirm"
+    - title: "Nicht wirklich ..."
+      payload: "/deny"
+
+  utter_thankyou_feedback:
+  - text: "Vielen Dank für dein Feedback!"
+
+  utter_faq/ask_about_moocs:
+  - text: Ein paar grundlegende Informationen zu Online-Kursen haben wir <a href="https://open.hpi.de/pages/mooc">hier</a> zusammengetragen.
+
+  utter_faq/ask_about_ki:
+  - text: Künstliche Intelligenz (KI) ist ein Teilgebiet der Informatik, das sich mit Konzepten und Methoden beschäftigt, die Computer befähigen, ihre Umgebung wahrzunehmen, zu denken, zu handeln, zu kommunizieren und zu lernen. Die Konzepte und Methoden werden durch Algorithmen als KI-Systeme realisiert.
+
+  utter_faq/ask_about_openHPI:
+  - text: "openHPI ist die Lernplattform des Potsdamer Hasso-Plattner-Instituts (HPI). Im September 2012 startete openHPI mit Prof. Dr. h.c. mult. Hasso Plattners Kurs 'In-Memory Data Management' als erste europäische MOOC-Plattform. Die englisch- und deutschsprachigen Kurse zu IT-Themen, Design Thinking und Digital Health werden von Professor:innen und wissenschaftlichen Mitarbeiter:innen des HPI erstellt. Außerdem wird openHPI für Blended Learning-Formate und zur Unterstützung von Präsenzveranstaltungen am Hasso-Plattner-Institut eingesetzt."
+  
+
+
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+forms:
+  course_form:
+    ignored_intents: []
+    required_slots:
+      - current_course_title
+
+actions:
+- action_get_courses
+- action_get_courses_buttons
+- action_get_achievements
+- action_course_set
+- action_set_current_course
+- action_download_certificate
+- action_search_topic
+
+entities:
+- certificate_type
+- Course
+- country
+
+slots:
+  all_courses:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: custom
+  current_course_title:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      intent: courses
+      entity: Course
+      conditions:
+      - active_loop: course_form
+        requested_slot: current_course_title
+    - type: from_text
+      intent: courses
+      not_intent:
+      - faq
+      - affirm
+      - deny
+      conditions:
+      - active_loop: course_form
+        requested_slot: current_course_title
+    - type: from_entity
+      entity: Course
+  current_course:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: custom
+  current_achievements:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: custom
+  course-set:
+    type: bool
+    mappings:
+    - type: custom
+  current_course_achieved:
+    type: bool
+    mappings:
+    - type: custom
+  courses_available:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: custom
