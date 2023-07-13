@@ -1,761 +1,1082 @@
-# version: '3.1'
+version: '3.1'
 
-# nlu:
-#   - intent: faq/moocs
-#     examples: |
-#       - Was sind Massive Open Online Courses?
-#       - Sag mir was zu Massive Open Online Courses
-#       - Was sind Moocs?
-#       - Was ist ein Mooc?
-#       - Was heißt Mooc?
-#       - Wofür steht Mooc?
-#       - Was bedeutet MOOC?
-#       - Ich verstehe nicht was Mooc bedeutet
-#       - Erklär mir Moocs
-#       - Ich will wissen was Mooc bedeutet
-#       - Ich will wissen was ein mooc ist
-#       - Kannst du mir sagen was ein Mooc ist?
-#       - MOOC
+nlu:
+  - intent: faq/moocs
+    examples: |
+      - Was sind Massive Open Online Courses?
+      - Sag mir was zu Massive Open Online Courses
+      - Was sind Moocs?
+      - Was ist ein Mooc?
+      - Was heißt Mooc?
+      - Wofür steht Mooc?
+      - Was bedeutet MOOC?
+      - Ich verstehe nicht was Mooc bedeutet
+      - Erklär mir Moocs
+      - Ich will wissen was Mooc bedeutet
+      - Ich will wissen was ein mooc ist
+      - Kannst du mir sagen was ein Mooc ist?
+      - Was verbirgt sich hinter dem Begriff "Massive Open Online Courses" (MOOCs)?
+      - Wie lassen sich MOOCs definieren und charakterisieren?
+      - Was zeichnet Massive Open Online Courses (MOOCs) aus?
+      - Welche Merkmale und Eigenschaften kennzeichnen MOOCs?
+      - Wie unterscheiden sich MOOCs von herkömmlichen Bildungsformaten?
+      - In welcher Form werden MOOCs in der Regel angeboten?
+      - Welche Möglichkeiten bieten MOOCs für Lernende weltweit?
+      - Wie groß ist die typische Teilnehmerzahl bei einem MOOC?
+      - Welche Vorteile können Lernende aus MOOCs ziehen?
+      - Wie sind MOOCs entstanden und wie hat sich dieses Bildungsformat entwickelt?
+      - Welche Rolle spielen MOOCs in der heutigen Bildungslandschaft?
+      - Welche Fachbereiche oder Themen werden in MOOCs abgedeckt?
+      - Gibt es Qualitätsstandards oder Bewertungskriterien für MOOCs?
+      - Wie interaktiv sind MOOCs gestaltet und wie erfolgt die Kommunikation mit anderen Teilnehmenden?
+      - Welche Organisationen oder Plattformen bieten MOOCs an?
+      - MOOC
 
-#   - intent: faq/ki
-#     examples: |
-#       - Ich möchte wissen was KI ist
-#       - ich möchte wissen was KI ist
-#       - Was ist KI
-#       - Kannst du mir sagen was KI ist?
-#       - Was ist KI?
-#       - Ich möchte mich über KI informieren
-#       - Ich möchte mich über Ki informieren
-#       - Was ist AI
-#       - Was ist Artificial Intelligence
-#       - Ich will mich über AI informieren
-#       - KI
+  - intent: faq/openHPI
+    examples: |
+      - Was ist openHPI?
+      - Was ist diese Seite?
+      - Was ist die Idee von openHPI?
+      - Warum gibt es openHPI?
+      - Wo kann ich mehr über openHPI erfahren?
+      - openHPI
+      - Was verbirgt sich hinter dem Begriff "openHPI"?
+      - Wie lässt sich openHPI definieren und charakterisieren?
+      - Was zeichnet openHPI als Bildungsplattform aus?
+      - Welche Merkmale und Eigenschaften kennzeichnen openHPI?
+      - In welcher Form werden Kurse und Inhalte auf openHPI angeboten?
+      - Welche Ziele und Visionen verfolgt openHPI?
+      - Wie unterscheidet sich openHPI von anderen Online-Lernplattformen?
+      - Welche Fachbereiche oder Themen werden auf openHPI abgedeckt?
+      - Wie groß ist die Community von openHPI und wie interagieren die Teilnehmenden miteinander?
+      - Welche Arten von Kursen und Lernmöglichkeiten bietet openHPI?
+      - Welche Rolle spielt openHPI in der heutigen Bildungslandschaft?
+      - Gibt es Zertifikate oder Leistungsnachweise, die man durch openHPI erwerben kann?
+      - Sind die Kurse und Inhalte auf openHPI kostenlos zugänglich?
+      - Gibt es spezielle Voraussetzungen oder technische Anforderungen, um openHPI nutzen zu können?
+      - Welche Organisation steht hinter openHPI und welche Partnerschaften bestehen?
 
-#   - intent: faq/openHPI
-#     examples: |
-#       - Was ist openHPI?
-#       - Was ist diese Seite?
-#       - Was ist die Idee von openHPI?
-#       - Warum gibt es openHPI?
-#       - Wo kann ich mehr über openHPI erfahren?
-#       - openHPI
 
-#   - intent: faq/course_process
-#     examples: |
-#       - Wie läuft ein Kurs auf openHPI grundsätzlich ab?
-#       - Was sind die grundlegenden Abläufe eines Kurses auf openHPI?
-#       - Könntest du mir eine Übersicht darüber geben, wie ein Kurs auf openHPI normalerweise abläuft?
-#       - Wie gestaltet sich der Ablauf eines Kurses auf openHPI im Allgemeinen?
-#       - Welche Schritte durchläuft man typischerweise bei einem Kurs auf openHPI?
-#       - Kannst du mir den üblichen Kursverlauf auf openHPI beschreiben?
-#       - Was sind die typischen Etappen eines Kurses auf openHPI?
-#       - Wie ist der Ablauf eines Kurses auf openHPI üblicherweise strukturiert?
-#       - Welche Phasen oder Elemente beinhaltet ein Kurs auf openHPI in der Regel?
-#       - Kannst du mir eine allgemeine Beschreibung geben, wie ein Kurs auf openHPI abläuft?
-#       - Was sind die gängigen Schritte, die man während eines openHPI-Kurses erwartet?
-#       - Wie sieht der normale Ablauf eines openHPI-Kurses aus?
-#       - Könntest du mir den typischen Kursverlauf auf openHPI erklären?
-#       - Was kann ich von einem Kurs auf openHPI in Bezug auf den Ablauf erwarten?
-#       - Welche Stufen oder Phasen durchläuft man üblicherweise während eines openHPI-Kurses?
-#       - Wie ist ein Kurs auf openHPI im Allgemeinen strukturiert und organisiert?
-#       - Wie läuft ein Kurs ab?
-#       - Was ist der typische Kursablauf?
-#       - Kursablauf
+  - intent: faq/course_process
+    examples: |
+      - Wie läuft ein Kurs auf openHPI grundsätzlich ab?
+      - Was sind die grundlegenden Abläufe eines Kurses auf openHPI?
+      - Könntest du mir eine Übersicht darüber geben, wie ein Kurs auf openHPI normalerweise abläuft?
+      - Wie gestaltet sich der Ablauf eines Kurses auf openHPI im Allgemeinen?
+      - Welche Schritte durchläuft man typischerweise bei einem Kurs auf openHPI?
+      - Kannst du mir den üblichen Kursverlauf auf openHPI beschreiben?
+      - Was sind die typischen Etappen eines Kurses auf openHPI?
+      - Wie ist der Ablauf eines Kurses auf openHPI üblicherweise strukturiert?
+      - Welche Phasen oder Elemente beinhaltet ein Kurs auf openHPI in der Regel?
+      - Kannst du mir eine allgemeine Beschreibung geben, wie ein Kurs auf openHPI abläuft?
+      - Was sind die gängigen Schritte, die man während eines openHPI-Kurses erwartet?
+      - Wie sieht der normale Ablauf eines openHPI-Kurses aus?
+      - Könntest du mir den typischen Kursverlauf auf openHPI erklären?
+      - Was kann ich von einem Kurs auf openHPI in Bezug auf den Ablauf erwarten?
+      - Welche Stufen oder Phasen durchläuft man üblicherweise während eines openHPI-Kurses?
+      - Wie ist ein Kurs auf openHPI im Allgemeinen strukturiert und organisiert?
+      - Wie läuft ein Kurs ab?
+      - Was ist der typische Kursablauf?
+      - Kursablauf
 
-#   - intent: faq/registration
-#     examples: |
-#       - Wer kann sich bei openHPI anmelden?
-#       - Welche Personen sind berechtigt, sich bei openHPI anzumelden?
-#       - Wer hat die Möglichkeit, sich bei openHPI zu registrieren?
-#       - Welche Zielgruppe kann sich bei openHPI anmelden?
-#       - Wer ist dazu befugt, ein Konto bei openHPI zu erstellen?
-#       - Für wen steht die Anmeldung bei openHPI offen?
-#       - Wer darf sich bei openHPI einschreiben?
-#       - Welche Personen können sich für openHPI-Kurse registrieren?
-#       - Wer hat Zugang zur Anmeldung auf openHPI?
-#       - Für wen ist es möglich, sich bei openHPI anzumelden?
-#       - Welche Personengruppen können sich bei openHPI einschreiben?
-#       - Wer wird von openHPI zur Teilnahme berechtigt?
-#       - Wer ist dazu berechtigt, sich für openHPI-Kurse anzumelden?
-#       - Welche Kriterien muss man erfüllen, um sich bei openHPI registrieren zu können?
-#       - Welche Voraussetzungen gelten für die Anmeldung bei openHPI?
-#       - Wer steht in der Lage, ein Konto auf openHPI zu erstellen?
-#       - Wer kann sich anmelden?
-#       - Anmeldung
-#       - Registrierung
-#       - Wer kann sich bei openHPI registrieren?
-#       - Wer kann sich registrieren?
+  - intent: faq/registration
+    examples: |
+      - Wer kann sich bei openHPI anmelden?
+      - Welche Personen sind berechtigt, sich bei openHPI anzumelden?
+      - Wer hat die Möglichkeit, sich bei openHPI zu registrieren?
+      - Welche Zielgruppe kann sich bei openHPI anmelden?
+      - Wer ist dazu befugt, ein Konto bei openHPI zu erstellen?
+      - Für wen steht die Anmeldung bei openHPI offen?
+      - Wer darf sich bei openHPI einschreiben?
+      - Welche Personen können sich für openHPI-Kurse registrieren?
+      - Wer hat Zugang zur Anmeldung auf openHPI?
+      - Für wen ist es möglich, sich bei openHPI anzumelden?
+      - Welche Personengruppen können sich bei openHPI einschreiben?
+      - Wer wird von openHPI zur Teilnahme berechtigt?
+      - Wer ist dazu berechtigt, sich für openHPI-Kurse anzumelden?
+      - Welche Kriterien muss man erfüllen, um sich bei openHPI registrieren zu können?
+      - Welche Voraussetzungen gelten für die Anmeldung bei openHPI?
+      - Wer steht in der Lage, ein Konto auf openHPI zu erstellen?
+      - Wer kann sich anmelden?
+      - Anmeldung
+      - Registrierung
+      - Wer kann sich bei openHPI registrieren?
+      - Wer kann sich registrieren?
 
-#   - intent: faq/costs
-#     examples: |
-#       - Kostet die Teilnahme an den openHPI Kursen Geld?
-#       - Sind die openHPI-Kurse kostenpflichtig?
-#       - Muss man für die Teilnahme an den openHPI-Kursen bezahlen?
-#       - Sind die openHPI-Kurse kostenfrei oder kostenpflichtig?
-#       - Entstehen Kosten für die Teilnahme an den openHPI-Kursen?
-#       - Ist die Teilnahme an den openHPI-Kursen mit Kosten verbunden?
-#       - Gibt es eine Gebühr für die Teilnahme an den openHPI-Kursen?
-#       - Muss man Gebühren entrichten, um an den openHPI-Kursen teilzunehmen?
-#       - Ist die Teilnahme an den openHPI-Kursen kostenfrei oder gibt es eine Gebühr?
-#       - Fallen Kosten an, wenn man sich für openHPI-Kurse einschreibt?
-#       - Verlangt openHPI eine Zahlung für die Teilnahme an den Kursen?
-#       - Muss man einen Betrag bezahlen, um an den openHPI-Kursen teilnehmen zu können?
-#       - Sind die openHPI-Kurse kostenpflichtig oder kostenlos verfügbar?
-#       - Gibt es eine finanzielle Verpflichtung für die Teilnahme an den openHPI-Kursen?
-#       - Verlangt openHPI eine Kursgebühr von den Teilnehmern?
-#       - Sind die openHPI-Kurse kostenpflichtig oder entstehen keine Kosten?
-#       - Sind die Kurse kostenpflichtig?
-#       - Muss man für die Kurse bezahlen?
-#       - Entstehen Kosten für die Teilnahme an den Kursen?
-#       - Ist eine Gebühr für die Kurse zu entrichten?
-#       - Sind die Kurse kostenfrei oder gibt es eine finanzielle Verpflichtung?
-#       - Verlangen die Kurse eine Zahlung?
-#       - Muss man einen Betrag für die Kurse bezahlen?
-#       - Sind die Kurse kostenpflichtig oder kostenlos verfügbar?
-#       - Gibt es eine finanzielle Verpflichtung für die Teilnahme an den Kursen?
-#       - Fallen Kosten für die Kurse an?
-#       - Kosten
-#       - kostenpflichtig
+  - intent: faq/costs
+    examples: |
+      - Kostet die Teilnahme an den openHPI Kursen Geld?
+      - Sind die openHPI-Kurse kostenpflichtig?
+      - Muss man für die Teilnahme an den openHPI-Kursen bezahlen?
+      - Sind die openHPI-Kurse kostenfrei oder kostenpflichtig?
+      - Entstehen Kosten für die Teilnahme an den openHPI-Kursen?
+      - Ist die Teilnahme an den openHPI-Kursen mit Kosten verbunden?
+      - Gibt es eine Gebühr für die Teilnahme an den openHPI-Kursen?
+      - Muss man Gebühren entrichten, um an den openHPI-Kursen teilzunehmen?
+      - Ist die Teilnahme an den openHPI-Kursen kostenfrei oder gibt es eine Gebühr?
+      - Fallen Kosten an, wenn man sich für openHPI-Kurse einschreibt?
+      - Verlangt openHPI eine Zahlung für die Teilnahme an den Kursen?
+      - Muss man einen Betrag bezahlen, um an den openHPI-Kursen teilnehmen zu können?
+      - Sind die openHPI-Kurse kostenpflichtig oder kostenlos verfügbar?
+      - Gibt es eine finanzielle Verpflichtung für die Teilnahme an den openHPI-Kursen?
+      - Verlangt openHPI eine Kursgebühr von den Teilnehmern?
+      - Sind die openHPI-Kurse kostenpflichtig oder entstehen keine Kosten?
+      - Sind die Kurse kostenpflichtig?
+      - Muss man für die Kurse bezahlen?
+      - Entstehen Kosten für die Teilnahme an den Kursen?
+      - Ist eine Gebühr für die Kurse zu entrichten?
+      - Sind die Kurse kostenfrei oder gibt es eine finanzielle Verpflichtung?
+      - Verlangen die Kurse eine Zahlung?
+      - Muss man einen Betrag für die Kurse bezahlen?
+      - Sind die Kurse kostenpflichtig oder kostenlos verfügbar?
+      - Gibt es eine finanzielle Verpflichtung für die Teilnahme an den Kursen?
+      - Fallen Kosten für die Kurse an?
+      - Kosten
+      - kostenpflichtig
 
-#   - intent: faq/minimum_age
-#     examples: |
-#       - Was ist das Mindestalter um an einem Kurs teilnehmen zu können?
-#       - Gibt es ein Mindestalter, um an einem Kurs teilnehmen zu dürfen?
-#       - Ab welchem Alter ist die Teilnahme an einem Kurs möglich?
-#       - Gibt es eine Altersgrenze für die Teilnahme an den Kursen?
-#       - Welches ist das Mindestalter, um sich für einen Kurs anzumelden?
-#       - Ab welchem Alter kann man an den Kursen teilnehmen?
-#       - Gibt es eine Altersbeschränkung für die Teilnahme an den Kursen?
-#       - Wie alt muss man sein, um an den Kursen teilnehmen zu können?
-#       - Gibt es ein vorgeschriebenes Mindestalter für die Kursteilnahme?
-#       - Welches Alter muss man haben, um sich für einen Kurs einschreiben zu können?
-#       - Gibt es eine Altersvoraussetzung für die Teilnahme an den Kursen?
-#       - Ab welchem Alter sind die Kurse zugänglich?
-#       - Ist die Teilnahme an den Kursen an eine bestimmte Altersgruppe gebunden?
-#       - Gibt es eine untere Altersgrenze für die Kursteilnahme?
-#       - Ab welchem Lebensjahr darf man an den Kursen teilnehmen?
-#       - Welches ist das Mindestalter, um sich für einen Kurs einzuschreiben?
-#       - Gibt es ein Mindestalter?
-#       - Mindestalter
+  - intent: faq/minimum_age
+    examples: |
+      - Was ist das Mindestalter um an einem Kurs teilnehmen zu können?
+      - Gibt es ein Mindestalter, um an einem Kurs teilnehmen zu dürfen?
+      - Ab welchem Alter ist die Teilnahme an einem Kurs möglich?
+      - Gibt es eine Altersgrenze für die Teilnahme an den Kursen?
+      - Welches ist das Mindestalter, um sich für einen Kurs anzumelden?
+      - Ab welchem Alter kann man an den Kursen teilnehmen?
+      - Gibt es eine Altersbeschränkung für die Teilnahme an den Kursen?
+      - Wie alt muss man sein, um an den Kursen teilnehmen zu können?
+      - Gibt es ein vorgeschriebenes Mindestalter für die Kursteilnahme?
+      - Welches Alter muss man haben, um sich für einen Kurs einschreiben zu können?
+      - Gibt es eine Altersvoraussetzung für die Teilnahme an den Kursen?
+      - Ab welchem Alter sind die Kurse zugänglich?
+      - Ist die Teilnahme an den Kursen an eine bestimmte Altersgruppe gebunden?
+      - Gibt es eine untere Altersgrenze für die Kursteilnahme?
+      - Ab welchem Lebensjahr darf man an den Kursen teilnehmen?
+      - Welches ist das Mindestalter, um sich für einen Kurs einzuschreiben?
+      - Gibt es ein Mindestalter?
+      - Mindestalter
 
-#   - intent: faq/gender_neutral_language
-#     examples: |
-#       - Warum nutzt openHPI gendergerechte Sprache?
-#       - Welche Gründe hat openHPI dafür, gendergerechte Sprache zu verwenden?
-#       - Warum legt openHPI Wert auf die Verwendung von gendergerechter Sprache?
-#       - Was sind die Beweggründe von openHPI, gendergerechte Sprache einzusetzen?
-#       - Warum ist es für openHPI wichtig, gendergerechte Sprache zu nutzen?
-#       - Welche Vorteile sieht openHPI in der Verwendung von gendergerechter Sprache?
-#       - Aus welchem Grund setzt openHPI auf gendergerechte Sprache?
-#       - Was ist die Motivation von openHPI, sich für gendergerechte Sprache einzusetzen?
-#       - Warum hat openHPI sich entschieden, gendergerechte Sprache zu verwenden?
-#       - Welchen Einfluss erhofft sich openHPI durch die Nutzung von gendergerechter Sprache?
-#       - Welche Ziele verfolgt openHPI mit der Anwendung von gendergerechter Sprache?
-#       - Welche Auswirkungen erhofft sich openHPI durch die Verwendung von gendergerechter Sprache?
-#       - Welche gesellschaftlichen Aspekte führen dazu, dass openHPI gendergerechte Sprache nutzt?
-#       - Welche Rolle spielt die Gleichstellung der Geschlechter bei der Entscheidung von openHPI für gendergerechte Sprache?
-#       - Welche Bedeutung hat für openHPI die Anerkennung und Inklusion aller Geschlechter durch die Verwendung von gendergerechter Sprache?
-#       - Wie unterstützt die Verwendung von gendergerechter Sprache die Werte und Ziele von openHPI?
-#       - gendergerechte Sprache
-#       - gendern
+  - intent: faq/gender_neutral_language
+    examples: |
+      - Warum nutzt openHPI gendergerechte Sprache?
+      - Welche Gründe hat openHPI dafür, gendergerechte Sprache zu verwenden?
+      - Warum legt openHPI Wert auf die Verwendung von gendergerechter Sprache?
+      - Was sind die Beweggründe von openHPI, gendergerechte Sprache einzusetzen?
+      - Warum ist es für openHPI wichtig, gendergerechte Sprache zu nutzen?
+      - Welche Vorteile sieht openHPI in der Verwendung von gendergerechter Sprache?
+      - Aus welchem Grund setzt openHPI auf gendergerechte Sprache?
+      - Was ist die Motivation von openHPI, sich für gendergerechte Sprache einzusetzen?
+      - Warum hat openHPI sich entschieden, gendergerechte Sprache zu verwenden?
+      - Welchen Einfluss erhofft sich openHPI durch die Nutzung von gendergerechter Sprache?
+      - Welche Ziele verfolgt openHPI mit der Anwendung von gendergerechter Sprache?
+      - Welche Auswirkungen erhofft sich openHPI durch die Verwendung von gendergerechter Sprache?
+      - Welche gesellschaftlichen Aspekte führen dazu, dass openHPI gendergerechte Sprache nutzt?
+      - Welche Rolle spielt die Gleichstellung der Geschlechter bei der Entscheidung von openHPI für gendergerechte Sprache?
+      - Welche Bedeutung hat für openHPI die Anerkennung und Inklusion aller Geschlechter durch die Verwendung von gendergerechter Sprache?
+      - Wie unterstützt die Verwendung von gendergerechter Sprache die Werte und Ziele von openHPI?
+      - gendergerechte Sprache
+      - gendern
 
-#   - intent: faq/technical_requirements
-#     examples: |
-#       - Welche technischen Voraussetzungen benötige ich für die Nutzung von openHPI?
-#       - Welche technischen Anforderungen sind erforderlich, um openHPI nutzen zu können?
-#       - Welche technischen Voraussetzungen muss ich erfüllen, um openHPI nutzen zu können?
-#       - Welche technische Ausstattung benötige ich, um openHPI verwenden zu können?
-#       - Was sind die erforderlichen technischen Anforderungen, um openHPI nutzen zu können?
-#       - Welche Geräte und Software brauche ich, um openHPI zu nutzen?
-#       - Welche technischen Vorkehrungen muss ich treffen, um openHPI verwenden zu können?
-#       - Was sind die Mindestanforderungen an meine technische Ausstattung, um openHPI zu nutzen?
-#       - Welche Internetverbindungsgeschwindigkeit wird für die Nutzung von openHPI empfohlen?
-#       - Welche Browser werden von openHPI unterstützt?
-#       - Benötige ich spezielle Software oder Programme, um openHPI nutzen zu können?
-#       - Welche Betriebssysteme sind mit openHPI kompatibel?
-#       - Gibt es spezielle Hardware-Anforderungen für die Nutzung von openHPI?
-#       - Welche E-Mail-Adresse muss ich haben, um mich bei openHPI anzumelden?
-#       - Muss ich bestimmte Plug-Ins oder Erweiterungen installieren, um openHPI zu verwenden?
-#       - Gibt es besondere Anforderungen an die Audio- oder Videoqualität für die Teilnahme an openHPI-Kursen?
-#       - Welche technischen Anforderungen sind erforderlich, um teilzunehmen?
-#       - Welche technische Ausstattung wird für die Teilnahme benötigt?
-#       - Welche technischen Voraussetzungen muss ich erfüllen, um mitmachen zu können?
-#       - Welche Geräte und Software werden für die Teilnahme benötigt?
-#       - Welche technischen Vorkehrungen sollte ich treffen, um dabei sein zu können?
-#       - Welche Mindestanforderungen gibt es an meine technische Ausstattung?
-#       - Welche Internetverbindungsgeschwindigkeit wird empfohlen?
-#       - Welche Browser oder Betriebssysteme werden unterstützt?
-#       - Gibt es spezielle Anforderungen an Audio- oder Videofunktionen?
-#       - Benötige ich bestimmte Plug-Ins oder Programme, um teilnehmen zu können?
-#       - technische Vorraussetungen
-#       - technische Anforderungen
+  - intent: faq/technical_requirements
+    examples: |
+      - Welche technischen Voraussetzungen benötige ich für die Nutzung von openHPI?
+      - Welche technischen Anforderungen sind erforderlich, um openHPI nutzen zu können?
+      - Welche technischen Voraussetzungen muss ich erfüllen, um openHPI nutzen zu können?
+      - Welche technische Ausstattung benötige ich, um openHPI verwenden zu können?
+      - Was sind die erforderlichen technischen Anforderungen, um openHPI nutzen zu können?
+      - Welche Geräte und Software brauche ich, um openHPI zu nutzen?
+      - Welche technischen Vorkehrungen muss ich treffen, um openHPI verwenden zu können?
+      - Was sind die Mindestanforderungen an meine technische Ausstattung, um openHPI zu nutzen?
+      - Welche Internetverbindungsgeschwindigkeit wird für die Nutzung von openHPI empfohlen?
+      - Welche Browser werden von openHPI unterstützt?
+      - Benötige ich spezielle Software oder Programme, um openHPI nutzen zu können?
+      - Welche Betriebssysteme sind mit openHPI kompatibel?
+      - Gibt es spezielle Hardware-Anforderungen für die Nutzung von openHPI?
+      - Welche E-Mail-Adresse muss ich haben, um mich bei openHPI anzumelden?
+      - Muss ich bestimmte Plug-Ins oder Erweiterungen installieren, um openHPI zu verwenden?
+      - Gibt es besondere Anforderungen an die Audio- oder Videoqualität für die Teilnahme an openHPI-Kursen?
+      - Welche technischen Anforderungen sind erforderlich, um teilzunehmen?
+      - Welche technische Ausstattung wird für die Teilnahme benötigt?
+      - Welche technischen Voraussetzungen muss ich erfüllen, um mitmachen zu können?
+      - Welche Geräte und Software werden für die Teilnahme benötigt?
+      - Welche technischen Vorkehrungen sollte ich treffen, um dabei sein zu können?
+      - Welche Mindestanforderungen gibt es an meine technische Ausstattung?
+      - Welche Internetverbindungsgeschwindigkeit wird empfohlen?
+      - Welche Browser oder Betriebssysteme werden unterstützt?
+      - Gibt es spezielle Anforderungen an Audio- oder Videofunktionen?
+      - Benötige ich bestimmte Plug-Ins oder Programme, um teilnehmen zu können?
+      - technische Vorraussetungen
+      - technische Anforderungen
 
-#   - intent: faq/contact
-#     examples: |
-#       - Wie kann ich das openHPI Team kontaktieren?
-#       - Wie kann ich mit dem openHPI-Team in Kontakt treten?
-#       - Welche Möglichkeiten habe ich, um das openHPI-Team zu erreichen?
-#       - Wie kann ich das Support-Team von openHPI kontaktieren?
-#       - Gibt es einen Kundenservice für openHPI, und wie erreiche ich ihn?
-#       - Welche Kontaktinformationen stehen mir zur Verfügung, um das openHPI-Team zu kontaktieren?
-#       - Wie kann ich Fragen oder Anliegen an das openHPI-Team richten?
-#       - Welche Kanäle stehen mir zur Verfügung, um das openHPI-Team zu erreichen?
-#       - Gibt es eine E-Mail-Adresse, an die ich mich wenden kann, um das openHPI-Team zu kontaktieren?
-#       - Gibt es ein Kontaktformular oder ein Helpdesk-Ticketing-System für openHPI?
-#       - Kann ich das openHPI-Team über soziale Medien erreichen?
-#       - Gibt es eine Telefonnummer, unter der ich das openHPI-Team erreichen kann?
-#       - Gibt es eine Live-Chat-Funktion, um direkt mit dem openHPI-Team zu kommunizieren?
-#       - Wie kann ich technische Probleme oder Schwierigkeiten dem openHPI-Team melden?
-#       - Gibt es eine Community oder ein Forum, in dem ich Fragen an das openHPI-Team stellen kann?
-#       - Welche Unterstützungsmöglichkeiten bietet das openHPI-Team, und wie kann ich sie in Anspruch nehmen?
-#       - Kontakt
-#       - kontaktieren
+  # - intent: faq/contact
+  #   examples: |
+  #     - Wie kann ich das openHPI Team kontaktieren?
+  #     - Wie kann ich mit dem openHPI-Team in Kontakt treten?
+  #     - Welche Möglichkeiten habe ich, um das openHPI-Team zu erreichen?
+  #     - Wie kann ich das Support-Team von openHPI kontaktieren?
+  #     - Gibt es einen Kundenservice für openHPI, und wie erreiche ich ihn?
+  #     - Welche Kontaktinformationen stehen mir zur Verfügung, um das openHPI-Team zu kontaktieren?
+  #     - Wie kann ich Fragen oder Anliegen an das openHPI-Team richten?
+  #     - Welche Kanäle stehen mir zur Verfügung, um das openHPI-Team zu erreichen?
+  #     - Gibt es eine E-Mail-Adresse, an die ich mich wenden kann, um das openHPI-Team zu kontaktieren?
+  #     - Gibt es ein Kontaktformular oder ein Helpdesk-Ticketing-System für openHPI?
+  #     - Kann ich das openHPI-Team über soziale Medien erreichen?
+  #     - Gibt es eine Telefonnummer, unter der ich das openHPI-Team erreichen kann?
+  #     - Gibt es eine Live-Chat-Funktion, um direkt mit dem openHPI-Team zu kommunizieren?
+  #     - Wie kann ich technische Probleme oder Schwierigkeiten dem openHPI-Team melden?
+  #     - Gibt es eine Community oder ein Forum, in dem ich Fragen an das openHPI-Team stellen kann?
+  #     - Welche Unterstützungsmöglichkeiten bietet das openHPI-Team, und wie kann ich sie in Anspruch nehmen?
+  #     - Kontakt
+  #     - kontaktieren
 
-#   - intent: faq/create_account
-#     examples: |
-#       - Wie erstelle ich ein Konto bei openHPI?
-#       - Wie kann ich mich bei openHPI registrieren und ein Konto erstellen?
-#       - Welche Schritte sind erforderlich, um ein Konto bei openHPI anzulegen?
-#       - Was muss ich tun, um einen Account bei openHPI zu erstellen?
-#       - Wie melde ich mich bei openHPI an und erstelle ein Konto?
-#       - Gibt es einen speziellen Registrierungsprozess, um ein Konto bei openHPI zu erstellen?
-#       - Wo finde ich das Anmeldeformular, um mich bei openHPI zu registrieren?
-#       - Welche Informationen werden für die Kontoerstellung bei openHPI benötigt?
-#       - Gibt es eine Anleitung oder einen Leitfaden, der mir bei der Kontoerstellung bei openHPI hilft?
-#       - Welche Schritte muss ich befolgen, um erfolgreich ein Konto bei openHPI anzulegen?
-#       - Gibt es eine Bestätigungs-E-Mail, die ich nach der Kontoerstellung bei openHPI erhalten werde?
-#       - Wie lange dauert es, um ein Konto bei openHPI zu erstellen?
-#       - Gibt es besondere Anforderungen an das Passwort bei der Kontoerstellung bei openHPI?
-#       - Kann ich mich mit meinem Social-Media-Konto bei openHPI anmelden oder muss ich ein separates Konto erstellen?
-#       - Wie gehe ich vor, wenn ich mein Passwort für mein openHPI-Konto vergessen habe?
-#       - Gibt es eine Altersbeschränkung für die Kontoerstellung bei openHPI?
-#       - Kontoerstellung
-#       - openHPI-Konto erstellen
-#       - Account erstellen
-#       - openHPI-Account erstellen
+  - intent: faq/create_account
+    examples: |
+      - Wie erstelle ich ein Konto bei openHPI?
+      - Wie kann ich mich bei openHPI registrieren und ein Konto erstellen?
+      - Welche Schritte sind erforderlich, um ein Konto bei openHPI anzulegen?
+      - Was muss ich tun, um einen Account bei openHPI zu erstellen?
+      - Wie melde ich mich bei openHPI an und erstelle ein Konto?
+      - Gibt es einen speziellen Registrierungsprozess, um ein Konto bei openHPI zu erstellen?
+      - Wo finde ich das Anmeldeformular, um mich bei openHPI zu registrieren?
+      - Welche Informationen werden für die Kontoerstellung bei openHPI benötigt?
+      - Gibt es eine Anleitung oder einen Leitfaden, der mir bei der Kontoerstellung bei openHPI hilft?
+      - Welche Schritte muss ich befolgen, um erfolgreich ein Konto bei openHPI anzulegen?
+      - Gibt es eine Bestätigungs-E-Mail, die ich nach der Kontoerstellung bei openHPI erhalten werde?
+      - Wie lange dauert es, um ein Konto bei openHPI zu erstellen?
+      - Gibt es besondere Anforderungen an das Passwort bei der Kontoerstellung bei openHPI?
+      - Kann ich mich mit meinem Social-Media-Konto bei openHPI anmelden oder muss ich ein separates Konto erstellen?
+      - Wie gehe ich vor, wenn ich mein Passwort für mein openHPI-Konto vergessen habe?
+      - Gibt es eine Altersbeschränkung für die Kontoerstellung bei openHPI?
+      - Kontoerstellung
+      - openHPI-Konto erstellen
+      - Account erstellen
+      - openHPI-Account erstellen
 
-#   - intent: faq/confirmation_mail
-#     examples: |
-#       - Warum erhalte ich meine Bestätigungs-E-Mail nicht?
-#       - Was könnten die Gründe dafür sein, dass ich meine Bestätigungs-E-Mail nicht erhalten habe?
-#       - Warum habe ich keine Bestätigungs-E-Mail von openHPI erhalten?
-#       - Welche möglichen Ursachen gibt es dafür, dass meine Bestätigungs-E-Mail nicht angekommen ist?
-#       - Was sollte ich tun, wenn ich meine Bestätigungs-E-Mail nicht finden kann?
-#       - Welche Schritte kann ich unternehmen, wenn ich keine Bestätigungs-E-Mail von openHPI bekommen habe?
-#       - Gibt es mögliche technische Probleme, die dazu führen könnten, dass ich meine Bestätigungs-E-Mail nicht erhalte?
-#       - Wie lange sollte es normalerweise dauern, bis ich meine Bestätigungs-E-Mail von openHPI erhalte?
-#       - Gibt es mögliche Lösungen, um sicherzustellen, dass ich meine Bestätigungs-E-Mail erhalte?
-#       - Könnte es sein, dass die E-Mail in meinem Spam- oder Junk-Ordner gelandet ist?
-#       - Sind die von mir eingegebenen E-Mail-Informationen korrekt, um die Bestätigungs-E-Mail zu erhalten?
-#       - Was passiert, wenn ich meine E-Mail-Adresse falsch eingegeben habe und deshalb keine Bestätigungs-E-Mail erhalte?
-#       - Kann ich meine E-Mail-Adresse ändern, um sicherzustellen, dass ich die Bestätigungs-E-Mail erhalte?
-#       - Kann es sein, dass meine E-Mail-Adresse blockiert oder als unzustellbar markiert wurde?
-#       - Gibt es Möglichkeiten, den E-Mail-Versand zu überprüfen oder erneut eine Bestätigungs-E-Mail anzufordern?
-#       - Was sollte ich tun, wenn ich trotz mehrerer Versuche immer noch keine Bestätigungs-E-Mail von openHPI erhalten habe?
-#       - Wo ist meine Bestätigungs-Email?
-#       - Ich habe meine Bestätigungs-Email nicht erhalten
-#       - Ich habe keine Email zur Bestätigung erhalten
-#       - Was kann ich tun, wenn ich keine Bestätigungsemail erhalten habe?
+  - intent: faq/confirmation_mail
+    examples: |
+      - Warum erhalte ich meine Bestätigungs-E-Mail nicht?
+      - Was könnten die Gründe dafür sein, dass ich meine Bestätigungs-E-Mail nicht erhalten habe?
+      - Warum habe ich keine Bestätigungs-E-Mail von openHPI erhalten?
+      - Welche möglichen Ursachen gibt es dafür, dass meine Bestätigungs-E-Mail nicht angekommen ist?
+      - Was sollte ich tun, wenn ich meine Bestätigungs-E-Mail nicht finden kann?
+      - Welche Schritte kann ich unternehmen, wenn ich keine Bestätigungs-E-Mail von openHPI bekommen habe?
+      - Gibt es mögliche technische Probleme, die dazu führen könnten, dass ich meine Bestätigungs-E-Mail nicht erhalte?
+      - Wie lange sollte es normalerweise dauern, bis ich meine Bestätigungs-E-Mail von openHPI erhalte?
+      - Gibt es mögliche Lösungen, um sicherzustellen, dass ich meine Bestätigungs-E-Mail erhalte?
+      - Könnte es sein, dass die E-Mail in meinem Spam- oder Junk-Ordner gelandet ist?
+      - Sind die von mir eingegebenen E-Mail-Informationen korrekt, um die Bestätigungs-E-Mail zu erhalten?
+      - Was passiert, wenn ich meine E-Mail-Adresse falsch eingegeben habe und deshalb keine Bestätigungs-E-Mail erhalte?
+      - Kann ich meine E-Mail-Adresse ändern, um sicherzustellen, dass ich die Bestätigungs-E-Mail erhalte?
+      - Kann es sein, dass meine E-Mail-Adresse blockiert oder als unzustellbar markiert wurde?
+      - Gibt es Möglichkeiten, den E-Mail-Versand zu überprüfen oder erneut eine Bestätigungs-E-Mail anzufordern?
+      - Was sollte ich tun, wenn ich trotz mehrerer Versuche immer noch keine Bestätigungs-E-Mail von openHPI erhalten habe?
+      - Wo ist meine Bestätigungs-Email?
+      - Ich habe meine Bestätigungs-Email nicht erhalten
+      - Ich habe keine Email zur Bestätigung erhalten
+      - Was kann ich tun, wenn ich keine Bestätigungsemail erhalten habe?
 
-#   - intent: faq/reset_password
-#     examples: |
-#       - Wie setze ich mein Passwort zurück?
-#       - Welche Schritte muss ich unternehmen, um mein Passwort zurückzusetzen?
-#       - Wie kann ich mein Passwort bei openHPI zurücksetzen?
-#       - Gibt es einen speziellen Prozess, um mein Passwort wiederherzustellen?
-#       - Was ist der empfohlene Weg, um mein Passwort zurückzusetzen?
-#       - Wie gehe ich vor, um mein vergessenes Passwort bei openHPI zurückzusetzen?
-#       - Welche Optionen habe ich, um mein Passwort wiederherzustellen?
-#       - Gibt es ein Passwort-Wiederherstellungsformular oder eine Funktion auf der Website?
-#       - Wo finde ich die Funktion, um mein Passwort bei openHPI zurückzusetzen?
-#       - Welche Informationen oder Angaben werden benötigt, um mein Passwort erfolgreich zurückzusetzen?
-#       - Gibt es eine Bestätigungs-E-Mail oder einen Bestätigungscode, den ich erhalten muss, um mein Passwort zurückzusetzen?
-#       - Wie lange dauert es normalerweise, um mein Passwort zurückzusetzen?
-#       - Gibt es besondere Anforderungen an das neue Passwort bei der Zurücksetzung?
-#       - Kann ich mein Passwort auch telefonisch oder per E-Mail zurücksetzen lassen?
-#       - Was sollte ich tun, wenn ich Probleme bei der Zurücksetzung meines Passworts habe?
-#       - Gibt es eine Möglichkeit, den Kundensupport zu kontaktieren, wenn ich mein Passwort nicht zurücksetzen kann?
-#       - Passwort zurücksetzten
-#       - Ich habe mein Passwort vergessen, was nun?
-#       - Passwort vergessen
-#       - Ich weiß mein Passwort nicht mehr
+  - intent: faq/reset_password
+    examples: |
+      - Wie setze ich mein Passwort zurück?
+      - Welche Schritte muss ich unternehmen, um mein Passwort zurückzusetzen?
+      - Wie kann ich mein Passwort bei openHPI zurücksetzen?
+      - Gibt es einen speziellen Prozess, um mein Passwort wiederherzustellen?
+      - Was ist der empfohlene Weg, um mein Passwort zurückzusetzen?
+      - Wie gehe ich vor, um mein vergessenes Passwort bei openHPI zurückzusetzen?
+      - Welche Optionen habe ich, um mein Passwort wiederherzustellen?
+      - Gibt es ein Passwort-Wiederherstellungsformular oder eine Funktion auf der Website?
+      - Wo finde ich die Funktion, um mein Passwort bei openHPI zurückzusetzen?
+      - Welche Informationen oder Angaben werden benötigt, um mein Passwort erfolgreich zurückzusetzen?
+      - Gibt es eine Bestätigungs-E-Mail oder einen Bestätigungscode, den ich erhalten muss, um mein Passwort zurückzusetzen?
+      - Wie lange dauert es normalerweise, um mein Passwort zurückzusetzen?
+      - Gibt es besondere Anforderungen an das neue Passwort bei der Zurücksetzung?
+      - Kann ich mein Passwort auch telefonisch oder per E-Mail zurücksetzen lassen?
+      - Was sollte ich tun, wenn ich Probleme bei der Zurücksetzung meines Passworts habe?
+      - Gibt es eine Möglichkeit, den Kundensupport zu kontaktieren, wenn ich mein Passwort nicht zurücksetzen kann?
+      - Passwort zurücksetzten
+      - Ich habe mein Passwort vergessen, was nun?
+      - Passwort vergessen
+      - Ich weiß mein Passwort nicht mehr
 
-#   - intent: faq/change_password
-#     examples: |
-#       - Wie ändere ich mein Passwort?
-#       - Wie kann ich mein Passwort bei openHPI ändern?
-#       - Welche Schritte sind erforderlich, um mein Passwort bei openHPI zu ändern?
-#       - Wie gehe ich vor, um mein Passwort erfolgreich zu ändern?
-#       - Gibt es eine spezielle Funktion oder Option auf der Website, um mein Passwort zu ändern?
-#       - Wo finde ich die Einstellungen, um mein Passwort bei openHPI zu ändern?
-#       - Welche Informationen oder Angaben werden benötigt, um das Passwort erfolgreich zu ändern?
-#       - Gibt es Anforderungen an das neue Passwort bei der Änderung?
-#       - Wie lange dauert es normalerweise, um mein Passwort zu ändern?
-#       - Gibt es besondere Sicherheitsmaßnahmen, die ich beachten muss, um mein Passwort zu ändern?
-#       - Gibt es eine Bestätigungs-E-Mail oder einen Bestätigungscode, den ich erhalten muss, um das Passwort zu ändern?
-#       - Kann ich mein Passwort auch telefonisch oder per E-Mail ändern lassen?
-#       - Was sollte ich tun, wenn ich Probleme bei der Passwortänderung habe?
-#       - Gibt es eine Möglichkeit, den Kundensupport zu kontaktieren, wenn ich mein Passwort nicht ändern kann?
-#       - Kann ich mein Passwort über die mobile App von openHPI ändern?
-#       - Gibt es eine Option, um ein vergessenes Passwort direkt bei der Passwortänderung wiederherzustellen?
-#       - Passwort ändern
-#       - Passwortänderung
-#       - Ich möchte mein Passwort ändern
-#       - Ich will mein Passwort ändern
-#       - Wie kann ich mein Passwort ändern?
+  - intent: faq/change_password
+    examples: |
+      - Wie ändere ich mein Passwort?
+      - Wie kann ich mein Passwort bei openHPI ändern?
+      - Welche Schritte sind erforderlich, um mein Passwort bei openHPI zu ändern?
+      - Wie gehe ich vor, um mein Passwort erfolgreich zu ändern?
+      - Gibt es eine spezielle Funktion oder Option auf der Website, um mein Passwort zu ändern?
+      - Wo finde ich die Einstellungen, um mein Passwort bei openHPI zu ändern?
+      - Welche Informationen oder Angaben werden benötigt, um das Passwort erfolgreich zu ändern?
+      - Gibt es Anforderungen an das neue Passwort bei der Änderung?
+      - Wie lange dauert es normalerweise, um mein Passwort zu ändern?
+      - Gibt es besondere Sicherheitsmaßnahmen, die ich beachten muss, um mein Passwort zu ändern?
+      - Gibt es eine Bestätigungs-E-Mail oder einen Bestätigungscode, den ich erhalten muss, um das Passwort zu ändern?
+      - Kann ich mein Passwort auch telefonisch oder per E-Mail ändern lassen?
+      - Was sollte ich tun, wenn ich Probleme bei der Passwortänderung habe?
+      - Gibt es eine Möglichkeit, den Kundensupport zu kontaktieren, wenn ich mein Passwort nicht ändern kann?
+      - Kann ich mein Passwort über die mobile App von openHPI ändern?
+      - Gibt es eine Option, um ein vergessenes Passwort direkt bei der Passwortänderung wiederherzustellen?
+      - Passwort ändern
+      - Passwortänderung
+      - Ich möchte mein Passwort ändern
+      - Ich will mein Passwort ändern
+      - Wie kann ich mein Passwort ändern?
   
-#   - intent: faq/change_mail_address
-#     examples: |
-#       - Wie ändere ich meine E-Mail-Adresse?
-#       - Wie kann ich meine E-Mail-Adresse bei openHPI ändern?
-#       - Welche Schritte sind erforderlich, um meine E-Mail-Adresse bei openHPI zu ändern?
-#       - Wie gehe ich vor, um erfolgreich meine E-Mail-Adresse bei openHPI zu ändern?
-#       - Wo finde ich die Einstellungen, um meine E-Mail-Adresse zu ändern?
-#       - Gibt es eine spezielle Funktion oder Option auf der Website, um meine E-Mail-Adresse zu ändern?
-#       - Welche Informationen oder Angaben werden benötigt, um die E-Mail-Adresse erfolgreich zu ändern?
-#       - Gibt es eine Bestätigungs-E-Mail oder einen Bestätigungscode, den ich erhalten muss, um die E-Mail-Adresse zu ändern?
-#       - Welche Schritte sind erforderlich, um meine E-Mail-Adresse erfolgreich zu aktualisieren?
-#       - Gibt es besondere Sicherheitsmaßnahmen, die ich beachten muss, um meine E-Mail-Adresse zu ändern?
-#       - Wie lange dauert es normalerweise, um meine E-Mail-Adresse zu ändern?
-#       - Kann ich meine E-Mail-Adresse auch telefonisch oder per E-Mail ändern lassen?
-#       - Was sollte ich tun, wenn ich Probleme bei der Änderung meiner E-Mail-Adresse habe?
-#       - Gibt es eine Möglichkeit, den Kundensupport zu kontaktieren, wenn ich meine E-Mail-Adresse nicht ändern kann?
-#       - Kann ich meine E-Mail-Adresse über die mobile App von openHPI ändern?
-#       - Gibt es spezielle Anforderungen oder Einschränkungen für die Änderung meiner E-Mail-Adresse?
-#       - Ich möchte meine Email-Adresse ändern
-#       - Email-Adresse ändern
-#       - Mail ändern
+  - intent: faq/change_mail_address
+    examples: |
+      - Wie ändere ich meine E-Mail-Adresse?
+      - Wie kann ich meine E-Mail-Adresse bei openHPI ändern?
+      - Welche Schritte sind erforderlich, um meine E-Mail-Adresse bei openHPI zu ändern?
+      - Wie gehe ich vor, um erfolgreich meine E-Mail-Adresse bei openHPI zu ändern?
+      - Wo finde ich die Einstellungen, um meine E-Mail-Adresse zu ändern?
+      - Gibt es eine spezielle Funktion oder Option auf der Website, um meine E-Mail-Adresse zu ändern?
+      - Welche Informationen oder Angaben werden benötigt, um die E-Mail-Adresse erfolgreich zu ändern?
+      - Gibt es eine Bestätigungs-E-Mail oder einen Bestätigungscode, den ich erhalten muss, um die E-Mail-Adresse zu ändern?
+      - Welche Schritte sind erforderlich, um meine E-Mail-Adresse erfolgreich zu aktualisieren?
+      - Gibt es besondere Sicherheitsmaßnahmen, die ich beachten muss, um meine E-Mail-Adresse zu ändern?
+      - Wie lange dauert es normalerweise, um meine E-Mail-Adresse zu ändern?
+      - Kann ich meine E-Mail-Adresse auch telefonisch oder per E-Mail ändern lassen?
+      - Was sollte ich tun, wenn ich Probleme bei der Änderung meiner E-Mail-Adresse habe?
+      - Gibt es eine Möglichkeit, den Kundensupport zu kontaktieren, wenn ich meine E-Mail-Adresse nicht ändern kann?
+      - Kann ich meine E-Mail-Adresse über die mobile App von openHPI ändern?
+      - Gibt es spezielle Anforderungen oder Einschränkungen für die Änderung meiner E-Mail-Adresse?
+      - Ich möchte meine Email-Adresse ändern
+      - Email-Adresse ändern
+      - Mail ändern
 
-#   - intent: faq/personal_data
-#     examples: |
-#       - Was geschieht mit meinen personenbezogenen Daten?
-#       - Wie wird mit meinen personenbezogenen Daten umgegangen?
-#       - Welche Maßnahmen werden ergriffen, um den Schutz meiner personenbezogenen Daten zu gewährleisten?
-#       - Was passiert mit meinen persönlichen Informationen, nachdem ich sie angegeben habe?
-#       - Welche Datenschutzrichtlinien gelten für meine personenbezogenen Daten?
-#       - Wer hat Zugriff auf meine personenbezogenen Daten?
-#       - Werden meine personenbezogenen Daten mit Dritten geteilt?
-#       - Wie lange werden meine personenbezogenen Daten gespeichert?
-#       - Kann ich meine Einwilligung zur Verwendung meiner personenbezogenen Daten widerrufen?
-#       - Wer ist für die Verwaltung meiner personenbezogenen Daten verantwortlich?
-#       - Welche Rechte habe ich bezüglich meiner personenbezogenen Daten?
-#       - Wird meine personenbezogene Daten außerhalb meines Landes übertragen?
-#       - Welche Sicherheitsmaßnahmen werden ergriffen, um den unbefugten Zugriff auf meine personenbezogenen Daten zu verhindern?
-#       - Werden meine personenbezogenen Daten für Marketingzwecke genutzt?
-#       - Wie kann ich Informationen zu meinen personenbezogenen Daten aktualisieren oder korrigieren?
-#       - Gibt es eine Datenschutzerklärung, die weitere Details zum Umgang mit meinen personenbezogenen Daten enthält?
-#       - Wie werden meine Daten geschützt?
-#       - personenbezogene Daten
-#       - Schutz meiner personenbezogenen Daten
+  - intent: faq/personal_data
+    examples: |
+      - Was geschieht mit meinen personenbezogenen Daten?
+      - Wie wird mit meinen personenbezogenen Daten umgegangen?
+      - Welche Maßnahmen werden ergriffen, um den Schutz meiner personenbezogenen Daten zu gewährleisten?
+      - Was passiert mit meinen persönlichen Informationen, nachdem ich sie angegeben habe?
+      - Welche Datenschutzrichtlinien gelten für meine personenbezogenen Daten?
+      - Wer hat Zugriff auf meine personenbezogenen Daten?
+      - Werden meine personenbezogenen Daten mit Dritten geteilt?
+      - Wie lange werden meine personenbezogenen Daten gespeichert?
+      - Kann ich meine Einwilligung zur Verwendung meiner personenbezogenen Daten widerrufen?
+      - Wer ist für die Verwaltung meiner personenbezogenen Daten verantwortlich?
+      - Welche Rechte habe ich bezüglich meiner personenbezogenen Daten?
+      - Wird meine personenbezogene Daten außerhalb meines Landes übertragen?
+      - Welche Sicherheitsmaßnahmen werden ergriffen, um den unbefugten Zugriff auf meine personenbezogenen Daten zu verhindern?
+      - Werden meine personenbezogenen Daten für Marketingzwecke genutzt?
+      - Wie kann ich Informationen zu meinen personenbezogenen Daten aktualisieren oder korrigieren?
+      - Gibt es eine Datenschutzerklärung, die weitere Details zum Umgang mit meinen personenbezogenen Daten enthält?
+      - Wie werden meine Daten geschützt?
+      - personenbezogene Daten
+      - Schutz meiner personenbezogenen Daten
   
-#   - intent: faq/course_structure_content
-#     examples: |
-#       - Wie sind die Kurse aufgebaut und strukturiert?
-#       - Können Sie mir einen Überblick über den Aufbau und die Struktur der Kurse geben?
-#       - Wie sind die Kurse inhaltlich und organisatorisch aufgebaut?
-#       - Welche Module oder Lektionen sind in den Kursen enthalten?
-#       - Gibt es einen festen Zeitplan oder kann ich die Kurse flexibel in meinem eigenen Tempo absolvieren?
-#       - Welche Arten von Lernmaterialien werden in den Kursen verwendet?
-#       - Wer sind die Kursleiter oder Dozenten und welche Expertise haben sie?
-#       - Gibt es interaktive Elemente wie Diskussionsforen oder Live-Chats in den Kursen?
-#       - Welche Aktivitäten oder Aufgaben sind Teil der Kursstruktur?
-#       - Wie viel Zeit sollte ich pro Woche für die Kurse einplanen?
-#       - Gibt es bestimmte Voraussetzungen oder Vorkenntnisse für die Teilnahme an den Kursen?
-#       - Werden die Kurse inhaltlich aktualisiert oder erweitert?
-#       - Gibt es praktische Übungen oder Projekte, um das Gelernte anzuwenden?
-#       - Werden Zertifikate oder Auszeichnungen für den erfolgreichen Abschluss der Kurse vergeben?
-#       - Gibt es spezielle Support-Möglichkeiten oder Hilfestellungen während der Kursdauer?
-#       - Wie ist die Kursstruktur darauf ausgerichtet, den Lernenden bestmöglich zu unterstützen?
-#       - Kursstruktur 
-#       - Kursinhalt
-#       - Struktur und Inhalt
+  - intent: faq/course_structure_content
+    examples: |
+      - Wie sind die Kurse aufgebaut und strukturiert?
+      - Können Sie mir einen Überblick über den Aufbau und die Struktur der Kurse geben?
+      - Wie sind die Kurse inhaltlich und organisatorisch aufgebaut?
+      - Welche Module oder Lektionen sind in den Kursen enthalten?
+      - Gibt es einen festen Zeitplan oder kann ich die Kurse flexibel in meinem eigenen Tempo absolvieren?
+      - Welche Arten von Lernmaterialien werden in den Kursen verwendet?
+      - Wer sind die Kursleiter oder Dozenten und welche Expertise haben sie?
+      - Gibt es interaktive Elemente wie Diskussionsforen oder Live-Chats in den Kursen?
+      - Welche Aktivitäten oder Aufgaben sind Teil der Kursstruktur?
+      - Wie viel Zeit sollte ich pro Woche für die Kurse einplanen?
+      - Gibt es bestimmte Voraussetzungen oder Vorkenntnisse für die Teilnahme an den Kursen?
+      - Werden die Kurse inhaltlich aktualisiert oder erweitert?
+      - Gibt es praktische Übungen oder Projekte, um das Gelernte anzuwenden?
+      - Werden Zertifikate oder Auszeichnungen für den erfolgreichen Abschluss der Kurse vergeben?
+      - Gibt es spezielle Support-Möglichkeiten oder Hilfestellungen während der Kursdauer?
+      - Wie ist die Kursstruktur darauf ausgerichtet, den Lernenden bestmöglich zu unterstützen?
+      - Kursstruktur 
+      - Kursinhalt
+      - Struktur und Inhalt
   
-#   - intent: faq/course_overview
-#     examples: |
-#       - Wo finde ich eine Übersicht der Kurse?
-#       - Wo kann ich eine Zusammenfassung oder Übersicht aller verfügbaren Kurse finden?
-#       - Gibt es eine zentrale Stelle, an der ich eine Auflistung aller Kurse finden kann?
-#       - Wo finde ich eine Übersicht über das Kursangebot?
-#       - Gibt es eine Seite oder einen Bereich auf der Website, der alle Kurse auflistet?
-#       - Wo kann ich Informationen zu den verschiedenen Kursen finden?
-#       - Gibt es eine Suchfunktion, um gezielt nach bestimmten Kursen zu suchen?
-#       - Wo finde ich detaillierte Beschreibungen der einzelnen Kurse?
-#       - Gibt es eine Kategorisierung der Kurse, um sie nach Themengebieten zu filtern?
-#       - Wo kann ich herausfinden, welche Kurse gerade angeboten werden?
-#       - Gibt es eine Möglichkeit, die Kurse nach Schwierigkeitsgrad oder Sprache zu sortieren?
-#       - Wo kann ich Informationen zu den Kursinhalten und Lernzielen finden?
-#       - Gibt es eine Möglichkeit, die Kurse nach Datum oder Dauer zu sortieren?
-#       - Wo finde ich Informationen zu den Voraussetzungen oder Zielgruppen der einzelnen Kurse?
-#       - Gibt es Kundenbewertungen oder Feedback zu den Kursen, die ich einsehen kann?
-#       - Wo kann ich mich über kommende Kurse oder Aktualisierungen informieren?
-#       - Kursübersicht
+  - intent: faq/course_overview
+    examples: |
+      - Wo finde ich eine Übersicht der Kurse?
+      - Wo kann ich eine Zusammenfassung oder Übersicht aller verfügbaren Kurse finden?
+      - Gibt es eine zentrale Stelle, an der ich eine Auflistung aller Kurse finden kann?
+      - Wo finde ich eine Übersicht über das Kursangebot?
+      - Gibt es eine Seite oder einen Bereich auf der Website, der alle Kurse auflistet?
+      - Wo kann ich Informationen zu den verschiedenen Kursen finden?
+      - Gibt es eine Suchfunktion, um gezielt nach bestimmten Kursen zu suchen?
+      - Wo finde ich detaillierte Beschreibungen der einzelnen Kurse?
+      - Gibt es eine Kategorisierung der Kurse, um sie nach Themengebieten zu filtern?
+      - Wo kann ich herausfinden, welche Kurse gerade angeboten werden?
+      - Gibt es eine Möglichkeit, die Kurse nach Schwierigkeitsgrad oder Sprache zu sortieren?
+      - Wo kann ich Informationen zu den Kursinhalten und Lernzielen finden?
+      - Gibt es eine Möglichkeit, die Kurse nach Datum oder Dauer zu sortieren?
+      - Wo finde ich Informationen zu den Voraussetzungen oder Zielgruppen der einzelnen Kurse?
+      - Gibt es Kundenbewertungen oder Feedback zu den Kursen, die ich einsehen kann?
+      - Wo kann ich mich über kommende Kurse oder Aktualisierungen informieren?
+      - Kursübersicht
 
-#   - intent: faq/languages
-#     examples: |
-#       - In welchen Sprachen werden die Kurse von openHPI angeboten?
-#       - In welchen Sprachen sind die Kurse von openHPI verfügbar?
-#       - Welche Sprachoptionen gibt es für die openHPI-Kurse?
-#       - In welchen Sprachen werden die Kursinhalte von openHPI präsentiert?
-#       - Welche Sprachunterstützung bieten die openHPI-Kurse?
-#       - In welchen Sprachen werden die Lektionen und Materialien der Kurse bereitgestellt?
-#       - Gibt es eine Auswahl an Sprachen, in denen die openHPI-Kurse angeboten werden?
-#       - Welche Sprachen sind für die Untertitel oder Transkriptionen der Kursvideos verfügbar?
-#       - Sind die Kurse von openHPI auch in anderen Sprachen als Englisch verfügbar?
-#       - Kann ich die Sprache der Kursplattform oder Benutzeroberfläche ändern?
-#       - Gibt es Übersetzungen der Kursinhalte in andere Sprachen?
-#       - In welchen Sprachen werden die Kursdiskussionen oder Foren unterstützt?
-#       - Sind die Kurse in der Muttersprache der Kursleiter verfügbar?
-#       - Welche Sprachoptionen werden für die Kommunikation mit dem Support-Team angeboten?
-#       - Gibt es spezielle Hinweise oder Anleitungen zur Nutzung der Kurse in verschiedenen Sprachen?
-#       - In welchen Sprachen werden die Zertifikate oder Abschlussbescheinigungen ausgestellt?
-#       - Sprachen
+  - intent: faq/languages
+    examples: |
+      - In welchen Sprachen werden die Kurse von openHPI angeboten?
+      - In welchen Sprachen sind die Kurse von openHPI verfügbar?
+      - Welche Sprachoptionen gibt es für die openHPI-Kurse?
+      - In welchen Sprachen werden die Kursinhalte von openHPI präsentiert?
+      - Welche Sprachunterstützung bieten die openHPI-Kurse?
+      - In welchen Sprachen werden die Lektionen und Materialien der Kurse bereitgestellt?
+      - Gibt es eine Auswahl an Sprachen, in denen die openHPI-Kurse angeboten werden?
+      - Welche Sprachen sind für die Untertitel oder Transkriptionen der Kursvideos verfügbar?
+      - Sind die Kurse von openHPI auch in anderen Sprachen als Englisch verfügbar?
+      - Kann ich die Sprache der Kursplattform oder Benutzeroberfläche ändern?
+      - Gibt es Übersetzungen der Kursinhalte in andere Sprachen?
+      - In welchen Sprachen werden die Kursdiskussionen oder Foren unterstützt?
+      - Sind die Kurse in der Muttersprache der Kursleiter verfügbar?
+      - Welche Sprachoptionen werden für die Kommunikation mit dem Support-Team angeboten?
+      - Gibt es spezielle Hinweise oder Anleitungen zur Nutzung der Kurse in verschiedenen Sprachen?
+      - In welchen Sprachen werden die Zertifikate oder Abschlussbescheinigungen ausgestellt?
+      - Sprachen
 
-#   - intent: faq/course_duration
-#     examples: |
-#       - Wie lange dauert ein Kurs auf openHPI?
-#       - Wie lange erstreckt sich die Dauer eines Kurses auf openHPI?
-#       - Welchen zeitlichen Rahmen hat ein typischer Kurs auf openHPI?
-#       - Wie lange dauert es normalerweise, einen Kurs auf openHPI abzuschließen?
-#       - Gibt es eine durchschnittliche Kursdauer auf openHPI?
-#       - Wie viel Zeit sollte ich einplanen, um einen Kurs auf openHPI abzuschließen?
-#       - Gibt es eine maximale oder minimale Kursdauer auf openHPI?
-#       - Wie viele Wochen oder Monate dauert ein typischer Kurs auf openHPI?
-#       - Habe ich Zugriff auf die Kursinhalte für eine bestimmte Zeit oder unbegrenzt?
-#       - Kann ich die Lerngeschwindigkeit anpassen und den Kurs in meinem eigenen Tempo absolvieren?
-#       - Wie viel Zeitaufwand pro Woche wird empfohlen, um einen Kurs auf openHPI erfolgreich abzuschließen?
-#       - Gibt es eine vorgeschriebene Stundenanzahl, um einen Kurs auf openHPI zu absolvieren?
-#       - Ist die Kursdauer abhängig vom individuellen Lernfortschritt oder gibt es einen festen Zeitrahmen?
-#       - Kann ich die Kursdauer verlängern, wenn ich mehr Zeit benötige, um den Kurs abzuschließen?
-#       - Gibt es eine zeitliche Begrenzung für den Zugriff auf die Kursmaterialien und -ressourcen?
-#       - Werden Kurse regelmäßig aktualisiert oder erweitert, sodass sich die Kursdauer ändern kann?
-#       - Kursdauer
-#       - Wie lang dauert ein Kurs?
-#       - Wie lang geht ein Kurs?
-#       - Was ist die Kursdauer?
+  - intent: faq/course_duration
+    examples: |
+      - Wie lange dauert ein Kurs auf openHPI?
+      - Wie lange erstreckt sich die Dauer eines Kurses auf openHPI?
+      - Welchen zeitlichen Rahmen hat ein typischer Kurs auf openHPI?
+      - Wie lange dauert es normalerweise, einen Kurs auf openHPI abzuschließen?
+      - Gibt es eine durchschnittliche Kursdauer auf openHPI?
+      - Wie viel Zeit sollte ich einplanen, um einen Kurs auf openHPI abzuschließen?
+      - Gibt es eine maximale oder minimale Kursdauer auf openHPI?
+      - Wie viele Wochen oder Monate dauert ein typischer Kurs auf openHPI?
+      - Habe ich Zugriff auf die Kursinhalte für eine bestimmte Zeit oder unbegrenzt?
+      - Kann ich die Lerngeschwindigkeit anpassen und den Kurs in meinem eigenen Tempo absolvieren?
+      - Wie viel Zeitaufwand pro Woche wird empfohlen, um einen Kurs auf openHPI erfolgreich abzuschließen?
+      - Gibt es eine vorgeschriebene Stundenanzahl, um einen Kurs auf openHPI zu absolvieren?
+      - Ist die Kursdauer abhängig vom individuellen Lernfortschritt oder gibt es einen festen Zeitrahmen?
+      - Kann ich die Kursdauer verlängern, wenn ich mehr Zeit benötige, um den Kurs abzuschließen?
+      - Gibt es eine zeitliche Begrenzung für den Zugriff auf die Kursmaterialien und -ressourcen?
+      - Werden Kurse regelmäßig aktualisiert oder erweitert, sodass sich die Kursdauer ändern kann?
+      - Kursdauer
+      - Wie lang dauert ein Kurs?
+      - Wie lang geht ein Kurs?
+      - Was ist die Kursdauer?
 
-#   - intent: faq/workload
-#     examples: |
-#       - Wie groß ist der Arbeitsaufwand für einen Kurs?
-#       - Welchen Arbeitsaufwand muss ich für einen Kurs einplanen?
-#       - Wie viel Zeit sollte ich pro Woche für einen Kurs einplanen?
-#       - Wie viele Stunden pro Woche werden empfohlen, um einen Kurs erfolgreich abzuschließen?
-#       - Gibt es eine durchschnittliche Arbeitszeit, die für einen Kurs aufgewendet werden sollte?
-#       - Wie umfangreich sind die Aufgaben und Aktivitäten in einem Kurs?
-#       - Ist der Arbeitsaufwand für jeden Kurs gleich oder variiert er je nach Kursinhalt?
-#       - Wie viel Zeit benötigt man durchschnittlich, um die Kursmaterialien zu bearbeiten?
-#       - Gibt es bestimmte Deadlines oder Termine, die den Arbeitsaufwand beeinflussen?
-#       - Hängt der Arbeitsaufwand vom individuellen Lerntempo ab oder gibt es einen festen Zeitrahmen?
-#       - Gibt es zusätzliche Ressourcen oder Materialien, die den Arbeitsaufwand erhöhen können?
-#       - Welche Art von Aufgaben oder Projekten sind Teil des Arbeitsaufwands in einem Kurs?
-#       - Ist der Arbeitsaufwand für fortgeschrittene Kurse höher als für Einsteigerkurse?
-#       - Kann der Arbeitsaufwand je nach Vorkenntnissen oder individuellen Lernbedürfnissen variieren?
-#       - Gibt es Unterstützung oder Empfehlungen seitens des Kursleiters zur Bewältigung des Arbeitsaufwands?
-#       - Werden der Arbeitsaufwand und die Lernziele eines Kurses deutlich kommuniziert?
-#       - Wie hoch ist der Arbeitsaufwand?
-#       - Arbeitsaufwand
-#       - Wie viel Arbeitsaufwand?
+  - intent: faq/workload
+    examples: |
+      - Wie groß ist der Arbeitsaufwand für einen Kurs?
+      - Welchen Arbeitsaufwand muss ich für einen Kurs einplanen?
+      - Wie viel Zeit sollte ich pro Woche für einen Kurs einplanen?
+      - Wie viele Stunden pro Woche werden empfohlen, um einen Kurs erfolgreich abzuschließen?
+      - Gibt es eine durchschnittliche Arbeitszeit, die für einen Kurs aufgewendet werden sollte?
+      - Wie umfangreich sind die Aufgaben und Aktivitäten in einem Kurs?
+      - Ist der Arbeitsaufwand für jeden Kurs gleich oder variiert er je nach Kursinhalt?
+      - Wie viel Zeit benötigt man durchschnittlich, um die Kursmaterialien zu bearbeiten?
+      - Gibt es bestimmte Deadlines oder Termine, die den Arbeitsaufwand beeinflussen?
+      - Hängt der Arbeitsaufwand vom individuellen Lerntempo ab oder gibt es einen festen Zeitrahmen?
+      - Gibt es zusätzliche Ressourcen oder Materialien, die den Arbeitsaufwand erhöhen können?
+      - Welche Art von Aufgaben oder Projekten sind Teil des Arbeitsaufwands in einem Kurs?
+      - Ist der Arbeitsaufwand für fortgeschrittene Kurse höher als für Einsteigerkurse?
+      - Kann der Arbeitsaufwand je nach Vorkenntnissen oder individuellen Lernbedürfnissen variieren?
+      - Gibt es Unterstützung oder Empfehlungen seitens des Kursleiters zur Bewältigung des Arbeitsaufwands?
+      - Werden der Arbeitsaufwand und die Lernziele eines Kurses deutlich kommuniziert?
+      - Wie hoch ist der Arbeitsaufwand?
+      - Arbeitsaufwand
+      - Wie viel Arbeitsaufwand?
 
-#   - intent: faq/time_utc
-#     examples: |
-#       - Was bedeutet die Zeitangabe in UTC?
-#       - Was genau wird mit der Zeitangabe in UTC gemeint?
-#       - Welche Bedeutung hat die Zeitangabe in UTC?
-#       - Was sind die Grundlagen von UTC und wie wird sie verwendet?
-#       - Welche Rolle spielt UTC bei der Zeitmessung und -koordination weltweit?
-#       - Wie unterscheidet sich UTC von anderen Zeitstandards wie GMT oder lokaler Zeit?
-#       - Gibt es eine Beziehung zwischen UTC und Zeitzonen?
-#       - Warum wird UTC als internationaler Zeitstandard verwendet?
-#       - Wie kann ich die UTC-Zeit in meine lokale Zeit umrechnen?
-#       - Gibt es spezielle Tools oder Websites, um die UTC-Zeit umzurechnen?
-#       - Welche Auswirkungen hat die Zeitangabe in UTC auf die Synchronisierung globaler Ereignisse?
-#       - Wie wird UTC im Zusammenhang mit digitalen Systemen und globalen Netzwerken verwendet?
-#       - Gibt es Besonderheiten oder Anpassungen, die bei der Interpretation der UTC-Zeit berücksichtigt werden müssen?
-#       - Welche Vor- und Nachteile hat die Verwendung von UTC im Vergleich zu anderen Zeitsystemen?
-#       - Wie hat sich die Verwendung von UTC im Laufe der Zeit entwickelt?
-#       - Gibt es Richtlinien oder Standards für die korrekte Verwendung der UTC-Zeitangabe?
-#       - UTC
-#       - Zeitangabe in UTC
+  - intent: faq/time_utc
+    examples: |
+      - Was bedeutet die Zeitangabe in UTC?
+      - Was genau wird mit der Zeitangabe in UTC gemeint?
+      - Welche Bedeutung hat die Zeitangabe in UTC?
+      - Was sind die Grundlagen von UTC und wie wird sie verwendet?
+      - Welche Rolle spielt UTC bei der Zeitmessung und -koordination weltweit?
+      - Wie unterscheidet sich UTC von anderen Zeitstandards wie GMT oder lokaler Zeit?
+      - Gibt es eine Beziehung zwischen UTC und Zeitzonen?
+      - Warum wird UTC als internationaler Zeitstandard verwendet?
+      - Wie kann ich die UTC-Zeit in meine lokale Zeit umrechnen?
+      - Gibt es spezielle Tools oder Websites, um die UTC-Zeit umzurechnen?
+      - Welche Auswirkungen hat die Zeitangabe in UTC auf die Synchronisierung globaler Ereignisse?
+      - Wie wird UTC im Zusammenhang mit digitalen Systemen und globalen Netzwerken verwendet?
+      - Gibt es Besonderheiten oder Anpassungen, die bei der Interpretation der UTC-Zeit berücksichtigt werden müssen?
+      - Welche Vor- und Nachteile hat die Verwendung von UTC im Vergleich zu anderen Zeitsystemen?
+      - Wie hat sich die Verwendung von UTC im Laufe der Zeit entwickelt?
+      - Gibt es Richtlinien oder Standards für die korrekte Verwendung der UTC-Zeitangabe?
+      - UTC
+      - Zeitangabe in UTC
 
-#   - intent: faq/homework_submission
-#     examples: |
-#       - Was passiert, wenn ich meine Hausaufgabe nicht rechtzeitig einreichen konnte?
-#       - Welche Konsequenzen gibt es, wenn ich meine Hausaufgabe nicht fristgerecht einreichen kann?
-#       - Gibt es einen Toleranzzeitraum für die Abgabe von Hausaufgaben?
-#       - Wie wird mit verspätet eingereichten Hausaufgaben umgegangen?
-#       - Gibt es einen Punktabzug für verspätet eingereichte Hausaufgaben?
-#       - Gibt es eine Möglichkeit, eine Verlängerung für die Hausaufgabenabgabe zu beantragen?
-#       - Welche Schritte sollte ich unternehmen, wenn ich meine Hausaufgabe aus unvorhergesehenen Gründen nicht rechtzeitig einreichen kann?
-#       - Wird meine Note beeinflusst, wenn ich meine Hausaufgabe verspätet einreiche?
-#       - Gibt es bestimmte Regeln oder Richtlinien für die Nachreichung von verspäteten Hausaufgaben?
-#       - Wird meine verspätet eingereichte Hausaufgabe dennoch bewertet?
-#       - Kann ich mit dem Kursleiter kommunizieren, um die Situation zu klären, wenn ich meine Hausaufgabe nicht rechtzeitig abgeben kann?
-#       - Gibt es besondere Umstände, unter denen verspätet eingereichte Hausaufgaben akzeptiert werden?
-#       - Gibt es einen Unterschied in der Behandlung von verspäteten Hausaufgaben je nach Kurs oder Dozent?
-#       - Wird der Grund für die verspätete Abgabe meiner Hausaufgabe berücksichtigt?
-#       - Gibt es Möglichkeiten zur Wiederholung der Hausaufgabe oder zur Erteilung eines Ersatzes, wenn ich sie nicht rechtzeitig einreichen kann?
-#       - Wie kann ich sicherstellen, dass ich meine Hausaufgaben fristgerecht einreiche, um eventuellen Problemen vorzubeugen?
+  - intent: faq/homework_submission
+    examples: |
+      - Was passiert, wenn ich meine Hausaufgabe nicht rechtzeitig einreichen konnte?
+      - Welche Konsequenzen gibt es, wenn ich meine Hausaufgabe nicht fristgerecht einreichen kann?
+      - Gibt es einen Toleranzzeitraum für die Abgabe von Hausaufgaben?
+      - Wie wird mit verspätet eingereichten Hausaufgaben umgegangen?
+      - Gibt es einen Punktabzug für verspätet eingereichte Hausaufgaben?
+      - Gibt es eine Möglichkeit, eine Verlängerung für die Hausaufgabenabgabe zu beantragen?
+      - Welche Schritte sollte ich unternehmen, wenn ich meine Hausaufgabe aus unvorhergesehenen Gründen nicht rechtzeitig einreichen kann?
+      - Wird meine Note beeinflusst, wenn ich meine Hausaufgabe verspätet einreiche?
+      - Gibt es bestimmte Regeln oder Richtlinien für die Nachreichung von verspäteten Hausaufgaben?
+      - Wird meine verspätet eingereichte Hausaufgabe dennoch bewertet?
+      - Kann ich mit dem Kursleiter kommunizieren, um die Situation zu klären, wenn ich meine Hausaufgabe nicht rechtzeitig abgeben kann?
+      - Gibt es besondere Umstände, unter denen verspätet eingereichte Hausaufgaben akzeptiert werden?
+      - Gibt es einen Unterschied in der Behandlung von verspäteten Hausaufgaben je nach Kurs oder Dozent?
+      - Wird der Grund für die verspätete Abgabe meiner Hausaufgabe berücksichtigt?
+      - Gibt es Möglichkeiten zur Wiederholung der Hausaufgabe oder zur Erteilung eines Ersatzes, wenn ich sie nicht rechtzeitig einreichen kann?
+      - Wie kann ich sicherstellen, dass ich meine Hausaufgaben fristgerecht einreiche, um eventuellen Problemen vorzubeugen?
   
-#   - intent: faq/registration_running_course
-#     examples: |
-#       - Kann ich mich noch anmelden, wenn der Kurs schon läuft?
-#       - Ist es möglich, sich anzumelden, wenn der Kurs bereits begonnen hat?
-#       - Gibt es eine späte Anmeldemöglichkeit, auch wenn der Kurs schon gestartet ist?
-#       - Kann ich mich noch registrieren, obwohl der Kurs bereits läuft?
-#       - Gibt es eine Möglichkeit zur Teilnahme, auch wenn der Kurs schon begonnen hat?
-#       - Ist eine nachträgliche Anmeldung möglich, wenn der Kurs bereits im Gange ist?
-#       - Kann ich mich noch einschreiben, wenn der Kurs schon begonnen hat?
-#       - Gibt es eine verlängerte Anmeldefrist für den Kurs, wenn er bereits läuft?
-#       - Kann ich mich auch verspätet anmelden, um den Kurs noch zu absolvieren?
-#       - Gibt es spezielle Bedingungen oder Einschränkungen für eine Anmeldung während des laufenden Kurses?
-#       - Gibt es einen Unterschied in den Teilnahmemöglichkeiten, wenn der Kurs bereits gestartet ist?
-#       - Wird der Zugriff auf die vergangenen Kursinhalte gewährt, wenn ich mich später anmelde?
-#       - Kann ich mich noch anmelden, um zumindest teilweise von den Kursinhalten zu profitieren?
-#       - Wird der Anmeldeprozess während des laufenden Kurses einfacher oder schneller?
-#       - Gibt es eine Begrenzung für die Anzahl der nachträglichen Anmeldungen in einem Kurs?
-#       - Kann ich mich noch anmelden, auch wenn ich einige der vorherigen Kurseinheiten verpasst habe?
+  - intent: faq/registration_running_course
+    examples: |
+      - Kann ich mich noch anmelden, wenn der Kurs schon läuft?
+      - Ist es möglich, sich anzumelden, wenn der Kurs bereits begonnen hat?
+      - Gibt es eine späte Anmeldemöglichkeit, auch wenn der Kurs schon gestartet ist?
+      - Kann ich mich noch registrieren, obwohl der Kurs bereits läuft?
+      - Gibt es eine Möglichkeit zur Teilnahme, auch wenn der Kurs schon begonnen hat?
+      - Ist eine nachträgliche Anmeldung möglich, wenn der Kurs bereits im Gange ist?
+      - Kann ich mich noch einschreiben, wenn der Kurs schon begonnen hat?
+      - Gibt es eine verlängerte Anmeldefrist für den Kurs, wenn er bereits läuft?
+      - Kann ich mich auch verspätet anmelden, um den Kurs noch zu absolvieren?
+      - Gibt es spezielle Bedingungen oder Einschränkungen für eine Anmeldung während des laufenden Kurses?
+      - Gibt es einen Unterschied in den Teilnahmemöglichkeiten, wenn der Kurs bereits gestartet ist?
+      - Wird der Zugriff auf die vergangenen Kursinhalte gewährt, wenn ich mich später anmelde?
+      - Kann ich mich noch anmelden, um zumindest teilweise von den Kursinhalten zu profitieren?
+      - Wird der Anmeldeprozess während des laufenden Kurses einfacher oder schneller?
+      - Gibt es eine Begrenzung für die Anzahl der nachträglichen Anmeldungen in einem Kurs?
+      - Kann ich mich noch anmelden, auch wenn ich einige der vorherigen Kurseinheiten verpasst habe?
 
-#   - intent: faq/enroll_unenroll_course
-#     examples: |
-#       - Kann ich aus dem openHPI Kurs aussteigen bzw. wiedereinsteigen?
-#       - Gibt es die Möglichkeit, aus dem openHPI-Kurs auszusteigen, wenn ich nicht mehr teilnehmen möchte?
-#       - Kann ich meinen Fortschritt in einem openHPI-Kurs speichern und zu einem späteren Zeitpunkt wieder einsteigen?
-#       - Ist es möglich, den openHPI-Kurs vorübergehend zu pausieren und später wieder einzusteigen?
-#       - Gibt es eine Möglichkeit, den openHPI-Kurs abzubrechen und zu einem späteren Zeitpunkt von vorne zu beginnen?
-#       - Kann ich nach einer Pause erneut in den openHPI-Kurs einsteigen, um meinen Fortschritt fortzusetzen?
-#       - Gibt es eine Frist oder Deadline, bis zu der ich aus dem openHPI-Kurs aussteigen kann?
-#       - Wie kann ich aus dem openHPI-Kurs aussteigen und meinen Account deaktivieren?
-#       - Kann ich aus einem openHPI-Kurs aussteigen, ohne dass dies Auswirkungen auf meine bisher erzielten Leistungen hat?
-#       - Gibt es eine Möglichkeit, den openHPI-Kurs später wieder aufzunehmen, wenn ich ausgestiegen bin?
-#       - Ist ein erneuter Zugriff auf die Kursmaterialien möglich, nachdem ich aus dem openHPI-Kurs ausgestiegen bin?
-#       - Kann ich nach dem Ausstieg aus einem openHPI-Kurs die erworbenen Zertifikate oder Auszeichnungen behalten?
-#       - Gibt es spezielle Bedingungen oder Schritte, um nach dem Ausstieg erneut in den openHPI-Kurs einzusteigen?
-#       - Ist es möglich, nach dem Ausstieg aus einem openHPI-Kurs den Support oder die Community weiterhin zu nutzen?
-#       - Gibt es eine Frist, innerhalb derer ich wieder in den openHPI-Kurs einsteigen kann, nachdem ich ausgestiegen bin?
-#       - Wie wirkt sich der Ausstieg aus dem openHPI-Kurs auf meine Teilnahmebewertung oder Abschlusszertifikate aus?
-#       - Wiedereinsteig
-#       - Kursausstieg
+  - intent: faq/enroll_unenroll_course
+    examples: |
+      - Kann ich aus dem openHPI Kurs aussteigen bzw. wiedereinsteigen?
+      - Gibt es die Möglichkeit, aus dem openHPI-Kurs auszusteigen, wenn ich nicht mehr teilnehmen möchte?
+      - Kann ich meinen Fortschritt in einem openHPI-Kurs speichern und zu einem späteren Zeitpunkt wieder einsteigen?
+      - Ist es möglich, den openHPI-Kurs vorübergehend zu pausieren und später wieder einzusteigen?
+      - Gibt es eine Möglichkeit, den openHPI-Kurs abzubrechen und zu einem späteren Zeitpunkt von vorne zu beginnen?
+      - Kann ich nach einer Pause erneut in den openHPI-Kurs einsteigen, um meinen Fortschritt fortzusetzen?
+      - Gibt es eine Frist oder Deadline, bis zu der ich aus dem openHPI-Kurs aussteigen kann?
+      - Wie kann ich aus dem openHPI-Kurs aussteigen und meinen Account deaktivieren?
+      - Kann ich aus einem openHPI-Kurs aussteigen, ohne dass dies Auswirkungen auf meine bisher erzielten Leistungen hat?
+      - Gibt es eine Möglichkeit, den openHPI-Kurs später wieder aufzunehmen, wenn ich ausgestiegen bin?
+      - Ist ein erneuter Zugriff auf die Kursmaterialien möglich, nachdem ich aus dem openHPI-Kurs ausgestiegen bin?
+      - Kann ich nach dem Ausstieg aus einem openHPI-Kurs die erworbenen Zertifikate oder Auszeichnungen behalten?
+      - Gibt es spezielle Bedingungen oder Schritte, um nach dem Ausstieg erneut in den openHPI-Kurs einzusteigen?
+      - Ist es möglich, nach dem Ausstieg aus einem openHPI-Kurs den Support oder die Community weiterhin zu nutzen?
+      - Gibt es eine Frist, innerhalb derer ich wieder in den openHPI-Kurs einsteigen kann, nachdem ich ausgestiegen bin?
+      - Wie wirkt sich der Ausstieg aus dem openHPI-Kurs auf meine Teilnahmebewertung oder Abschlusszertifikate aus?
+      - Wiedereinsteig
+      - Kursausstieg
 
-#   - intent: faq/homework
-#     examples: |
-#       - Muss ich an den Hausaufgaben teilnehmen?
-#       - Ist die Teilnahme an den Hausaufgaben verpflichtend?
-#       - Sind die Hausaufgaben ein integraler Bestandteil des Kurses?
-#       - Gibt es Konsequenzen, wenn ich mich nicht an den Hausaufgaben beteilige?
-#       - Sind die Hausaufgaben erforderlich, um den Kurs erfolgreich abzuschließen?
-#       - Wird meine Gesamtnote oder Bewertung durch die Teilnahme an den Hausaufgaben beeinflusst?
-#       - Bietet die Teilnahme an den Hausaufgaben zusätzliche Lernmöglichkeiten oder Vorteile?
-#       - Kann ich den Kurs auch absolvieren, ohne mich an den Hausaufgaben zu beteiligen?
-#       - Gibt es alternative Aufgaben oder Aktivitäten, die anstelle der Hausaufgaben absolviert werden können?
-#       - Werden die Hausaufgaben von anderen Kursteilnehmern oder dem Kursleiter bewertet?
-#       - Gibt es eine Mindestanzahl von Hausaufgaben, die ich abgeben muss, um den Kurs abzuschließen?
-#       - Kann ich meine Hausaufgaben auch freiwillig abgeben, um Feedback oder zusätzliche Unterstützung zu erhalten?
-#       - Bieten die Hausaufgaben die Möglichkeit, das Gelernte praktisch anzuwenden?
-#       - Wird die Qualität meiner Hausaufgaben bei der endgültigen Bewertung berücksichtigt?
-#       - Kann ich meine Hausaufgaben auch im Austausch mit anderen Kursteilnehmern diskutieren oder präsentieren?
-#       - Gibt es eine empfohlene Herangehensweise oder Strategie, um das Beste aus den Hausaufgaben herauszuholen?
+  - intent: faq/homework
+    examples: |
+      - Muss ich an den Hausaufgaben teilnehmen?
+      - Ist die Teilnahme an den Hausaufgaben verpflichtend?
+      - Sind die Hausaufgaben ein integraler Bestandteil des Kurses?
+      - Gibt es Konsequenzen, wenn ich mich nicht an den Hausaufgaben beteilige?
+      - Sind die Hausaufgaben erforderlich, um den Kurs erfolgreich abzuschließen?
+      - Wird meine Gesamtnote oder Bewertung durch die Teilnahme an den Hausaufgaben beeinflusst?
+      - Bietet die Teilnahme an den Hausaufgaben zusätzliche Lernmöglichkeiten oder Vorteile?
+      - Kann ich den Kurs auch absolvieren, ohne mich an den Hausaufgaben zu beteiligen?
+      - Gibt es alternative Aufgaben oder Aktivitäten, die anstelle der Hausaufgaben absolviert werden können?
+      - Werden die Hausaufgaben von anderen Kursteilnehmern oder dem Kursleiter bewertet?
+      - Gibt es eine Mindestanzahl von Hausaufgaben, die ich abgeben muss, um den Kurs abzuschließen?
+      - Kann ich meine Hausaufgaben auch freiwillig abgeben, um Feedback oder zusätzliche Unterstützung zu erhalten?
+      - Bieten die Hausaufgaben die Möglichkeit, das Gelernte praktisch anzuwenden?
+      - Wird die Qualität meiner Hausaufgaben bei der endgültigen Bewertung berücksichtigt?
+      - Kann ich meine Hausaufgaben auch im Austausch mit anderen Kursteilnehmern diskutieren oder präsentieren?
+      - Gibt es eine empfohlene Herangehensweise oder Strategie, um das Beste aus den Hausaufgaben herauszuholen?
 
-#   - intent: faq/licence
-#     examples: |
-#       - Unter welcher Lizenz stehen die openHPI Kurse? Darf ich diese für Weiterbildungen nutzen?
-#       - Welche Lizenzbedingungen gelten für die openHPI-Kurse?
-#       - Unter welcher Lizenz stehen die Kurse von openHPI?
-#       - Sind die openHPI-Kurse unter einer Creative Commons Lizenz verfügbar?
-#       - Welche Rechte und Einschränkungen gelten für die Nutzung der openHPI-Kurse?
-#       - Kann ich die openHPI-Kurse für Weiterbildungen oder Schulungen nutzen?
-#       - Darf ich die Materialien der openHPI-Kurse für nicht-kommerzielle Zwecke verwenden?
-#       - Gibt es Beschränkungen bei der Nutzung der openHPI-Kurse für kommerzielle Zwecke?
-#       - Ist es erlaubt, die Inhalte der openHPI-Kurse in anderen Bildungsinstitutionen einzusetzen?
-#       - Sind Anpassungen oder Modifikationen der openHPI-Kurse erlaubt?
-#       - Gibt es eine Möglichkeit, die openHPI-Kurse in eigene Lehrmaterialien zu integrieren?
-#       - Werden die openHPI-Kurse unter einer offenen Lizenz bereitgestellt?
-#       - Sind die openHPI-Kurse für die Nutzung in Unternehmen oder Organisationen geeignet?
-#       - Gibt es eine spezielle Lizenzvereinbarung für die Nutzung der openHPI-Kurse?
-#       - Darf ich die openHPI-Kurse für die Ausbildung meiner Mitarbeiter oder Kollegen verwenden?
-#       - Gibt es Voraussetzungen oder Richtlinien, die bei der Nutzung der openHPI-Kurse zu beachten sind?
-#       - openHPI Lizenz
+  - intent: faq/licence
+    examples: |
+      - Unter welcher Lizenz stehen die openHPI Kurse? Darf ich diese für Weiterbildungen nutzen?
+      - Welche Lizenzbedingungen gelten für die openHPI-Kurse?
+      - Unter welcher Lizenz stehen die Kurse von openHPI?
+      - Sind die openHPI-Kurse unter einer Creative Commons Lizenz verfügbar?
+      - Welche Rechte und Einschränkungen gelten für die Nutzung der openHPI-Kurse?
+      - Kann ich die openHPI-Kurse für Weiterbildungen oder Schulungen nutzen?
+      - Darf ich die Materialien der openHPI-Kurse für nicht-kommerzielle Zwecke verwenden?
+      - Gibt es Beschränkungen bei der Nutzung der openHPI-Kurse für kommerzielle Zwecke?
+      - Ist es erlaubt, die Inhalte der openHPI-Kurse in anderen Bildungsinstitutionen einzusetzen?
+      - Sind Anpassungen oder Modifikationen der openHPI-Kurse erlaubt?
+      - Gibt es eine Möglichkeit, die openHPI-Kurse in eigene Lehrmaterialien zu integrieren?
+      - Werden die openHPI-Kurse unter einer offenen Lizenz bereitgestellt?
+      - Sind die openHPI-Kurse für die Nutzung in Unternehmen oder Organisationen geeignet?
+      - Gibt es eine spezielle Lizenzvereinbarung für die Nutzung der openHPI-Kurse?
+      - Darf ich die openHPI-Kurse für die Ausbildung meiner Mitarbeiter oder Kollegen verwenden?
+      - Gibt es Voraussetzungen oder Richtlinien, die bei der Nutzung der openHPI-Kurse zu beachten sind?
+      - openHPI Lizenz
 
-#   - intent: faq/self-study
-#     examples: |
-#       - Wie funktioniert das Selbststudium?
-#       - Wie läuft das Selbststudium bei openHPI ab?
-#       - Welche Schritte muss ich unternehmen, um das Selbststudium zu beginnen?
-#       - Gibt es eine spezielle Anleitung oder einen Leitfaden für das Selbststudium?
-#       - Wie kann ich meine Lernfortschritte im Selbststudium verfolgen?
-#       - Welche Ressourcen stehen mir für das Selbststudium zur Verfügung?
-#       - Kann ich mir die Lernmaterialien nach Bedarf ansehen oder gibt es eine festgelegte Reihenfolge?
-#       - Gibt es Empfehlungen für die Zeiteinteilung und den Arbeitsaufwand im Selbststudium?
-#       - Wie kann ich Fragen oder Unklarheiten während des Selbststudiums klären?
-#       - Gibt es interaktive Elemente oder Übungen, um das Gelernte im Selbststudium anzuwenden?
-#       - Wie kann ich mit anderen Teilnehmern interagieren oder von ihrer Erfahrung im Selbststudium profitieren?
-#       - Kann ich meinen Lernfortschritt mit anderen Teilnehmern vergleichen oder diskutieren?
-#       - Gibt es Möglichkeiten zur Selbstbewertung oder Selbstreflexion im Selbststudium?
-#       - Wie kann ich sicherstellen, dass ich das Gelernte im Selbststudium richtig verstehe?
-#       - Gibt es Feedback oder Unterstützung seitens des Kursleiters während des Selbststudiums?
-#       - Wie kann ich mich motivieren und diszipliniert bleiben, um das Selbststudium erfolgreich abzuschließen?
-#       - Selbststudium
+  - intent: faq/self-study
+    examples: |
+      - Wie funktioniert das Selbststudium?
+      - Wie läuft das Selbststudium bei openHPI ab?
+      - Welche Schritte muss ich unternehmen, um das Selbststudium zu beginnen?
+      - Gibt es eine spezielle Anleitung oder einen Leitfaden für das Selbststudium?
+      - Wie kann ich meine Lernfortschritte im Selbststudium verfolgen?
+      - Welche Ressourcen stehen mir für das Selbststudium zur Verfügung?
+      - Kann ich mir die Lernmaterialien nach Bedarf ansehen oder gibt es eine festgelegte Reihenfolge?
+      - Gibt es Empfehlungen für die Zeiteinteilung und den Arbeitsaufwand im Selbststudium?
+      - Wie kann ich Fragen oder Unklarheiten während des Selbststudiums klären?
+      - Gibt es interaktive Elemente oder Übungen, um das Gelernte im Selbststudium anzuwenden?
+      - Wie kann ich mit anderen Teilnehmern interagieren oder von ihrer Erfahrung im Selbststudium profitieren?
+      - Kann ich meinen Lernfortschritt mit anderen Teilnehmern vergleichen oder diskutieren?
+      - Gibt es Möglichkeiten zur Selbstbewertung oder Selbstreflexion im Selbststudium?
+      - Wie kann ich sicherstellen, dass ich das Gelernte im Selbststudium richtig verstehe?
+      - Gibt es Feedback oder Unterstützung seitens des Kursleiters während des Selbststudiums?
+      - Wie kann ich mich motivieren und diszipliniert bleiben, um das Selbststudium erfolgreich abzuschließen?
+      - Selbststudium
 
-#   - intent: faq/forum
-#     examples: |
-#       - Wie nutze ich das Diskussionsforum?
-#       - Wie funktioniert das Diskussionsforum und wie kann ich es nutzen?
-#       - Welche Schritte sind erforderlich, um das Diskussionsforum zu verwenden?
-#       - Wie melde ich mich im Diskussionsforum an und erstelle einen Beitrag?
-#       - Gibt es spezielle Regeln oder Richtlinien für die Nutzung des Diskussionsforums?
-#       - Wie finde ich relevante Diskussionsthemen im Forum?
-#       - Kann ich Fragen stellen oder Probleme im Diskussionsforum ansprechen?
-#       - Wie kann ich auf Beiträge anderer Teilnehmer antworten?
-#       - Gibt es Funktionen zur Markierung von Diskussionsbeiträgen als hilfreich oder zur Verfolgung von Diskussionen?
-#       - Wie kann ich mich aktiv an Diskussionen beteiligen und meine Meinung äußern?
-#       - Sind die Diskussionen moderiert oder gibt es eine Kontrolle über die Inhalte?
-#       - Wie kann ich die Beiträge anderer Teilnehmer bewerten oder kommentieren?
-#       - Kann ich private Nachrichten an andere Teilnehmer im Diskussionsforum senden?
-#       - Gibt es Möglichkeiten, Diskussionsthemen zu abonnieren oder zu verfolgen?
-#       - Wie kann ich Unstimmigkeiten oder Missbrauch im Diskussionsforum melden?
-#       - Gibt es Funktionen zur Suche nach bestimmten Themen oder Beiträgen im Diskussionsforum?
-#       - Diskussionsforum
-#       - Forum
+  - intent: faq/forum
+    examples: |
+      - Wie nutze ich das Diskussionsforum?
+      - Wie funktioniert das Diskussionsforum und wie kann ich es nutzen?
+      - Welche Schritte sind erforderlich, um das Diskussionsforum zu verwenden?
+      - Wie melde ich mich im Diskussionsforum an und erstelle einen Beitrag?
+      - Gibt es spezielle Regeln oder Richtlinien für die Nutzung des Diskussionsforums?
+      - Wie finde ich relevante Diskussionsthemen im Forum?
+      - Kann ich Fragen stellen oder Probleme im Diskussionsforum ansprechen?
+      - Wie kann ich auf Beiträge anderer Teilnehmer antworten?
+      - Gibt es Funktionen zur Markierung von Diskussionsbeiträgen als hilfreich oder zur Verfolgung von Diskussionen?
+      - Wie kann ich mich aktiv an Diskussionen beteiligen und meine Meinung äußern?
+      - Sind die Diskussionen moderiert oder gibt es eine Kontrolle über die Inhalte?
+      - Wie kann ich die Beiträge anderer Teilnehmer bewerten oder kommentieren?
+      - Kann ich private Nachrichten an andere Teilnehmer im Diskussionsforum senden?
+      - Gibt es Möglichkeiten, Diskussionsthemen zu abonnieren oder zu verfolgen?
+      - Wie kann ich Unstimmigkeiten oder Missbrauch im Diskussionsforum melden?
+      - Gibt es Funktionen zur Suche nach bestimmten Themen oder Beiträgen im Diskussionsforum?
+      - Diskussionsforum
+      - Forum
 
-#   - intent: faq/study_room
-#     examples: |
-#       - Wie funktioniert ein Lernraum?
-#       - Was ist ein Lernraum und wie funktioniert er?
-#       - Welche Funktionen bietet ein Lernraum und wie kann ich ihn nutzen?
-#       - Wie kann ich auf den Lernraum zugreifen und mich darin orientieren?
-#       - Welche Ressourcen und Materialien stehen im Lernraum zur Verfügung?
-#       - Gibt es bestimmte Aktivitäten oder Aufgaben, die im Lernraum stattfinden?
-#       - Kann ich mit anderen Teilnehmern im Lernraum interagieren und zusammenarbeiten?
-#       - Wie kann ich meine Fragen stellen oder Unterstützung im Lernraum erhalten?
-#       - Gibt es Möglichkeiten zur Diskussion oder zum Austausch von Erfahrungen im Lernraum?
-#       - Wie kann ich meinen Lernfortschritt im Lernraum verfolgen und dokumentieren?
-#       - Sind die Lerninhalte im Lernraum strukturiert oder gibt es eine bestimmte Reihenfolge?
-#       - Kann ich meine eigenen Notizen oder Anmerkungen im Lernraum erstellen?
-#       - Gibt es zusätzliche Ressourcen oder Links, die im Lernraum bereitgestellt werden?
-#       - Gibt es Funktionen zur Zusammenarbeit oder Gruppenarbeit im Lernraum?
-#       - Wie kann ich Feedback zu meinen Lernfortschritten oder Aufgaben im Lernraum erhalten?
-#       - Gibt es eine Möglichkeit, den Lernraum für zusätzliche Recherche oder Vertiefung des Gelernten zu nutzen?
-#       - Lernraum
+  - intent: faq/study_room
+    examples: |
+      - Wie funktioniert ein Lernraum?
+      - Was ist ein Lernraum und wie funktioniert er?
+      - Welche Funktionen bietet ein Lernraum und wie kann ich ihn nutzen?
+      - Wie kann ich auf den Lernraum zugreifen und mich darin orientieren?
+      - Welche Ressourcen und Materialien stehen im Lernraum zur Verfügung?
+      - Gibt es bestimmte Aktivitäten oder Aufgaben, die im Lernraum stattfinden?
+      - Kann ich mit anderen Teilnehmern im Lernraum interagieren und zusammenarbeiten?
+      - Wie kann ich meine Fragen stellen oder Unterstützung im Lernraum erhalten?
+      - Gibt es Möglichkeiten zur Diskussion oder zum Austausch von Erfahrungen im Lernraum?
+      - Wie kann ich meinen Lernfortschritt im Lernraum verfolgen und dokumentieren?
+      - Sind die Lerninhalte im Lernraum strukturiert oder gibt es eine bestimmte Reihenfolge?
+      - Kann ich meine eigenen Notizen oder Anmerkungen im Lernraum erstellen?
+      - Gibt es zusätzliche Ressourcen oder Links, die im Lernraum bereitgestellt werden?
+      - Gibt es Funktionen zur Zusammenarbeit oder Gruppenarbeit im Lernraum?
+      - Wie kann ich Feedback zu meinen Lernfortschritten oder Aufgaben im Lernraum erhalten?
+      - Gibt es eine Möglichkeit, den Lernraum für zusätzliche Recherche oder Vertiefung des Gelernten zu nutzen?
+      - Lernraum
 
-#   - intent: faq/peer-assessment
-#     examples: |
-#       - Wie funktioniert ein Peer-Assessment?
-#       - Was ist ein Peer-Assessment und wie funktioniert es?
-#       - Welche Rolle spielt das Peer-Assessment im Lernprozess?
-#       - Wie werden die Bewertungen und Rückmeldungen im Peer-Assessment durchgeführt?
-#       - Welche Kriterien werden beim Peer-Assessment berücksichtigt?
-#       - Wie erfolgt die Zuweisung von Aufgaben oder Projekten für das Peer-Assessment?
-#       - Gibt es Richtlinien oder Schulungen für die Teilnehmer zum Durchführen des Peer-Assessments?
-#       - Wie kann ich meine Bewertungen und Rückmeldungen im Peer-Assessment abgeben?
-#       - Wer bewertet meine Arbeit im Peer-Assessment?
-#       - Wie wird sichergestellt, dass das Peer-Assessment fair und objektiv durchgeführt wird?
-#       - Welche Bedeutung hat das Feedback der Peers für meine Bewertung im Peer-Assessment?
-#       - Kann ich meine Bewertungen im Peer-Assessment begründen oder kommentieren?
-#       - Gibt es eine Möglichkeit, das erhaltene Feedback aus dem Peer-Assessment zu diskutieren oder zu erläutern?
-#       - Werden die Ergebnisse des Peer-Assessments in die endgültige Bewertung einbezogen?
-#       - Gibt es Mechanismen zur Überprüfung oder Kontrolle der Qualität des Peer-Assessments?
-#       - Wie kann ich von den Peer-Bewertungen und Rückmeldungen im Peer-Assessment lernen und mich weiterentwickeln?
-#       - Peer-Assessment
+  - intent: faq/peer-assessment
+    examples: |
+      - Wie funktioniert ein Peer-Assessment?
+      - Was ist ein Peer-Assessment und wie funktioniert es?
+      - Welche Rolle spielt das Peer-Assessment im Lernprozess?
+      - Wie werden die Bewertungen und Rückmeldungen im Peer-Assessment durchgeführt?
+      - Welche Kriterien werden beim Peer-Assessment berücksichtigt?
+      - Wie erfolgt die Zuweisung von Aufgaben oder Projekten für das Peer-Assessment?
+      - Gibt es Richtlinien oder Schulungen für die Teilnehmer zum Durchführen des Peer-Assessments?
+      - Wie kann ich meine Bewertungen und Rückmeldungen im Peer-Assessment abgeben?
+      - Wer bewertet meine Arbeit im Peer-Assessment?
+      - Wie wird sichergestellt, dass das Peer-Assessment fair und objektiv durchgeführt wird?
+      - Welche Bedeutung hat das Feedback der Peers für meine Bewertung im Peer-Assessment?
+      - Kann ich meine Bewertungen im Peer-Assessment begründen oder kommentieren?
+      - Gibt es eine Möglichkeit, das erhaltene Feedback aus dem Peer-Assessment zu diskutieren oder zu erläutern?
+      - Werden die Ergebnisse des Peer-Assessments in die endgültige Bewertung einbezogen?
+      - Gibt es Mechanismen zur Überprüfung oder Kontrolle der Qualität des Peer-Assessments?
+      - Wie kann ich von den Peer-Bewertungen und Rückmeldungen im Peer-Assessment lernen und mich weiterentwickeln?
+      - Peer-Assessment
 
-#   - intent: faq/recap
-#     examples: |
-#       - Was ist das Recap?
-#       - Was genau ist das Recap und wie funktioniert es?
-#       - Welche Rolle spielt das Recap im Lernprozess?
-#       - Was beinhaltet das Recap und was sind seine Hauptmerkmale?
-#       - Wie wird das Recap in den Kurs integriert und präsentiert?
-#       - Welche Ziele verfolgt das Recap?
-#       - Wie trägt das Recap zur Zusammenfassung und Wiederholung des Gelernten bei?
-#       - Gibt es spezifische Formate oder Methoden, die im Recap verwendet werden?
-#       - Wird das Recap von den Kursleitern oder anderen Teilnehmern erstellt?
-#       - Wie hilft das Recap den Teilnehmern dabei, das Gelernte zu festigen und zu reflektieren?
-#       - Ist das Recap interaktiv gestaltet, um eine aktive Teilnahme der Lernenden zu fördern?
-#       - Gibt es Zeitpunkte, zu denen das Recap präsentiert wird, z. B. am Ende jeder Lektion oder des Kurses?
-#       - Kann das Recap auch als Gelegenheit zur Klärung offener Fragen oder zur Diskussion dienen?
-#       - In welcher Form wird das Recap präsentiert, z. B. als Videozusammenfassung, schriftlicher Bericht oder Diskussionsforum?
-#       - Gibt es spezielle Techniken oder Werkzeuge, die im Recap verwendet werden, um das Gelernte aufzubereiten?
-#       - Wie unterstützt das Recap die Lernenden dabei, das Gelernte in einen größeren Kontext einzuordnen und Anwendungsmöglichkeiten zu erkennen?
-#       - Recap
+  - intent: faq/recap
+    examples: |
+      - Was ist das Recap?
+      - Was genau ist das Recap und wie funktioniert es?
+      - Welche Rolle spielt das Recap im Lernprozess?
+      - Was beinhaltet das Recap und was sind seine Hauptmerkmale?
+      - Wie wird das Recap in den Kurs integriert und präsentiert?
+      - Welche Ziele verfolgt das Recap?
+      - Wie trägt das Recap zur Zusammenfassung und Wiederholung des Gelernten bei?
+      - Gibt es spezifische Formate oder Methoden, die im Recap verwendet werden?
+      - Wird das Recap von den Kursleitern oder anderen Teilnehmern erstellt?
+      - Wie hilft das Recap den Teilnehmern dabei, das Gelernte zu festigen und zu reflektieren?
+      - Ist das Recap interaktiv gestaltet, um eine aktive Teilnahme der Lernenden zu fördern?
+      - Gibt es Zeitpunkte, zu denen das Recap präsentiert wird, z. B. am Ende jeder Lektion oder des Kurses?
+      - Kann das Recap auch als Gelegenheit zur Klärung offener Fragen oder zur Diskussion dienen?
+      - In welcher Form wird das Recap präsentiert, z. B. als Videozusammenfassung, schriftlicher Bericht oder Diskussionsforum?
+      - Gibt es spezielle Techniken oder Werkzeuge, die im Recap verwendet werden, um das Gelernte aufzubereiten?
+      - Wie unterstützt das Recap die Lernenden dabei, das Gelernte in einen größeren Kontext einzuordnen und Anwendungsmöglichkeiten zu erkennen?
+      - Recap
 
-#   - intent: faq/hpi_academy
-#     examples: |
-#       - Was sind die Besonderheiten von Kursen der HPI Academy?
-#       - Welche besonderen Merkmale zeichnen die Kurse der HPI Academy aus?
-#       - Was unterscheidet die Kurse der HPI Academy von anderen Bildungsangeboten?
-#       - Welche spezifischen Fachgebiete oder Schwerpunkte decken die Kurse der HPI Academy ab?
-#       - Gibt es einen besonderen Fokus auf praktische Anwendungen oder Projekte in den Kursen der HPI Academy?
-#       - Wie werden die Kurse der HPI Academy von Experten oder Praktikern in ihren jeweiligen Bereichen geleitet?
-#       - Werden die Kurse der HPI Academy in enger Zusammenarbeit mit Unternehmen oder Organisationen entwickelt?
-#       - Gibt es eine starke Betonung der Anwendbarkeit des Gelernten in den Kursen der HPI Academy?
-#       - Werden die Kurse der HPI Academy regelmäßig aktualisiert, um den aktuellen Entwicklungen und Trends gerecht zu werden?
-#       - Gibt es besondere Zertifizierungen oder Anerkennungen für die Absolventen der Kurse der HPI Academy?
-#       - Werden die Kurse der HPI Academy in verschiedenen Lernformaten angeboten, z. B. Präsenzkurse, Online-Kurse oder Hybridkurse?
-#       - Gibt es spezielle Netzwerk- oder Austauschmöglichkeiten für die Teilnehmer der Kurse der HPI Academy?
-#       - Werden die Kurse der HPI Academy in enger Verbindung mit aktuellen Forschungsprojekten oder Innovationen durchgeführt?
-#       - Gibt es besondere Ressourcen oder Materialien, die den Teilnehmern der Kurse der HPI Academy zur Verfügung gestellt werden?
-#       - Sind die Kurse der HPI Academy darauf ausgerichtet, spezifische berufliche Kompetenzen oder Fähigkeiten zu entwickeln?
-#       - Wie werden die Teilnehmer der Kurse der HPI Academy bei der Umsetzung des Gelernten in die Praxis unterstützt?
-#       - HPI-Academy
+  - intent: faq/hpi_academy
+    examples: |
+      - Was sind die Besonderheiten von Kursen der HPI Academy?
+      - Welche besonderen Merkmale zeichnen die Kurse der HPI Academy aus?
+      - Was unterscheidet die Kurse der HPI Academy von anderen Bildungsangeboten?
+      - Welche spezifischen Fachgebiete oder Schwerpunkte decken die Kurse der HPI Academy ab?
+      - Gibt es einen besonderen Fokus auf praktische Anwendungen oder Projekte in den Kursen der HPI Academy?
+      - Wie werden die Kurse der HPI Academy von Experten oder Praktikern in ihren jeweiligen Bereichen geleitet?
+      - Werden die Kurse der HPI Academy in enger Zusammenarbeit mit Unternehmen oder Organisationen entwickelt?
+      - Gibt es eine starke Betonung der Anwendbarkeit des Gelernten in den Kursen der HPI Academy?
+      - Werden die Kurse der HPI Academy regelmäßig aktualisiert, um den aktuellen Entwicklungen und Trends gerecht zu werden?
+      - Gibt es besondere Zertifizierungen oder Anerkennungen für die Absolventen der Kurse der HPI Academy?
+      - Werden die Kurse der HPI Academy in verschiedenen Lernformaten angeboten, z. B. Präsenzkurse, Online-Kurse oder Hybridkurse?
+      - Gibt es spezielle Netzwerk- oder Austauschmöglichkeiten für die Teilnehmer der Kurse der HPI Academy?
+      - Werden die Kurse der HPI Academy in enger Verbindung mit aktuellen Forschungsprojekten oder Innovationen durchgeführt?
+      - Gibt es besondere Ressourcen oder Materialien, die den Teilnehmern der Kurse der HPI Academy zur Verfügung gestellt werden?
+      - Sind die Kurse der HPI Academy darauf ausgerichtet, spezifische berufliche Kompetenzen oder Fähigkeiten zu entwickeln?
+      - Wie werden die Teilnehmer der Kurse der HPI Academy bei der Umsetzung des Gelernten in die Praxis unterstützt?
+      - HPI-Academy
 
-#   - intent: faq/self_tests-homework
-#     examples: |
-#       - Was sind Selbsttests und Hausaufgaben und worin unterscheiden sich diese?
-#       - Was genau sind Selbsttests und wie unterscheiden sie sich von Hausaufgaben?
-#       - Wie werden Selbsttests und Hausaufgaben in den Kursen verwendet und welchen Zweck erfüllen sie?
-#       - Was sind die Hauptmerkmale und Ziele von Selbsttests?
-#       - Worin besteht der Zweck und die Bedeutung von Hausaufgaben in einem Kurs?
-#       - Wie unterscheiden sich Selbsttests von Hausaufgaben in Bezug auf den Schwierigkeitsgrad?
-#       - Sind Selbsttests eher zur individuellen Lernkontrolle gedacht, während Hausaufgaben mehr praktische Anwendungen erfordern?
-#       - Gibt es Unterschiede im Format oder in der Art der Fragen zwischen Selbsttests und Hausaufgaben?
-#       - Werden Selbsttests eher zur regelmäßigen Überprüfung des Lernfortschritts verwendet, während Hausaufgaben den Kursabschluss beeinflussen?
-#       - Wie häufig werden Selbsttests im Vergleich zu Hausaufgaben im Verlauf eines Kurses angeboten?
-#       - Sind Selbsttests eher darauf ausgerichtet, das Verständnis des Gelernten zu überprüfen, während Hausaufgaben ein tieferes Verständnis und die Anwendung des Gelernten fördern?
-#       - Gibt es Unterschiede in der zeitlichen Abgabe oder dem Umfang von Selbsttests im Vergleich zu Hausaufgaben?
-#       - Werden Selbsttests eher automatisch bewertet, während Hausaufgaben eine manuelle Bewertung erfordern?
-#       - Sind Selbsttests eher als Selbstlernwerkzeug konzipiert, während Hausaufgaben eine formellere Abgabe und Rückmeldung erfordern?
-#       - Gibt es Unterschiede in der Gewichtung von Selbsttests und Hausaufgaben für die Gesamtnote oder Bewertung eines Kurses?
-#       - Welche Unterstützung oder Ressourcen werden den Teilnehmern für Selbsttests und Hausaufgaben zur Verfügung gestellt?
-#       - Selbsttests vs. Hausaufgaben
+  - intent: faq/self_tests-homework
+    examples: |
+      - Was sind Selbsttests und Hausaufgaben und worin unterscheiden sich diese?
+      - Was genau sind Selbsttests und wie unterscheiden sie sich von Hausaufgaben?
+      - Wie werden Selbsttests und Hausaufgaben in den Kursen verwendet und welchen Zweck erfüllen sie?
+      - Was sind die Hauptmerkmale und Ziele von Selbsttests?
+      - Worin besteht der Zweck und die Bedeutung von Hausaufgaben in einem Kurs?
+      - Wie unterscheiden sich Selbsttests von Hausaufgaben in Bezug auf den Schwierigkeitsgrad?
+      - Sind Selbsttests eher zur individuellen Lernkontrolle gedacht, während Hausaufgaben mehr praktische Anwendungen erfordern?
+      - Gibt es Unterschiede im Format oder in der Art der Fragen zwischen Selbsttests und Hausaufgaben?
+      - Werden Selbsttests eher zur regelmäßigen Überprüfung des Lernfortschritts verwendet, während Hausaufgaben den Kursabschluss beeinflussen?
+      - Wie häufig werden Selbsttests im Vergleich zu Hausaufgaben im Verlauf eines Kurses angeboten?
+      - Sind Selbsttests eher darauf ausgerichtet, das Verständnis des Gelernten zu überprüfen, während Hausaufgaben ein tieferes Verständnis und die Anwendung des Gelernten fördern?
+      - Gibt es Unterschiede in der zeitlichen Abgabe oder dem Umfang von Selbsttests im Vergleich zu Hausaufgaben?
+      - Werden Selbsttests eher automatisch bewertet, während Hausaufgaben eine manuelle Bewertung erfordern?
+      - Sind Selbsttests eher als Selbstlernwerkzeug konzipiert, während Hausaufgaben eine formellere Abgabe und Rückmeldung erfordern?
+      - Gibt es Unterschiede in der Gewichtung von Selbsttests und Hausaufgaben für die Gesamtnote oder Bewertung eines Kurses?
+      - Welche Unterstützung oder Ressourcen werden den Teilnehmern für Selbsttests und Hausaufgaben zur Verfügung gestellt?
+      - Selbsttests vs. Hausaufgaben
 
-#   - intent: faq/xp
-#     examples: |
-#       - Was bedeuten die XP in meinem Profil?
-#       - Was genau bedeuten die XP in meinem Profil?
-#       - Welche Rolle spielen die XP für meine Teilnahme an openHPI?
-#       - Wie werden die XP in meinem Profil berechnet oder vergeben?
-#       - Gibt es bestimmte Aktivitäten oder Leistungen, die zu XP in meinem Profil führen?
-#       - Welchen Zweck erfüllen die XP in Bezug auf meinen Lernfortschritt?
-#       - Können die XP in meinem Profil zur Nachverfolgung meiner Leistung verwendet werden?
-#       - Gibt es eine bestimmte Skala oder ein Punktesystem, das den XP in meinem Profil zugrunde liegt?
-#       - Wie können die XP in meinem Profil von anderen Teilnehmern oder Kursleitern betrachtet werden?
-#       - Werden die XP in meinem Profil in Bezug auf die Abschlusszertifikate oder Auszeichnungen berücksichtigt?
-#       - Gibt es Möglichkeiten, die XP in meinem Profil durch zusätzliche Aktivitäten zu erhöhen?
-#       - Wird meine Teilnahme an Diskussionen, Hausaufgaben oder anderen Aktivitäten in den XP in meinem Profil berücksichtigt?
-#       - Werden die XP in meinem Profil verwendet, um meine Fortschritte mit anderen Teilnehmern zu vergleichen?
-#       - Gibt es Belohnungen oder Anerkennungen für das Erreichen bestimmter XP-Meilensteine in meinem Profil?
-#       - Können die XP in meinem Profil als Indikator für meine Beteiligung und Engagement in den Kursen betrachtet werden?
-#       - Wie kann ich die XP in meinem Profil nutzen, um meine Lernziele effektiver zu verfolgen?
-#       - XP
+  - intent: faq/xp
+    examples: |
+      - Was bedeuten die XP in meinem Profil?
+      - Was genau bedeuten die XP in meinem Profil?
+      - Welche Rolle spielen die XP für meine Teilnahme an openHPI?
+      - Wie werden die XP in meinem Profil berechnet oder vergeben?
+      - Gibt es bestimmte Aktivitäten oder Leistungen, die zu XP in meinem Profil führen?
+      - Welchen Zweck erfüllen die XP in Bezug auf meinen Lernfortschritt?
+      - Können die XP in meinem Profil zur Nachverfolgung meiner Leistung verwendet werden?
+      - Gibt es eine bestimmte Skala oder ein Punktesystem, das den XP in meinem Profil zugrunde liegt?
+      - Wie können die XP in meinem Profil von anderen Teilnehmern oder Kursleitern betrachtet werden?
+      - Werden die XP in meinem Profil in Bezug auf die Abschlusszertifikate oder Auszeichnungen berücksichtigt?
+      - Gibt es Möglichkeiten, die XP in meinem Profil durch zusätzliche Aktivitäten zu erhöhen?
+      - Wird meine Teilnahme an Diskussionen, Hausaufgaben oder anderen Aktivitäten in den XP in meinem Profil berücksichtigt?
+      - Werden die XP in meinem Profil verwendet, um meine Fortschritte mit anderen Teilnehmern zu vergleichen?
+      - Gibt es Belohnungen oder Anerkennungen für das Erreichen bestimmter XP-Meilensteine in meinem Profil?
+      - Können die XP in meinem Profil als Indikator für meine Beteiligung und Engagement in den Kursen betrachtet werden?
+      - Wie kann ich die XP in meinem Profil nutzen, um meine Lernziele effektiver zu verfolgen?
+      - XP
 
-#   - intent: faq/badges
-#     examples: |
-#       - Was bedeuten Badges wie Communicator, Knowledgeable und Self-Tested?
-#       - Was genau bedeuten Badges wie Communicator, Knowledgeable und Self-Tested?
-#       - Welche Fähigkeiten oder Leistungen werden durch den Badge Communicator anerkannt?
-#       - Was sind die Merkmale und Qualifikationen, die mit dem Badge Knowledgeable verbunden sind?
-#       - Wie wird der Badge Self-Tested vergeben und was bedeutet er in Bezug auf mein Lernniveau?
-#       - Gibt es spezifische Kriterien oder Anforderungen, die erfüllt werden müssen, um einen bestimmten Badge zu erhalten?
-#       - Welchen Zweck erfüllen die Badges im Hinblick auf meine Teilnahme und meinen Fortschritt bei openHPI?
-#       - Werden die Badges von openHPI selbst vergeben oder gibt es eine externe Bewertungsinstanz?
-#       - Welche Bedeutung haben die Badges in Bezug auf meine Fähigkeiten und Kenntnisse in einem bestimmten Fachgebiet?
-#       - Werden die Badges öffentlich angezeigt und können von anderen Teilnehmern oder Arbeitgebern eingesehen werden?
-#       - Gibt es Möglichkeiten, zusätzliche Badges zu erwerben oder spezielle Herausforderungen zu meistern, um höhere Badges zu erhalten?
-#       - Wie können die Badges in meiner Lernkurve oder meiner persönlichen Entwicklung genutzt werden?
-#       - Werden die Badges in Bezug auf die Abschlusszertifikate oder Auszeichnungen berücksichtigt?
-#       - Gibt es Belohnungen oder Vorteile, die mit dem Erwerb bestimmter Badges verbunden sind?
-#       - Können die Badges als Nachweis für bestimmte Kompetenzen oder Fähigkeiten in meinem Lebenslauf verwendet werden?
-#       - Wie kann ich die Badges nutzen, um meine Lernziele effektiver zu verfolgen und mich weiterzuentwickeln?
-#       - Badges
+  - intent: faq/badges
+    examples: |
+      - Was bedeuten Badges wie Communicator, Knowledgeable und Self-Tested?
+      - Was genau bedeuten Badges wie Communicator, Knowledgeable und Self-Tested?
+      - Welche Fähigkeiten oder Leistungen werden durch den Badge Communicator anerkannt?
+      - Was sind die Merkmale und Qualifikationen, die mit dem Badge Knowledgeable verbunden sind?
+      - Wie wird der Badge Self-Tested vergeben und was bedeutet er in Bezug auf mein Lernniveau?
+      - Gibt es spezifische Kriterien oder Anforderungen, die erfüllt werden müssen, um einen bestimmten Badge zu erhalten?
+      - Welchen Zweck erfüllen die Badges im Hinblick auf meine Teilnahme und meinen Fortschritt bei openHPI?
+      - Werden die Badges von openHPI selbst vergeben oder gibt es eine externe Bewertungsinstanz?
+      - Welche Bedeutung haben die Badges in Bezug auf meine Fähigkeiten und Kenntnisse in einem bestimmten Fachgebiet?
+      - Werden die Badges öffentlich angezeigt und können von anderen Teilnehmern oder Arbeitgebern eingesehen werden?
+      - Gibt es Möglichkeiten, zusätzliche Badges zu erwerben oder spezielle Herausforderungen zu meistern, um höhere Badges zu erhalten?
+      - Wie können die Badges in meiner Lernkurve oder meiner persönlichen Entwicklung genutzt werden?
+      - Werden die Badges in Bezug auf die Abschlusszertifikate oder Auszeichnungen berücksichtigt?
+      - Gibt es Belohnungen oder Vorteile, die mit dem Erwerb bestimmter Badges verbunden sind?
+      - Können die Badges als Nachweis für bestimmte Kompetenzen oder Fähigkeiten in meinem Lebenslauf verwendet werden?
+      - Wie kann ich die Badges nutzen, um meine Lernziele effektiver zu verfolgen und mich weiterzuentwickeln?
+      - Badges
 
-#   - intent: faq/score
-#     examples: |
-#       - Wie ergibt sich meine Punktzahl bei Multiple Choice und Multiple Answer-Aufgaben?
-      
+  - intent: faq/score
+    examples: |
+      - Wie ergibt sich meine Punktzahl bei Multiple Choice und Multiple Answer-Aufgaben?
+      - Wie wird meine Punktzahl bei Multiple Choice-Aufgaben berechnet?
+      - Welches Bewertungssystem wird bei Multiple Choice-Aufgaben angewendet?
+      - Wie werden die richtigen und falschen Antworten bei Multiple Choice-Aufgaben gewichtet, um meine Punktzahl zu ermitteln?
+      - Gibt es Abzüge für falsche Antworten bei Multiple Choice-Aufgaben?
+      - Werden alle Fragen bei Multiple Choice-Aufgaben gleich gewichtet oder gibt es Unterschiede?
+      - Wie werden Teilpunkte vergeben, wenn ich nur einen Teil einer Multiple Choice-Frage richtig beantwortet habe?
+      - Wie werden meine Punkte berechnet, wenn es mehrere richtige Antworten bei einer Multiple Answer-Aufgabe gibt?
+      - Gibt es Abzüge für falsch markierte Antworten bei Multiple Answer-Aufgaben?
+      - Wie werden Teilpunkte vergeben, wenn ich einen Teil der richtigen Antworten bei einer Multiple Answer-Aufgabe ausgelassen habe?
+      - Werden die Punktzahlen bei Multiple Choice und Multiple Answer-Aufgaben auf unterschiedliche Weise berechnet?
+      - Welche Faktoren werden bei der Berechnung der Punktzahl für Multiple Choice und Multiple Answer-Aufgaben berücksichtigt?
+      - Gibt es eine Mindestpunktzahl, um eine Multiple Choice oder Multiple Answer-Aufgabe als bestanden zu betrachten?
+      - Gibt es eine spezifische Formel oder ein Berechnungsschema, das bei der Ermittlung der Punktzahl für Multiple Choice und Multiple Answer-Aufgaben verwendet wird?
+      - Wie können meine Antworten bei Multiple Choice und Multiple Answer-Aufgaben von anderen Teilnehmern oder Kursleitern überprüft werden?
+      - Welche Rolle spielt die Punktzahl bei Multiple Choice und Multiple Answer-Aufgaben in Bezug auf meine Gesamtnote oder mein Abschlusszertifikat?
+      - Multiple Choice
+      - Multiple Answer
+  
+  - intent: faq/final_result
+    examples: |
+      - Wie setzt sich mein Endergebnis zusammen?
+      - Welche Komponenten fließen in die Berechnung meines Endergebnisses ein?
+      - Welche Faktoren werden berücksichtigt, um mein Endergebnis zu bestimmen?
+      - Wie werden meine Leistungen in den einzelnen Kursaktivitäten oder Prüfungen gewichtet, um mein Endergebnis zu ermitteln?
+      - Werden meine Teilnahme, mein Engagement oder andere nicht-quantitative Faktoren in die Bewertung meines Endergebnisses einbezogen?
+      - Gibt es spezifische Gewichtungen oder Skalen, die verwendet werden, um die verschiedenen Komponenten meines Endergebnisses zu berücksichtigen?
+      - Werden meine Ergebnisse im Vergleich zu anderen Teilnehmern oder einem definierten Leistungsniveau bewertet, um mein Endergebnis zu ermitteln?
+      - Gibt es bestimmte Mindestanforderungen, die erfüllt sein müssen, um mein Endergebnis als bestanden zu betrachten?
+      - Werden meine Leistungen kontinuierlich über den Kursverlauf hinweg verfolgt oder nur am Ende zur Ermittlung meines Endergebnisses herangezogen?
+      - Werden mögliche Bonuspunkte oder zusätzliche Leistungen in die Berechnung meines Endergebnisses einbezogen?
+      - Gibt es eine spezifische Formel oder ein Berechnungsschema, das zur Bestimmung meines Endergebnisses verwendet wird?
+      - Wie werden meine Teilnahme, meine Beiträge im Diskussionsforum und andere interaktive Aktivitäten in die Bewertung meines Endergebnisses einbezogen?
+      - Gibt es eine Mindestpunktzahl, um mein Endergebnis als bestanden zu betrachten?
+      - Werden meine Leistungen durch eine Einzelbewertung oder durch Peer-Assessment berücksichtigt, um mein Endergebnis zu ermitteln?
+      - Werden meine Ergebnisse in verschiedenen Kategorien oder Modulen gewichtet, um mein Endergebnis zu ermitteln?
+      - Wie kann ich mein Endergebnis verbessern oder beeinflussen, um meine Lernziele zu erreichen?
+      - Endergebnis
+
+  - intent: faq/points_rounded
+    examples: |
+      - Wie werden meine erreichten Punkte gerundet?
+      - Wie erfolgt die Rundung meiner erreichten Punkte?
+      - Gibt es eine bestimmte Rundungsregel, die bei der Berechnung meiner Punkte angewendet wird?
+      - Wird die Rundung meiner Punkte auf ganze Zahlen oder Dezimalstellen durchgeführt?
+      - Wird die Rundung meiner Punkte auf den nächstgelegenen ganzen Wert oder auf eine bestimmte Anzahl von Dezimalstellen durchgeführt?
+      - Welche Genauigkeit wird bei der Rundung meiner Punkte verwendet, z. B. auf Zehntel, Hundertstel oder Tausendstel?
+      - Gibt es besondere Richtlinien für die Rundung meiner Punkte bei spezifischen Aufgaben oder Prüfungen?
+      - Wird die Rundung meiner Punkte bei jeder Komponente oder nur beim Endergebnis durchgeführt?
+      - Gibt es eine spezifische Rundungsregelung, die von openHPI festgelegt wurde und für alle Kurse gilt?
+      - Werden meine Punkte auf- oder abgerundet, wenn die Dezimalstellen im Ergebnis genau in der Mitte liegen?
+      - Wird die Rundung meiner Punkte automatisch durch das System vorgenommen oder manuell von Kursleitern oder Prüfern durchgeführt?
+      - Gibt es besondere Ausnahmen oder Sonderregelungen für die Rundung meiner Punkte in bestimmten Szenarien?
+      - Wird die Rundung meiner Punkte in Bezug auf die Gesamtnote oder andere Bewertungskriterien vorgenommen?
+      - Wie wird die Rundung meiner Punkte bei Teilpunkten oder Teilaufgaben innerhalb einer Prüfung oder Aufgabe gehandhabt?
+      - Werden meine Punkte gerundet, bevor sie in die Gesamtpunktzahl oder das Endergebnis einfließen?
+      - Kann ich Informationen über die Rundungsregelung oder -praxis des Kurses oder der Plattform in den Kursrichtlinien oder FAQ finden?
+      - Punkte runden
+
+  - intent: faq/performance-records_differences
+    examples: |
+      - Wie unterscheiden Sie die Leistungsnachweise Zertifikat, Leistungsnachweis und Teilnahmebescheinigung?
+      - Was ist der Unterschied zwischen einem Zertifikat, einem Leistungsnachweis und einer Teilnahmebescheinigung?
+      - Welche Kriterien müssen erfüllt sein, um ein Zertifikat zu erhalten?
+      - Welche Leistungen oder Anforderungen werden für einen Leistungsnachweis erwartet?
+      - Wann erhält man eine Teilnahmebescheinigung und welche Bedeutung hat sie?
+      - Wie werden die Leistungsnachweise in Bezug auf den Lernfortschritt und die erworbenen Fähigkeiten gewichtet?
+      - Welchen Wert oder Nutzen haben die verschiedenen Arten von Leistungsnachweisen in Bezug auf berufliche Entwicklung oder Weiterbildung?
+      - Werden die Leistungsnachweise von openHPI selbst ausgestellt oder gibt es eine externe Zertifizierungsinstitution?
+      - Gibt es spezifische Anforderungen an die Prüfungen oder Bewertungen, um ein Zertifikat oder einen Leistungsnachweis zu erhalten?
+      - Welche Informationen werden auf den verschiedenen Arten von Leistungsnachweisen angegeben, z. B. erreichte Punktzahl, Kursdetails oder Ausstellungsdatum?
+      - Wie werden die Leistungsnachweise von Arbeitgebern oder anderen Bildungseinrichtungen anerkannt oder bewertet?
+      - Gibt es eine Gültigkeitsdauer oder ein Verfallsdatum für die verschiedenen Arten von Leistungsnachweisen?
+      - Welche Rolle spielen die Leistungsnachweise bei der Bewerbung um einen Job oder eine weitere akademische Laufbahn?
+      - Wie kann ich meine erworbenen Leistungsnachweise in meinem Lebenslauf oder Profil präsentieren?
+      - Werden die Leistungsnachweise in Bezug auf die erworbenen XP oder Badges berücksichtigt?
+      - Gibt es weitere Vorteile oder Privilegien, die mit dem Erhalt bestimmter Leistungsnachweise verbunden sind, z. B. Zugang zu weiteren Kursen oder Ressourcen?
+      - Zertifikat vs. Leistungsnachweis vs. Teilnahmebescheinigung
+
+  - intent: faq/record-of-achievement_unlock
+    examples: |
+      - Wann werden die Leistungsnachweise freigeschaltet?
+      - Wann werden die Leistungsnachweise normalerweise freigeschaltet?
+      - Gibt es einen bestimmten Zeitpunkt oder Zeitraum, zu dem die Leistungsnachweise verfügbar sind?
+      - Werden die Leistungsnachweise sofort nach Abschluss des Kurses freigeschaltet oder gibt es eine Verzögerung?
+      - Hängt die Freischaltung der Leistungsnachweise von der Überprüfung oder Bewertung der eingereichten Aufgaben ab?
+      - Werden die Leistungsnachweise nach Abschluss aller Kursaktivitäten und Prüfungen freigeschaltet?
+      - Gibt es spezifische Kriterien oder Anforderungen, die erfüllt sein müssen, bevor die Leistungsnachweise freigeschaltet werden?
+      - Werden die Leistungsnachweise einzeln freigeschaltet oder werden sie gleichzeitig für alle Teilnehmer verfügbar gemacht?
+      - Wird eine Benachrichtigung versendet, wenn die Leistungsnachweise freigeschaltet wurden?
+      - Gibt es möglicherweise Gründe für eine Verzögerung bei der Freischaltung der Leistungsnachweise, z. B. technische Probleme oder Überprüfungsaufgaben?
+      - Wird die Freischaltung der Leistungsnachweise von openHPI selbst oder von Kursleitern oder Prüfern durchgeführt?
+      - Gibt es spezielle Voraussetzungen, die erfüllt sein müssen, bevor die Leistungsnachweise freigeschaltet werden, wie z. B. die Teilnahme an bestimmten Diskussionen oder das Bestehen einer Abschlussprüfung?
+      - Können die Leistungsnachweise nach der Freischaltung erneut eingesehen oder heruntergeladen werden?
+      - Wie kann ich überprüfen, ob meine Leistungsnachweise freigeschaltet wurden?
+      - Gibt es spezielle Richtlinien oder FAQ, in denen Informationen zur Freischaltung der Leistungsnachweise bereitgestellt werden?
+      - Werden die Leistungsnachweise automatisch freigeschaltet oder gibt es einen manuellen Prozess, der durchlaufen werden muss?
+      - Leistungsnachweis freischalten
+      - Wann bekomme ich meinen Leistungsnachweis?
+
+  
+  - intent: faq/record-of-achievement_date-of-issue
+    examples: |
+      - Welches Ausstelldatum steht auf den Leistungsnachweisen?
+      - Welches Ausstelldatum wird auf den Leistungsnachweisen angegeben?
+      - Wird das Ausstelldatum auf den Leistungsnachweisen automatisch generiert oder manuell festgelegt?
+      - Wird das Ausstelldatum auf den Leistungsnachweisen basierend auf dem Abschlussdatum des Kurses festgelegt?
+      - Gibt es möglicherweise eine Verzögerung zwischen dem Abschluss des Kurses und dem Ausstelldatum auf den Leistungsnachweisen?
+      - Wird das Ausstelldatum auf den Leistungsnachweisen für alle Teilnehmer gleich sein oder individuell variieren?
+      - Welche Informationen können neben dem Ausstelldatum auf den Leistungsnachweisen angegeben werden?
+      - Wird das Ausstelldatum auf den Leistungsnachweisen nachträglich geändert, wenn bestimmte Voraussetzungen erfüllt sind?
+      - Gibt es spezifische Richtlinien oder Verfahren, die bei der Festlegung des Ausstelldatums auf den Leistungsnachweisen befolgt werden?
+      - Wie kann ich überprüfen, ob das Ausstelldatum auf meinem Leistungsnachweis korrekt ist?
+      - Wird das Ausstelldatum auf den Leistungsnachweisen automatisch aktualisiert, wenn ich den Kurs zu einem späteren Zeitpunkt wiederhole oder wieder abschließe?
+      - Welche Bedeutung hat das Ausstelldatum auf den Leistungsnachweisen in Bezug auf die Gültigkeit oder Anerkennung?
+      - Werden die Leistungsnachweise rückwirkend mit dem Ausstelldatum versehen, wenn bestimmte Anforderungen nachträglich erfüllt werden?
+      - Gibt es spezifische Zeitzonen oder Zeitangaben, die beim Ausstelldatum auf den Leistungsnachweisen berücksichtigt werden?
+      - Können Änderungen oder Anpassungen am Ausstelldatum auf den Leistungsnachweisen vorgenommen werden, wenn dies erforderlich ist?
+      - Gibt es zusätzliche Informationen oder Erläuterungen, die neben dem Ausstelldatum auf den Leistungsnachweisen angegeben werden?
+      - Ausstellungsdatum Leistungsnachweis
+
+  - intent: faq/confirmation-of-participation_requirements
+    examples: |
+      - Wann erhalte ich eine Teilnahmebescheinigung?
+      - Unter welchen Bedingungen erhalte ich eine Teilnahmebescheinigung?
+      - Wann wird mir eine Teilnahmebescheinigung ausgestellt?
+      - Welche Anforderungen muss ich erfüllen, um eine Teilnahmebescheinigung zu erhalten?
+      - Erhalte ich automatisch eine Teilnahmebescheinigung, wenn ich den Kurs beendet habe?
+      - Wird die Teilnahmebescheinigung basierend auf meiner aktiven Teilnahme am Kurs ausgestellt?
+      - Gibt es eine Mindestanwesenheitszeit, um eine Teilnahmebescheinigung zu erhalten?
+      - Werden meine erzielten Punkte oder mein Fortschritt im Kurs bei der Ausstellung der Teilnahmebescheinigung berücksichtigt?
+      - Gibt es bestimmte Kriterien, die erfüllt sein müssen, wie das Abschließen von Selbsttests oder das Einreichen von Hausaufgaben, um eine Teilnahmebescheinigung zu erhalten?
+      - Wird die Teilnahmebescheinigung automatisch nach Abschluss des Kurses generiert oder muss ich sie beantragen?
+      - Wird meine aktive Teilnahme am Diskussionsforum oder anderen interaktiven Aktivitäten bei der Ausstellung der Teilnahmebescheinigung berücksichtigt?
+      - Gibt es eine Überprüfung oder Bestätigung meiner Teilnahme durch Kursleiter oder Prüfer, bevor mir eine Teilnahmebescheinigung ausgestellt wird?
+      - Gibt es eine spezifische Zeitspanne, innerhalb derer die Teilnahmebescheinigung ausgestellt wird, nachdem der Kurs abgeschlossen ist?
+      - Werden zusätzliche Informationen oder Angaben auf der Teilnahmebescheinigung angezeigt, wie beispielsweise der Kursname oder das Abschlussdatum?
+      - Können spezielle Anfragen oder Bedingungen berücksichtigt werden, um eine Teilnahmebescheinigung zu erhalten, z. B. für Teilnehmer mit besonderen Anforderungen oder technischen Schwierigkeiten?
+      - Wie kann ich überprüfen, ob meine Teilnahmebescheinigung ausgestellt wurde und wie erhalte ich sie?
+      - Teilnahmebescheinigung Vorraussetzungen
+
+  - intent: faq/record-of-achievement_requirements
+    examples: |
+      - Wann erhalte ich einen Leistungsnachweis?
+      - Unter welchen Bedingungen erhalte ich einen Leistungsnachweis?
+      - Wann wird mir ein Leistungsnachweis ausgestellt?
+      - Welche Anforderungen muss ich erfüllen, um einen Leistungsnachweis zu erhalten?
+      - Erhalte ich automatisch einen Leistungsnachweis, wenn ich den Kurs erfolgreich abgeschlossen habe?
+      - Wird der Leistungsnachweis basierend auf meinen erzielten Punkten oder meiner Gesamtleistung im Kurs ausgestellt?
+      - Gibt es eine Mindestpunktzahl, die ich erreichen muss, um einen Leistungsnachweis zu erhalten?
+      - Werden meine Ergebnisse in einzelnen Prüfungen oder Aufgaben bei der Ausstellung des Leistungsnachweises berücksichtigt?
+      - Gibt es bestimmte Kriterien, die erfüllt sein müssen, wie das Bestehen einer Abschlussprüfung oder das Erreichen einer bestimmten Punktzahl, um einen Leistungsnachweis zu erhalten?
+      - Wird der Leistungsnachweis automatisch generiert und an mich verschickt oder muss ich ihn beantragen?
+      - Werden zusätzliche Informationen oder Angaben auf dem Leistungsnachweis angezeigt, wie beispielsweise der Kursname oder das Abschlussdatum?
+      - Gibt es eine spezifische Zeitspanne, innerhalb derer der Leistungsnachweis ausgestellt wird, nachdem der Kurs abgeschlossen ist?
+      - Werden meine Leistungen von Kursleitern oder Prüfern überprüft oder bestätigt, bevor mir ein Leistungsnachweis ausgestellt wird?
+      - Gibt es eine individuelle Bewertung oder Rückmeldung meiner Leistungen, die bei der Ausstellung des Leistungsnachweises berücksichtigt wird?
+      - Kann es Fälle geben, in denen zusätzliche Kriterien oder Bedingungen erfüllt sein müssen, um einen Leistungsnachweis zu erhalten, z. B. für bestimmte Zertifizierungen oder Spezialisierungen?
+      - Wie kann ich überprüfen, ob mein Leistungsnachweis ausgestellt wurde, und wie erhalte ich ihn?
+      - Leistungsnachweis Vorraussetzungen
+
+  - intent: faq/open-badge_requirements
+    examples: |
+      - Wann erhalte ich ein Open Badge?
+      - Unter welchen Bedingungen erhalte ich ein Open Badge?
+      - Wann wird mir ein Open Badge verliehen?
+      - Welche Leistungen oder Kriterien muss ich erfüllen, um ein Open Badge zu erhalten?
+      - Wird das Open Badge automatisch nach dem Erreichen bestimmter Meilensteine oder Leistungen vergeben?
+      - Werden meine Punkte, mein Fortschritt oder andere Leistungen bei der Vergabe des Open Badges berücksichtigt?
+      - Gibt es bestimmte Aktivitäten, Aufgaben oder Prüfungen, die abgeschlossen sein müssen, um ein Open Badge zu erhalten?
+      - Werden die Open Badges durch openHPI selbst oder durch externe Zertifizierungsstellen vergeben?
+      - Gibt es spezifische Kriterien oder Anforderungen, die erfüllt sein müssen, um ein Open Badge zu erhalten, wie z. B. das Abschließen von bestimmten Kursen oder Modulen?
+      - Wird das Open Badge automatisch generiert und an mich verschickt oder muss ich es beantragen?
+      - Welche Informationen oder Metadaten werden auf dem Open Badge angezeigt?
+      - Gibt es eine spezifische Zeitspanne, innerhalb derer das Open Badge vergeben wird, nachdem die entsprechenden Leistungen erfüllt wurden?
+      - Wird das Open Badge von Kursleitern oder Prüfern überprüft oder validiert, bevor es vergeben wird?
+      - Gibt es eine individuelle Bewertung oder Rückmeldung meiner Leistungen, die bei der Vergabe des Open Badges berücksichtigt wird?
+      - Können Open Badges zusätzliche Vorteile oder Privilegien bieten, wie beispielsweise Zugang zu weiteren Kursen oder Ressourcen?
+      - Wie kann ich überprüfen, ob mir ein Open Badge verliehen wurde, und wie erhalte ich es?
+      - Open Badge Vorraussetzungen
+
+  - intent: faq/certificate_requirements
+    examples: |
+      - Wann erhalte ich ein Zertifikat?
+      - Unter welchen Bedingungen erhalte ich ein Zertifikat?
+      - Wann wird mir ein Zertifikat ausgestellt?
+      - Welche Anforderungen muss ich erfüllen, um ein Zertifikat zu erhalten?
+      - Wird das Zertifikat automatisch nach Abschluss des Kurses oder Programms ausgestellt?
+      - Werden meine erreichten Punkte oder mein Fortschritt im Kurs bei der Ausstellung des Zertifikats berücksichtigt?
+      - Gibt es eine Mindestpunktzahl oder eine bestimmte Leistung, die erfüllt sein muss, um ein Zertifikat zu erhalten?
+      - Wird das Zertifikat von openHPI selbst ausgestellt oder gibt es eine externe Zertifizierungsstelle?
+      - Gibt es spezifische Kriterien oder Anforderungen, die erfüllt sein müssen, wie das Bestehen von Abschlussprüfungen oder das Abschließen bestimmter Kursaktivitäten?
+      - Wird das Zertifikat automatisch generiert und an mich verschickt oder muss ich es beantragen?
+      - Werden zusätzliche Informationen oder Angaben auf dem Zertifikat angezeigt, wie beispielsweise der Kursname, das Abschlussdatum oder die erzielte Punktzahl?
+      - Gibt es eine spezifische Zeitspanne, innerhalb derer das Zertifikat ausgestellt wird, nachdem der Kurs abgeschlossen ist?
+      - Werden meine Leistungen von Kursleitern oder Prüfern überprüft oder bestätigt, bevor mir das Zertifikat ausgestellt wird?
+      - Gibt es eine individuelle Bewertung oder Rückmeldung meiner Leistungen, die bei der Ausstellung des Zertifikats berücksichtigt wird?
+      - Können Zertifikate zusätzliche Vorteile oder Privilegien bieten, wie beispielsweise Zugang zu weiteren Kursen oder beruflichen Chancen?
+      - Wie kann ich überprüfen, ob mir ein Zertifikat ausgestellt wurde, und wie erhalte ich es?
+      - Zertifikat Vorraussetzungen
+
+  - intent: faq/certificate_costs
+    examples: |
+      - Wie viel kostet ein Zertifikat?
+      - Welche Kosten sind mit dem Erhalt eines Zertifikats verbunden?
+      - Wie hoch ist die Gebühr für ein Zertifikat?
+      - Gibt es verschiedene Preisstufen oder Optionen für Zertifikate?
+      - Sind die Kosten für ein Zertifikat in den Kursgebühren enthalten oder fallen zusätzliche Kosten an?
+      - Werden die Kosten für ein Zertifikat für jeden Kurs oder jedes Programm individuell festgelegt?
+      - Gibt es möglicherweise Rabatte oder Sonderangebote für den Erwerb eines Zertifikats?
+      - Welche Zahlungsmethoden werden für den Kauf eines Zertifikats akzeptiert?
+      - Werden die Kosten für ein Zertifikat von openHPI selbst festgelegt oder gibt es externe Zertifizierungsstellen, die diese festlegen?
+      - Gibt es eine Rückerstattungsmöglichkeit, wenn ich nach dem Kauf des Zertifikats meine Meinung ändere?
+      - Wird das Zertifikat automatisch mit dem Erhalt bestimmter Punktzahlen oder dem Abschluss bestimmter Kursanforderungen vergeben?
+      - Sind die Kosten für ein Zertifikat für alle Teilnehmer gleich oder können sie je nach Land, Währung oder anderen Faktoren variieren?
+      - Gibt es zusätzliche Servicegebühren oder Verwaltungskosten, die mit dem Erhalt eines Zertifikats verbunden sind?
+      - Gibt es möglicherweise finanzielle Unterstützungsoptionen, wie Stipendien oder Zuschüsse, um die Kosten für ein Zertifikat zu reduzieren?
+      - Werden die Kosten für ein Zertifikat in der Währung des Kursstandorts oder in einer anderen Währung angegeben?
+      - Wo kann ich detaillierte Informationen zu den Kosten für ein Zertifikat finden?
+      - Was kostet ein Zertifikat?
+      - Zertifikat Kosten
+      - Was muss ich für ein Zertifikat bezahlen?
+
+  - intent: faq/certificate_booking
+    examples: |
+      - Bis wann muss ich ein Zertifikat spätestens buchen?
+      - Bis zu welchem Zeitpunkt muss ich das Zertifikat spätestens buchen?
+      - Gibt es eine bestimmte Frist, bis zu der ich das Zertifikat buchen muss?
+      - Wie lange vor dem Abschluss des Kurses sollte ich das Zertifikat buchen?
+      - Gibt es eine begrenzte Anzahl von verfügbaren Zertifikaten, die vorab gebucht werden können?
+      - Muss das Zertifikat vor dem Abschluss des Kurses oder kann es auch nachträglich gebucht werden?
+      - Wird die Buchung des Zertifikats automatisch mit der Anmeldung zum Kurs durchgeführt oder muss sie separat erfolgen?
+      - Gibt es möglicherweise eine bestimmte Anzahl von Tagen oder Wochen vor dem Abschluss des Kurses, innerhalb derer das Zertifikat gebucht werden muss?
+      - Kann ich das Zertifikat auch nach Abschluss des Kurses buchen oder ist eine vorherige Buchung erforderlich?
+      - Gibt es möglicherweise besondere Bedingungen oder Einschränkungen für die Buchung des Zertifikats, wie beispielsweise das Bestehen bestimmter Prüfungen oder das Erreichen einer Mindestpunktzahl?
+      - Werden mir Erinnerungen oder Benachrichtigungen über den Buchungszeitpunkt des Zertifikats zugesandt?
+      - Kann ich das Zertifikat nach dem angegebenen Buchungszeitpunkt noch buchen oder gibt es eine spätere Nachbuchungsfrist?
+      - Gibt es spezielle Richtlinien oder FAQ, in denen Informationen zum Buchungszeitpunkt des Zertifikats bereitgestellt werden?
+      - Wird die Buchung des Zertifikats automatisch durch das System oder manuell von openHPI durchgeführt?
+      - Gibt es möglicherweise Einschränkungen hinsichtlich der Verfügbarkeit von Zertifikaten, wenn der Kurs eine begrenzte Teilnehmerzahl hat?
+      - Kann ich Informationen zum Buchungszeitpunkt des Zertifikats in meinem Kurskonto oder in den Kursmaterialien finden?
+      - Bis wann kann ich ein Zertifikat buchen?
+      - Zertifikat buchen
+
+  - intent: faq/certificate_violations
+    examples: |
+      - Welche Verstöße sind für die Online-Aufsicht beim Zertifikat relevant?
+      - Welche Art von Verstößen können sich auf die Online-Aufsicht und das Zertifikat auswirken?
+      - Welche Verhaltensweisen oder Aktionen werden als Verstöße gegen die Online-Aufsicht betrachtet?
+      - Welche Auswirkungen haben Verstöße auf die Gültigkeit des Zertifikats?
+      - Gibt es spezifische Regeln oder Richtlinien, die während der Online-Aufsicht befolgt werden müssen, um Verstöße zu vermeiden?
+      - Werden Verstöße gegen die Online-Aufsicht während des Kurses oder bei der Prüfung erfasst?
+      - Wie werden Verstöße gegen die Online-Aufsicht erkannt und dokumentiert?
+      - Gibt es möglicherweise technische Maßnahmen, um Verstöße gegen die Online-Aufsicht zu erkennen, wie z. B. Bildschirmaufnahmen oder Überwachungssoftware?
+      - Welche Sanktionen können für Verstöße gegen die Online-Aufsicht verhängt werden?
+      - Gibt es ein Verfahren zur Überprüfung von Verstößen gegen die Online-Aufsicht und zum Einreichen von Berufungen?
+      - Wird das Zertifikat automatisch ungültig, wenn ein Verstoß gegen die Online-Aufsicht festgestellt wird?
+      - Welche Konsequenzen hat ein Verstoß gegen die Online-Aufsicht für den weiteren Kursverlauf oder zukünftige Teilnahmemöglichkeiten?
+      - Gibt es eine Möglichkeit, Verstöße gegen die Online-Aufsicht nachträglich zu korrigieren oder auszugleichen?
+      - Werden Verstöße gegen die Online-Aufsicht mit anderen Teilnehmern geteilt oder vertraulich behandelt?
+      - Gibt es spezifische Schulungsmaßnahmen oder Informationen, die vor Beginn des Kurses bereitgestellt werden, um Verstöße gegen die Online-Aufsicht zu vermeiden?
+      - Wie kann ich mich über die genauen Verhaltensregeln und Richtlinien in Bezug auf die Online-Aufsicht und Verstöße informieren?
+      - Zertifikatsverstöße
+
+  - intent: faq/certificate_invoice
+    examples: |
+      - Kann ich für den Kauf eines Zertifikats auch eine Rechnung erhalten?
+      - Ist es möglich, für den Kauf eines Zertifikats eine Rechnung zu erhalten?
+      - Kann ich anstelle einer Online-Zahlung eine Rechnung für den Kauf des Zertifikats anfordern?
+      - Werden für den Kauf eines Zertifikats automatisch Rechnungen erstellt und versendet?
+      - Gibt es einen speziellen Prozess, um eine Rechnung für den Kauf eines Zertifikats anzufordern?
+      - Welche Informationen und Details sollten in der Rechnung für den Zertifikatskauf enthalten sein?
+      - Gibt es besondere Anforderungen oder Informationen, die ich für die Ausstellung einer Rechnung angeben muss?
+      - Kann ich eine Rechnung für den Zertifikatskauf auf meinen Namen oder auf den Namen einer Organisation erhalten?
+      - Welche Zahlungsmethoden stehen für die Begleichung der Rechnung für den Zertifikatskauf zur Verfügung?
+      - Gibt es spezielle Fristen oder Bedingungen für die Bezahlung der Rechnung für den Zertifikatskauf?
+      - Werden zusätzliche Gebühren oder Kosten für die Ausstellung einer Rechnung erhoben?
+      - Gibt es spezifische Richtlinien oder Verfahren, die bei der Anforderung und Bearbeitung von Rechnungen für den Zertifikatskauf befolgt werden müssen?
+      - Kann ich die Rechnung für den Zertifikatskauf elektronisch oder in Papierform erhalten?
+      - Wie kann ich eine Kopie der Rechnung für den Zertifikatskauf anfordern, falls erforderlich?
+      - Wer ist der Ansprechpartner, wenn es Fragen oder Probleme im Zusammenhang mit der Rechnung für den Zertifikatskauf gibt?
+      - Gibt es spezielle Informationen oder FAQ, in denen Informationen zur Rechnungsstellung für den Zertifikatskauf bereitgestellt werden?
+      - Ich brauche eine Rechnung für den Kauf des Zertifikats
+      - Ich brauche eine Rechnung für mein Zertifikat
+      - Ich brauche eine Rechnung
+      - Zertifikatsrechnung
+
+  - intent: faq/open-badge_linkedin
+    examples: |
+      - Wie kann ich mein openHPI Open Badge zu meinem LinkedIn-Profil hinzufügen?
+      - Wie füge ich mein openHPI Open Badge zu meinem LinkedIn-Profil hinzu?
+      - Welche Schritte sind erforderlich, um mein openHPI Open Badge mit meinem LinkedIn-Profil zu verknüpfen?
+      - Gibt es eine spezielle Funktion oder Integration, um mein openHPI Open Badge direkt auf LinkedIn hochzuladen?
+      - Welche Informationen oder Daten werden für die Hinzufügung des openHPI Open Badges zu meinem LinkedIn-Profil benötigt?
+      - Gibt es eine offizielle Anleitung oder ein Tutorial, das den Prozess des Hinzufügens des openHPI Open Badges zu LinkedIn erklärt?
+      - Kann ich mein openHPI Open Badge automatisch mit meinem LinkedIn-Profil verknüpfen lassen oder muss ich es manuell hinzufügen?
+      - Gibt es spezifische Einstellungen oder Datenschutzoptionen, die ich beachten sollte, wenn ich mein openHPI Open Badge auf LinkedIn teile?
+      - Wird mein openHPI Open Badge auf LinkedIn sichtbar sein, sobald es hinzugefügt wurde, oder gibt es einen Überprüfungsprozess?
+      - Kann ich mehrere openHPI Open Badges zu meinem LinkedIn-Profil hinzufügen und anzeigen lassen?
+      - Wie kann ich sicherstellen, dass mein openHPI Open Badge auf meinem LinkedIn-Profil korrekt angezeigt wird?
+      - Gibt es spezielle Kategorien oder Abschnitte auf LinkedIn, in denen ich mein openHPI Open Badge anzeigen lassen kann?
+      - Welche Vorteile bietet das Hinzufügen meines openHPI Open Badges zu meinem LinkedIn-Profil, insbesondere in Bezug auf berufliche Möglichkeiten oder Sichtbarkeit?
+      - Kann ich mein openHPI Open Badge auf LinkedIn auch mit anderen Zertifikaten oder Leistungsnachweisen verknüpfen?
+      - Gibt es zusätzliche Anpassungsmöglichkeiten, um mein openHPI Open Badge auf meinem LinkedIn-Profil besonders hervorzuheben?
+      - Gibt es einen offiziellen Support oder eine Kontaktstelle, an die ich mich wenden kann, wenn ich Probleme beim Hinzufügen meines openHPI Open Badges zu LinkedIn habe?
+      - Open Badge LinkedIn

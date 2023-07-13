@@ -18,18 +18,18 @@ intents:
 
 responses:
   utter_greet:
-  - text: Hey, wie kann ich dir helfen?
-  - text: Hey, was kann ich für dich tun?
+  - text: Guten Tag, wie kann ich Ihnen helfen?
+  - text: Hallo, was kann ich für Sie tun?
 
   utter_tip_formulation:
-  - text: "💡 Übrigens: Ich verstehe dich am besten, wenn du deine Fragen kurz und präzise formulierst!"
+  - text: "💡 Übrigens: Ich verstehe Sie am besten, wenn Sie Ihre Fragen kurz und präzise formulierst!"
 
   utter_goodbye:
-  - text: Alles klar. Ich wünsche dir noch einen schönen Tag! Bis bald 👋
-  - text: Alles klar. Ich wünsche dir noch einen schönen Tag! Auf Wiedersehen 👋
+  - text: Alles klar. Ich wünsche Ihnen noch einen schönen Tag! Bis bald 👋
+  - text: Alles klar. Ich wünsche Ihnen noch einen schönen Tag! Auf Wiedersehen 👋
   
   utter_have_a_nice_day:
-  - text: Hab einen schönen Tag und bis bald!
+  - text: Ich wünsche Ihnen noch einen schönen Tag! Bis bald 👋
 
   utter_you_are_welcome:
   - text: Bitte sehr.
@@ -40,22 +40,22 @@ responses:
   - text: In Ordnung!
 
   utter_download_certificate:
-  - text: Möchtest du deinen Leistungsnachweis oder deine Teilnahmebestätigung herunterladen?
+  - text: Möchten Sie Ihren Leistungsnachweis oder Ihre Teilnahmebestätigung herunterladen?
 
   utter_ask_which_course:
-  - text: Bitte wähle einen Kurs aus, für den du deinen Fortschritt oder deine Bescheinigungen sehen möchtest.
+  - text: Bitte wähle einen Kurs aus, für den Sie Ihren Fortschritt oder Ihre Bescheinigungen sehen möchtest.
 
   utter_out_of_scope:
-  - text: 'Tut mir leid, das kann ich leider nicht beantworten. Benutze gerne unser Kontaktformular, um deine Frage zu stellen oder tippe "Hilfe". ' 
+  - text: 'Tut mir leid, das kann ich leider nicht beantworten. Sie können auch Kontaktformular, um Ihre Frage zu stellen oder tippen Sie "Hilfe". ' 
 
   utter_use_contact_form:
-  - text: Du kannst auch das Kontaktformular nebenan verwenden, um Hilfe zu erhalten. Wir werden versuchen, dir so schnell wie möglich zu antworten.
+  - text: Sie können auch das Kontaktformular nebenan verwenden, um Hilfe zu erhalten. Wir werden versuchen, Ihnen so schnell wie möglich zu antworten.
 
   utter_more_info:
-  - text: Okay. Wie kann ich dir weiterhelfen?
+  - text: Okay. Wie kann ich Ihnen weiterhelfen?
 
   utter_anything_else:
-  - text: Kann ich dir noch bei etwas anderem helfen?
+  - text: Kann ich Ihnen noch bei etwas anderem helfen?
     buttons:
     - title: "Ja"
       payload: "/affirm"
@@ -63,16 +63,16 @@ responses:
       payload: "/deny"
 
   utter_help:
-  - text: Ich helfe dir gerne bei technischen Problemen und Fragen zu den Kursen. Ich erkläre dir zum Beispiel den Kursaufbau und beantworte Fragen zum Zertifikat, zum Zurücksetzen des Passworts oder zum Ändern deiner persönlichen Daten. 
+  - text: Ich helfe Ihnen gerne bei technischen Problemen und Fragen zu den Kursen. Ich erkläre Ihnen zum Beispiel den Kursaufbau und beantworte Fragen zum Zertifikat, zum Zurücksetzen des Passworts oder zum Ändern Ihrer persönlichen Daten. 
 
   utter_default:
-  - text: Das habe ich nicht ganz verstanden. Kannst du das umformulieren?
+  - text: Das habe ich nicht ganz verstanden. Könnten Sie das bitte umformulieren?
 
   utter_iamabot:
-  - text: Ich bin dein virtueller Lern-Assistent. Gerne unterstütze ich dich auf deiner MOOC-Reise.
+  - text: Ich bin Ihr virtueller Lern-Assistent. Gerne unterstütze ich Sie auf Ihrer MOOC-Reise.
 
   utter_ask_handoff:
-  - text: Willst du lieber mit unserem Helpdesk-Team sprechen?
+  - text: Wollen Sie lieber mit unserem Helpdesk-Team sprechen?
     buttons:
     - title: "Ja, bitte"
       payload: "/affirm"
@@ -80,13 +80,13 @@ responses:
       payload: "/deny"
 
   utter_handoff:
-  - text: 'Um mit unserem Helpdesk-Team zu sprechen, klicke auf den Reiter "Kontaktformular" und beschreibe uns dein Anliegen dort kurz. Das Helpdesk-Team wird sich zeitnah bei dir melden.'
+  - text: 'Um mit unserem Helpdesk-Team zu sprechen, klicken Sie auf den Reiter "Kontaktformular" und beschreiben Sie uns dort Ihr Anliegen. Das Helpdesk-Team wird sich zeitnah bei Ihnen melden.'
   
   utter_insults:
-  - text: "Na, na, na, du bist aber ein ganz Schlimmer :) Bitte achte etwas besser auf dein Wording! Ich bin zwar nur eine Maschine, aber ich habe auch Gefühle!!"
+  - text: "Bitte achte etwas besser auf Ihre Wortwahl! Ich bin zwar nur eine Maschine, aber ich habe auch Gefühle!!"
 
   utter_feedback:
-  - text: "Hab ich dir bei deinem Anliegen helfen können?"
+  - text: "Hab ich Ihnen bei Ihrem Anliegen helfen können?"
     buttons:
     - title: "Ja!"
       payload: "/affirm"
@@ -94,16 +94,180 @@ responses:
       payload: "/deny"
 
   utter_thankyou_feedback:
-  - text: "Vielen Dank für dein Feedback!"
+  - text: "Vielen Dank für Ihr Feedback!"
 
   utter_faq/moocs:
-  - text: Ein paar grundlegende Informationen zu Online-Kursen haben wir <a href="https://open.hpi.de/pages/mooc">hier</a> zusammengetragen.
-
-  utter_faq/ki:
-  - text: Künstliche Intelligenz (KI) ist ein Teilgebiet der Informatik, das sich mit Konzepten und Methoden beschäftigt, die Computer befähigen, ihre Umgebung wahrzunehmen, zu denken, zu handeln, zu kommunizieren und zu lernen. Die Konzepte und Methoden werden durch Algorithmen als KI-Systeme realisiert.
+  - text: Ein paar grundlegende Informationen zu Online-Kursen haben wir <a target="_blank" href="https://open.hpi.de/pages/mooc">hier</a> zusammengetragen.
 
   utter_faq/openHPI:
   - text: "openHPI ist die Lernplattform des Potsdamer Hasso-Plattner-Instituts (HPI). Im September 2012 startete openHPI mit Prof. Dr. h.c. mult. Hasso Plattners Kurs 'In-Memory Data Management' als erste europäische MOOC-Plattform. Die englisch- und deutschsprachigen Kurse zu IT-Themen, Design Thinking und Digital Health werden von Professor:innen und wissenschaftlichen Mitarbeiter:innen des HPI erstellt. Außerdem wird openHPI für Blended Learning-Formate und zur Unterstützung von Präsenzveranstaltungen am Hasso-Plattner-Institut eingesetzt."
+
+  utter_faq/course_process:
+  - text: "Die Kurse auf openHPI haben einen festen Start- und Endtermin und folgen einem wöchentlichen Rhythmus. Das gesamte Kursmaterial für eine Woche, d.h. Lernvideos, Selbsttests, Hausaufgaben und Lesematerial, wird jeweils zu Beginn einer Kurswoche (meist dienstags oder mittwochs) bei openHPI freigeschaltet. Die Kursmaterialien und Selbsttests können Sie dann innerhalb der Kurswoche flexibel nach Ihrem eigenen Zeitplan bearbeiten und so häufig wiederholen, wie Sie möchten."
+
+  utter_faq/registration:
+  - text: "Es gibt keinerlei formale Zulassungsbeschränkungen. Sie benötigen zur Registrierung lediglich eine gültige E-Mail-Adresse."
+
+  utter_faq/costs:
+  - text: Die Kurse auf openHPI sind grundsätzlich kostenfrei. Ausnahme bilden die Kurse im <a target="_blank" href="https://open.hpi.de/channels/hpi-academy">Executive Education Channel</a>, die kostenpflichtig über die HPI Academy gebucht werden können.
+
+  utter_faq/minimum_age:
+  - text: Um an einem openHPI Kurs teilzunehmen muss das Mindestalter von 16 Jahren erreicht sein. Sollten Teilnehmer:innen jünger als 16 Jahre sein, benötigen Sie für die Registrierung die <a target="_blank" href="https://open.hpi.de/pages/data-protection#a-generelle-informationen">schriftliche Einwilligung ihrer Eltern</a>.
+
+  utter_faq/gender_neutral_language:
+  - text: "openHPI ist eine Lernplattform mit einer vielfältigen Community. Um diese Vielfalt abzubilden, nutzen wir grundsätzlich in allen Texten gendergerechte Sprache."
+
+  utter_faq/technical_requirements:
+  - text: Die Teilnahme an einem Kurs auf openHPI erfolgt vollständig web-basiert. Wir empfehlen, Ihren Browser und Ihr Betriebssystem auf die jeweils aktuellste Version zu aktualisieren. Die Installation weiterer Software auf Ihrem System ist in aller Regel nicht notwendig. Sollte ein bestimmter Kurs dies dennoch erfordern, dann wird im Kurs darauf explizit hingewiesen. Für das problemlose Abspielen der Kursvideos sollten sie über einen schnellen Internetzugang verfügen. Die openHPI Apps für Android und iOS können im <a target="_blank" href="https://play.google.com/store/apps/details?id=de.xikolo.openhpi&pli=1">Google Play Store</a> bzw. im <a target="_blank" href="https://apps.apple.com/de/app/openhpi/id1146509753">App Store</a> kostenlos heruntergeladen werden. In den mobilen Apps können die Videos auch runtergeladen werden und anschließend offline abgespielt werden.
+
+  # utter_faq/contact:
+  # - text: "Sollten Sie auf unseren openHPI-Seiten und unter den 'Häufig gestellten Fragen' keine Antworten auf Ihre Frage gefunden haben, so bitten wir Sie, uns über den <a target="_blank" href="https://open.hpi.de/pages/faq?locale=de#1-was-ist-openhpi:~:text=uns%20%C3%BCber%20den-,Hilfe%2DButton,-zu%20kontaktieren.%20F%C3%BCr">Hilfe-Button</a> zu kontaktieren. Für inhatliche Fragen zu Kursen steht Ihnen das Kursforum zu Verfügung, das vom jeweiligen Kursleiter:innen (Teaching Team) inhatlich betreut wird. Bitte schauen Sie im Kursforum auch, ob nicht schon andere Lerner:innen ein ähnliches Problem hatten und eine Diskussion zum Thema gestartet haben.
+  #         Gerne können Sie uns auch kontaktieren, wenn Sie einen eigenen Online-Kurs für Ihr Unternehmen oder Ihre öffentliche Einrichtung anbieten wollen oder an einer eigenen Lernplattform intessiert sind."
+
+  utter_faq/create_account:
+  - text: Um sich bei openHPI zu registrieren, gehen Sie bitte auf folgenden <a target="_blank" href="https://open.hpi.de/account/new">Link</a>. Tragen Sie Ihre E-Mail-Adresse und ein selbstgewähltes Passwort ein. Bestätigen Sie den Link in der Bestätigungsmail um die Registrierung abzuschließen. Sollten Sie keine Bestätigungsmail erhalten, überprüfen Sie bitte als Erstes, ob diese nicht in Ihrem Spam-Ordner gelandet ist. Sie können eine erneute Bestätigungsmail anfordern, indem Sie sich mit Ihren zuvor gewählten Zugangsdaten anmelden. Solange Ihr Account noch nicht bestätigt ist, erscheint eine Nachricht in der ein Link zur Anforderung einer erneuten Bestätigungsmail enthalten ist.
+          
+          Ist Ihr Account bereits bestätigt, aber Sie können sich nicht einloggen, stellen Sie bitte sicher, dass Sie JavaScript aktiviert haben und Cookies von unserer Seite akzeptieren. Sollte es weiterhin nicht funktionieren, benutzen Sie bitte die <a target="_blank" href="https://open.hpi.de/account/reset/new">"Passwort zurücksetzen"</a> Funktion.
+  
+  utter_faq/confirmation_mail:
+  - text: Es kann gelegentlich einige Zeit dauern, bis die Bestätigungsmail eintrifft, bitte überprüfen Sie auch Ihren Spamordner. Sollten Sie nach drei Stunden noch keine Bestätigunsmail erhalten haben, kontaktieren sie bitte den Helpdesk über das Kontakformular.
+
+  utter_faq/reset_password:
+  - text: 'Sie können Ihr Passwort über die "Passwort zurücksetzen"-Funktion zurücksetzen. Bitte geben Sie die E-Mail-Adresse ein, die Sie für Ihre Registrierung verwendet haben. Nach dem Absenden des Formulars erhalten Sie eine E-Mail an diese Adresse. Diese Mail enthält einen Link, der Sie zum eigentlichen Zurücksetzen des Passwortes führt. Nach einem Klick in der Mail müssen Sie lediglich Ihr neues Passwort eingeben und bestätigen und schon können Sie sich wieder anmelden.'
+
+  utter_faq/change_password:
+  - text: Ihr Passwort können Sie selbstständig in Ihrem <a target="_blank" href="https://open.hpi.de/dashboard/profile">Profil</a> ändern. Sie finden die Passwort ändern-Funktion auf der rechten Seite.
+
+  utter_faq/change_mail_address:
+  - text: Sie können Ihre E-Mail-Adresse selbstständig in Ihrem persönlichen openHPI-Profil ändern. Bitte melden Sie sich bei openHPI an und gehen Sie zu Ihrem <a target="_blank" href="https://open.hpi.de/dashboard/profile">Profil</a>. Überschreiben Sie die vorhandene E-Mail-Adresse, vergessen Sie nicht das Häkchen zu setzen. Sie erhalten eine E-Mail, die bestätigt werden muss, bevor die Änderung vorgenommen wird. Diese Bestätigungs-E-Mails landen manchmal auch im Spam-Ordner. Überprüfen Sie daher bitte auch Ihren Spam-Ordner. Sobald Sie Änderung bestätigt haben, ändert sich die angezeigte E-Mail-Adresse in Ihrem Profil. Bitte beachten Sie, dass Sie nur die primäre E-Mail-Adresse zum Login benutzen können.
+
+  utter_faq/personal_data:
+  - text: Das Hasso-Plattner-Institut unterliegt dem Bundesdatenschutzgesetz, da die Server, auf denen Nutzerdaten gespeichert sind, in Deutschland stehen. Es erfolgt keine Weitergabe von personenbezogenen Daten an Dritte. Zur Verbesserung der Plattform und zur Auswertung für wissenschaftliche Zwecke werden ausschließlich pseudonymisierte Daten verwendet. Weitere Informationen zum Datenschutz auf openHPI finden Sie <a target="_blank" href="https://open.hpi.de/pages/data-protection">hier</a>.
+
+  utter_faq/course_structure_content:
+  - text: Wichtigster Bestandteil der Lernplattform sind die Kurse. Kurse sind in Module untergliedert, Module umfassen mehrere Lerneinheiten. Zu solchen Lerneinheiten gehören nicht nur wissensvermittelnde Videos und Texte, sondern auch interaktive und prüfende Elemente wie Quiz und praktische Aufgabenstellungen.
+
+  utter_faq/course_overview:
+  - text: Die <a target="_blank" href="https://open.hpi.de/courses">Kursliste</a> bietet den Nutzer:innen einen Überblick der angebotenen Kurse. Außerdem gibt es eine Reihe von Filtermöglichkeiten. Die Kurse der HPI Academy finden Sie im <a target="_blank" href="https://open.hpi.de/channels/hpi-academy">Executive Education Channel</a>.
+
+  utter_faq/languages:
+  - text: Die Kurse werden vor allem auf Deutsch und Englisch angeboten. Die entsprechende Information finden Sie auf der Kursdetailseite.
+
+  utter_faq/course_duration:
+  - text: "Es gibt drei verschiedene Kursformate auf openHPI: Reguläre 6-Wochen-Kurse dauern einschließlich der Abschlussprüfung sieben Wochen. Hands-on Kurse dauern vier Wochen und legen den Fokus auf die direkte Anwendung erworbener Kompetenzen (z.B. Programmiersprachen). Workshops dauern nur zwei Wochen und befassen sich mit einem eng umgrenzten Thema."
+
+  utter_faq/workload:
+  - text: "Für die Kursteilnahme sollten Sie, abhängig von Ihrem Vorwissen, 3-6 Stunden pro Woche Zeit einplanen. Die geschätzte Zeit beinhaltet die Beschäftigung mit den bereitgestellten Lernmaterialien und Selbsttests. Zusätzlich ist jede Woche eine benotete Hausaufgabe mit einer Bearbeitungszeit von 60 Minuten angesetzt. Die Bearbeitungszeit der Abschlussprüfung beträgt 120 Minuten. Der Arbeitsaufwand eines regulären 6-Wochen-Kurses entspricht 2 ECTS-Punkten."
+
+  utter_faq/time_utc:
+  - text: Die Zeitangaben auf openHPI sind ganzjährlich in Coordinated Universal Time (UTC) angegeben. Die Differenz der mitteleuropäischen Zeit (MEZ) zur Weltzeit UTC beträgt +1 Stunde, die Differenz der mitteleuropäischen Sommerzeit (MESZ) zur UTC beträgt +2 Stunden. Sie können hier Ihre Zeitzone relativ zu UTC <a target="_blank" href="https://www.timeanddate.de/stadt/info/zeitzone/utc">hier</a> ermitteln.
+
+  utter_faq/homework_submission:
+  - text: "Die Abgabefristen für bewertete Aufhaben können nicht individuell verlängert werden, da die Ergebnisse der Aufgaben für die anderen Teilnehmer:innen zeitnah nach der Abgabefrist veröffentlicht werden und die Aufgaben danach im Forum diskutiert werden dürfen. Wenn Sie nicht an der Aufgabe teilgenommen haben, können Sie auch nicht auf die Fragen (etwa zu Übungszwecken) zugreifen. Unsere Kurse sind so konzipiert, dass Sie den Kurs auch erfolgreich mit einem Leistungsnachweis abschließen können, wenn Sie es nicht schaffen, an allen bewerteten Aufgaben teilzunehmen."
+  
+  utter_faq/registration_running_course:
+  - text: "Sie können Sich jederzeit für einen openHPI-Kurs anmelden. Wenn Sie im Laufe der ersten Kurswoche einsteigen, können Sie auch noch alle bewerteten Aufgaben absolvieren. Sollten Sie später einsteigen, wird es immer schwieriger, die notwendige Punktzahl für den Erwerb des Zeugnisses zu erreichen. Zertifikate können nur in der ersten Kurswoche noch gebucht werden. Eine Teilnahmebescheinigung können Sie auch für den verspäteten Einstieg erhalten."
+
+  utter_faq/enroll_unenroll_course:
+  - text: 'Ein Ausstieg aus einem openHPI Kurs ist jederzeit möglich. Sie können Sich von einem Kurs abmelden, indem Sie auf der Kursdetailseite den Knopf "Kursteilnahme beenden" benutzen. Sie können aber auch im Kurs eingeschrieben bleiben und den Kurs zu einem späterem Zeitpunkt im Selbststudium fortsetzen. Ein Wiedereinschreiben in den Kurs ist ebenfalls möglich. Ihre Fortschritte im Kurs werden dann wiederhergestellt.'
+
+  utter_faq/homework:
+  - text: "Sie können nach Ihren eigenen Interessen und Möglichkeiten am Kursgeschehen teilnehmen. Es besteht keine Verpflichtung, die Hausaufgaben zu erledigen und den Leistungsnachweis anzustreben. Wir freuen uns über jede aktive Teilnahme an den Forumsdiskussionen."
+
+  utter_faq/licence:
+  - text: Sie können die Materialien gerne für eigene Schulungen einsetzen, es sei denn, es ist auf der Kursdetailseite anders vermerkt. Die meisten Lerninhalte auf openHPI stehen unter einer <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA-Lizenz</a>. Diese Lizenz erlaubt es, die Materialien zu verbreiten, zu remixen, zu verbessern und darauf aufzubauen, allerdings nur nicht-kommerziell, unter Nennung von openHPI als Urheber des Originals und bei Weitergabe unter gleichen Bedingungen. Grundsätzlich ausgenommen von dieser Regelung sind die Kurse der HPI Academy im <a target="_blank" href="https://open.hpi.de/channels/hpi-academy">Executive Education Channel</a>. Diese Kurse dürfen nicht für andere Zwecke genutzt werden, egal ob kommerziell oder nicht-kommerziell.
+
+  utter_faq/self-study:
+  - text: "Nach dem Ende eines Kurses bleiben die Kursinhalte weiterhin im Archivmodus verfügbar. Neue Teilnehmer:innen können sich jederzeit zum Selbststudium anmelden. Bewertete Aufgaben mit Abgabefristen können jedoch nicht mehr bearbeitet und somit kann auch ein Leistungsnachweis nicht mehr erworben werden. Für die erfolgreiche Kursteilnahme können Sie lediglich eine Teilnahmebescheinigung erhalten. Das Forum wird nach Kursende geschlossen und steht nur noch im Lesemodus zur Verfügung."
+
+  utter_faq/forum:
+  - text: Das Forum ist ein wichtiger Bestandteil des Lernerlebnisses auf openHPI. Eine aktive Beteiligung trägt zu Ihrem Lernerfolg entscheidend bei, da Sie in diesem Bereich über die Themen des Kurses reflektieren, offen gebliebene Fragen stellen (und beantworten) oder mit anderen Teilnehmer:innen und den Kursleiter:innen diskutieren können. Informationen über die konkrete Funktionsweise des Forums und die Forenregeln finden Sie <a target="_blank" href="https://open.hpi.de/pages/forum_rules">hier</a>.
+
+  utter_faq/study_room:
+  - text: "In einem Lernraum können Sie in einer Gruppe diskutieren und zusammenarbeiten. Lernräume bieten neben einem Gruppenforum weitere Funktionen wie Videokonferenzen, Etherpad, Dateiaustausch und Terminplanung. Ein Lernraum kann für alle interessierten Kursteilnehmer:innen geöffnet oder nur für eine eingeschränkte Gruppe geöffnet sein."
+
+  utter_faq/peer-assessment:
+  - text: 'Ein Peer-Assessment ist eine Aufgabenform, bei der sich Teilnehmer:innen gegenseitig bewerten. Ein Peer-Assessment kommt dann zum Einsatz, wenn eine automatische Auswertung für eine bestimmte Fragestellung schwierig wäre oder wenn es den Lernprozess aktiv unterstützt, über die Lösungsvorschläge anderer Kursteilnehmer:innen zu reflektieren und diese zu bewerten. Die Bearbeitung der Aufgabe kann entweder alleine oder in Teamarbeit (Team Peer Assessment) geschehen. Mehr Informationen erhalten Sie <a target="_blank" href="https://open.hpi.de/pages/p_a">hier</a>.'
+
+  utter_faq/recap:
+  - text: "Das Recap bietet die Möglichkeit, Fragen aus Selbsttests in Quizform zu beantworten und so das Wissen zu vertiefen."
+
+  utter_faq/hpi_academy:
+  - text: Die <a target="_blank" href="https://open.hpi.de/channels/hpi-academy">Kurse der HPI Academy</a> sind kostenpflichtig und können über die HPI Academy gebucht werden. Sie erhalten nach Zahlungseingang Zugang zum Kurs. Zugriff auf die Kursmaterialien haben Sie nur während der Kurslaufzeit. Kursmaterialien dürfen weder kommerziell oder nicht-kommerziell für andere Zwecke genutzt werden. Bei inhaltlichen Fragen zu den Kursen der HPI Academy wenden Sie sich bitte an das Team der HPI Academy.
+
+  utter_faq/self_tests-homework:
+  - text: "Selbsttests sind kurze, unbewertete Quiz, die direkt auf ein Video oder einen Text folgen. Zweck der Selbsttests ist es, das Verständnis des gerade erworbenen Wissens selbst zu überprüfen. Diese zählen nicht für den Leistungsnachweis bzw. das Zertifikat und können beliebig oft wiederholt werden. Hausaufgaben sowie die Abschlussprüfung hingegen müssen bis zu einer bestimmten (meist wöchentlichen) Abgabefrist bearbeitet werden und sind Voraussetzung für den Erwerb eines Kurszeugnisses."
+
+  utter_faq/xp:
+  - text: Die Experience Points spiegeln den Einsatz im Kurs sowie die Aktivität im Forum wider. Sie stehen dabei in Abgrenzung zu den Leistungspunkten, die Sie durch die erfolgreiche Teilnahme an den Hausaufgaben und der Abschlussprüfung erhälten. <a target="_blank" href="https://open.hpi.de/pages/gamification#experience-points-xp">Hier</a> finden Sie Übersicht, wie die Experience Points verteilt werden.
+
+  utter_faq/badges:
+  - text: 'Es gibt drei verschiedene Badges, die jeweils in bronze, silber und gold vergeben werden: Communicator für die besonders aktive Beteiligung am Diskussionsforum und in den Lerngruppen, Knowledgeable-Badge für besonders hilfreiche Antworten im Forum und Self-Tested, wenn die Selbsttests eines Kurses komplett richtig beantwortet wurden. Mehr Informationen dazu finden Sie <a target="_blank" href="https://open.hpi.de/pages/gamification#badges">hier</a>.'
+
+  utter_faq/score:
+  - text: "Bei Multiple-Choice-Aufgaben gibt es genau eine richtige Antwort. Wird diese richtig ausgewählt, erhält der Teilnehmer die angegebene Punktzahl für die Aufgabe. Wird die falsche Antwort angeklickt, erhält der Teilnehmer 0 Punkte für diese Aufgabe. Bei Multiple-Answer-Aufgaben werden die erreichten Punkte bei teilweise richtigen Lösungen, auf folgende Weise berechnet: Die maximale Punkteanzahl wird durch die Anzahl der richtigen Alternativen dividiert. Dieser Wert wird als Basis verwendet. Für jede richtige Alternative, die korrekt ausgewählt wurde, wird der Basiswert vergeben, für jede falsche Alternative wird der Basiswert abgezogen. Ist das Gesamtergebnis negativ, werden 0 Punkte vergeben.
+
+          Beispiel: Für eine Aufgabe werden maximal 3 Punkte vergeben. Von fünf Antworten sind drei richtig. Sie haben haben zwei richtige und eine falsche angekreuzt. Für die beiden Richtigen erhalten Sie jeweils einen Punkt (3 dividiert durch 3), für die falsche wird ebenfalls ein Punkt abgezogen. Sie erhalten für die Aufgabe einen Punkt."
+
+  utter_faq/final_result:
+  - text: "Die Höchstpunktezahl, die im Kurs erreicht werden kann, setzt sich aus den Punkten der Hausaufgaben und den Punkten der Abschlussklausur zusammen. Jeder, der mindestens 50% der Gesamtpunktezahl erreicht, erhält am Ende des Kurses einen Leistungsnachweis, auf dem die erreichte Punktezahl angegeben ist."
+
+  utter_faq/points_rounded:
+  - text: "Die Summe aller erreichten Punkte eines Teilnehmers wird auf dem Leistungsnachweis ausgewiesen und als Prozentsatz aller möglichen Punkte (Höchstpunktezahl) angegeben. Falls das Ergebnis Dezimalstellen aufweist, wird abgerundet. Hat eine Teilnehmende beispielsweise 49,9% der Gesamtpunktezahl erreicht, reicht das leider nicht aus, um ein Leistungsnachweis zu erhalten."
+
+  utter_faq/performance-records_differences:
+  - text: "Die Leistungsnachweise unterscheiden sich vor allem in Ihrer Wertigkeit. Ein Zertifikat weist das Ergebnis der Nutzer:in aus und bietet wegen der Online-Aufsicht und dem aufgedruckten Foto die Sicherheit, dass das Zertifikat auch von der entsprechenden Nutzer:in erworben wurde. Der Leistungsnachweis weist ebenfalls das Ergebnis der Nutzer:in aus und bescheinigt den erfolreichen Abschluss des Kurses. Eine Teilnahmebescheinigung sagt nur, dass dass sich mindestens 50 % der Kursmaterial angesehen wurden, aber nichts über die Bearbeitungsdauer und Intensität der Bearbeitung aus."
+
+  utter_faq/record-of-achievement_unlock:
+  - text: "Die Leistungsnachweise (Zertifikat, Leistungsnachweis und Teilnahmebescheinigung) werden in der Regel eine Woche nach Kursende freigeschaltet."
+
+  utter_faq/record-of-achievement_date-of-issue:
+  - text: "Das Ausstelldatum auf den Leistungsnachweisen bezieht sich grundsätzlich auf das Ende des Kurses. Teilnahmebescheinigungen weisen das Datum aus, an dem der Leistungsnachweis freigeschaltet wurde, so dass Sie in Kursen im Selbststudium, die beispielsweise im vergangenen Jahr stattgefunden haben, eine Teilnahmebescheinigung mit einem Datum aus dem vergangenen Jahr erhalten. Leistungsnachweise und Zertifikate weisen den Tag aus, an dem Sie den Leistungsnachweis erworben haben. Es ist nicht möglich, das Ausstelldatum manuell zu ändern."
+
+  utter_faq/confirmation-of-participation_requirements:
+  - text: "Die Teilnahmebescheinigung erhält, wer auf zumindest 50% der Kursunterlagen zugegriffen hat. Die Bearbeitungsdauer und Intensität der Bearbeitung der Kursmaterialien sind dabei unerheblich."
+
+  utter_faq/record-of-achievement_requirements:
+  - text: "Den Leistungsnachweis erhält, wer in der Summe aller benoteten Aufgaben mindestens 50% der Höchstpunktzahl erreicht hat. Dabei ist unerheblich, wie sich die Punkteverteilung aus Hausaufgaben, möglichen Programmieraufgaben und Abschlussprüfung zusammensetzt."
+
+  utter_faq/open-badge_requirements:
+  - text: "In einigen Kursen werden Open Badges angeboten. Wenn Sie einen Leistungsnachweis erworben haben, wird Ihr Open Badge zusätzlich freigeschaltet."
+
+  utter_faq/certificate_requirements:
+  - text: "Dieses kann von den Teilnehmern gebucht werden. Mittels automatischer Gesichtserkennung wird sichergestellt, dass der Teilnehmer die Prüfung persönlich abgelegt hat. Das HPI rechnet seinen Studierenden dafür ECTS-Punkte (European Credit Transfer System) an und empfiehlt dies auch anderen Hochschulen."
+
+  utter_faq/certificate_costs:
+  - text: "Ein Zertifikat kostet 60 Euro inklusive der gesetzlichen Mehrwertsteuer."
+
+  utter_faq/certificate_booking:
+  - text: "Die Buchung des Zertifikats muss spätestens nach Abgabe der ersten bewerteten Aufgabe des Kurses erfolgen. In der Regel ist dies innerhalb der zweiten Kurswoche. Ist die Abgabefrist für die zweite Hausaufgabe verstrichen, so ist eine Anmeldung zur Prüfung mit automatischer Gesichtskontrolle per Webcam nicht mehr möglich."
+
+  utter_faq/certificate_violations:
+  - text: Achten Sie vor allem darauf, dass die Online-Aufsicht immer Zugriff auf Ihre Webcam hat und sich keine weitere Person vor der Webcam befindet. Eine detaillierte Liste von Verstößen finden Sie <a target="_blank" href="https://open.hpi.de/pages/document_types#%20-zertifikat">hier</a>.
+
+  utter_faq/certificate_invoice:
+  - text: "Wenn Sie eine Rechnung für den Kauf Ihres Zertifikats benötigen, wenden Sie sich bitte an den openHPI Helpdesk. Unsere Drittmittelverwaltung wird Ihnen daraufhin eine Rechnung erstellen. <i>Hinweis: Derzeit können Kursreaktivierungen nicht gekauft werden.</i>"
+
+  utter_faq/open-badge_linkedin:
+  - text: 'Melden Sie sich in Ihrem LinkedIn-Konto an -> Gehen Sie auf Ihr Profil -> Wählen Sie im Bereich "Bescheinigungen und Zertifikate" (ggf. müssen Sie diesen Profilbereich zunächst hinzufügen) bitte folgende Angaben:
+          <ul>
+          <li> Name: Name des openHPI-Kurses</li>
+          <li>Ausgestellt von: Hasso-Plattner-Institute</li>
+          <li>Zertifikats-ID: openHPI</li>
+          <li>URL des Nachweichses: Den Online-Link finden Sie am Ende Ihres Leistungsnachweises.</li>
+          <li>Wählen Sie bitte "Diese Zertifizierung hat kein Ablaufdatum".</li>
+          <li>Ausgestellt am: Monat und Jahr, in denen Ihr Leistungsnachweis ausgestellt wurde</li>
+          <li>Klicken Sie bitte auf "Speichern".</li>'
+
+
+
+
+
+
+
+
+
+
   
 
 
