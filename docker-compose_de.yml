@@ -14,5 +14,6 @@ services:
       volumes:
         - ./rasa/openHPI_de/actions:/app/actions
         - ./rasa/openHPI_de/data:/app/data
+        - ./rasa/openHPI_de/action_responses:/app/action_responses
       ports:
         - 10011:5055
