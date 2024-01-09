@@ -1,8 +1,6 @@
 from enum import Enum
 from typing import Dict, Type
 
-from actions.settings import load_config
-
 
 class ResponseEnum(Enum):
 	"""

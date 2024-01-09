@@ -2,11 +2,10 @@ version: "3.1"
 
 stories:
 
-- story: User greets login
+- story: User greet
   steps:
   - intent: greet
   - action: utter_greet
-  - action: utter_tip_formulation
 
 - story: User goodbye
   steps:
@@ -19,12 +18,26 @@ stories:
    - action: utter_you_are_welcome
    - action: utter_anything_else
 
+- story: choose chatbot function courses
+  steps:
+    - intent: ask_courses
+    - action: utter_ask_courses
+
 - story: faq
   steps:
   - intent: faq
   - action: utter_faq
   - action: utter_anything_else
   - checkpoint: more_information
+
+- story: choose chatbot function faq
+  steps:
+    - intent: ask_question
+    - action: utter_which_question
+    - intent: faq
+    - action: utter_faq
+    - action: utter_anything_else
+    - checkpoint: more_information
 
 - story: answer bot challenge
   steps:
@@ -33,7 +46,7 @@ stories:
   - action: utter_anything_else
   - checkpoint: more_information
 
-- story: Handle insults
+- story: handle insults
   steps:
   - intent: insults
   - action: utter_insults
@@ -85,9 +98,79 @@ stories:
   steps:
   - checkpoint: more_information
   - intent: deny
-  - action: utter_feedback
-  - or:
-    - intent: affirm
-    - intent: deny
-  - action: utter_thankyou_feedback
-  - action: utter_have_a_nice_day
+  - checkpoint: user_feedback
+
+- story: get achievements, no courses available
+  steps:
+  - intent: get_achievements
+  - action: action_get_courses_buttons
+  - slot_was_set:
+    - courses_available: false
+  - action: utter_anything_else
+  - checkpoint: more_information
+
+- story: get achievements, courses available, course not achieved
+  steps:
+  - intent: get_achievements
+  - action: action_get_courses_buttons
+  - slot_was_set:
+    - courses_available: true
+  - action: utter_ask_which_course
+  - action: course_form
+  - active_loop: course_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_get_achievements
+  - slot_was_set:
+    - current_course_achieved: false
+  - action: utter_anything_else
+  - checkpoint: more_information
+
+- story: get achievements, courses available, course achieved, download certificate
+  steps:
+  - intent: get_achievements
+  - action: action_get_courses_buttons
+  - slot_was_set:
+    - courses_available: true
+  - action: utter_ask_which_course
+  - action: course_form
+  - active_loop: course_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_get_achievements
+  - slot_was_set:
+    - current_course_achieved: true
+  - action: utter_download_certificate
+  - intent: affirm
+  - action: action_download_certificate
+  - action: utter_anything_else
+  - checkpoint: more_information
+
+- story: get achievements, courses available, course achieved, not download certificate
+  steps:
+  - intent: get_achievements
+  - action: action_get_courses_buttons
+  - slot_was_set:
+    - courses_available: true
+  - action: utter_ask_which_course
+  - action: course_form
+  - active_loop: course_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_get_achievements
+  - slot_was_set:
+    - current_course_achieved: true
+  - action: utter_download_certificate
+  - intent: deny
+  - action: utter_anything_else
+  - checkpoint: more_information
+
+- story: feedback
+  steps:
+    - checkpoint: user_feedback
+    - action: utter_feedback_general
+    - action: feedback_form
+    - active_loop: feedback_form
