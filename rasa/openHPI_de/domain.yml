@@ -312,8 +312,8 @@ responses:
       buttons:
       - title: "MOOCs"
         payload: "Was sind Massive Open Online Courses?"
-      - title: "KI-Campus"
-        payload: "Was ist der KI Campus?"
+      - title: "openHPI"
+        payload: "Was ist openHPI?"
       - title: "Zertifikat"
         payload: "Kann ich Zertifikate erwerben?"
       - title: "Passwort"
