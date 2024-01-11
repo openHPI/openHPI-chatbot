@@ -287,7 +287,15 @@ responses:
         payload: "/human_handoff"
 
   utter_default:
-  - text: Das habe ich nicht ganz verstanden. Könnten Sie das bitte umformulieren?
+  - text: Das habe ich nicht ganz verstanden. Meintest du ...
+    custom:
+      buttons:
+      - title: "Ich habe eine allgemeine Frage"
+        payload: "/ask_question" 
+      - title: "Ich habe eine Frage zu meinen Kursen"
+        payload: "/get_courses"
+      - title: "Ich möchte mit dem Helpdesk-Team sprechen"
+        payload: "/human_handoff"
 
   utter_iamabot:
   - text: Ich bin Ihr virtueller Lern-Assistent. Gerne unterstütze ich Sie auf Ihrer MOOC-Reise.
