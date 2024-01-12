@@ -4,6 +4,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet, SessionStarted
 from rasa_sdk.executor import CollectingDispatcher
 
+import requests
 import json
 
 class CourseSet(Action):

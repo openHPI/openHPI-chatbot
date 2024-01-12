@@ -139,14 +139,14 @@ responses:
       - title: "Ich habe eine allgemeine Frage"
         payload: "/ask_question" 
       - title: "Ich habe eine Frage zu meinen Kursen"
-        payload: "/get_courses"
+        payload: "/ask_courses"
   - text: Hallo, was kann ich für Sie tun?
     custom:
       buttons:
       - title: "Ich habe eine allgemeine Frage"
         payload: "/ask_question" 
       - title: "Ich habe eine Frage zu meinen Kursen"
-        payload: "/get_courses"
+        payload: "/ask_courses"
 
   utter_goodbye:
   - text: Alles klar. Ich wünsche Ihnen noch einen schönen Tag! Bis bald 👋
@@ -240,7 +240,7 @@ responses:
       - title: "Ich habe eine allgemeine Frage"
         payload: "/ask_question" 
       - title: "Ich habe eine Frage zu meinen Kursen"
-        payload: "/get_courses"
+        payload: "/ask_courses"
       - title: "Ich möchte mit dem Helpdesk-Team sprechen"
         payload: "/human_handoff"  
 
@@ -254,7 +254,7 @@ responses:
       - title: "Ich habe eine allgemeine Frage"
         payload: "/ask_question" 
       - title: "Ich habe eine Frage zu meinen Kursen"
-        payload: "/get_courses"
+        payload: "/ask_courses"
       - title: "Ich möchte mit dem Helpdesk-Team sprechen"
         payload: "/human_handoff" 
 
@@ -282,7 +282,7 @@ responses:
       - title: "Ich habe eine allgemeine Frage"
         payload: "/ask_question" 
       - title: "Ich habe eine Frage zu meinen Kursen"
-        payload: "/get_courses"
+        payload: "/ask_courses"
       - title: "Ich möchte mit dem Helpdesk-Team sprechen"
         payload: "/human_handoff"
 
@@ -293,7 +293,7 @@ responses:
       - title: "Ich habe eine allgemeine Frage"
         payload: "/ask_question" 
       - title: "Ich habe eine Frage zu meinen Kursen"
-        payload: "/get_courses"
+        payload: "/ask_courses"
       - title: "Ich möchte mit dem Helpdesk-Team sprechen"
         payload: "/human_handoff"
 
